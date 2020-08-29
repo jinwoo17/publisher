@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>toggle()</title>
+<script src="jquery-1.7.2.min.js"></script>
+<script src="jquery-migrate-1.4.1.js"></script>
+<!--제이쿼리 최신버전 사용시 마이그레이트 사용하기-->
+</head>
+<body>
+
+	<button>화면을 변경</button>
+
+	<p><img src="flower.jpg" alt="꽃" /></p>
+
+
+	<!---------- jQuery code Start ---------->
+	<script type="text/javascript">
+//하나의 객체 이벤트에 여러개의 이벤트 수행 - toggle
+		// button을 클릭할때마다 바다, 해파리, 건물, 꽃 이미지를 순서대로 로드하시오
+		$('button').toggle(
+			function(){
+				$('p img').attr({src:"sea.jpg", alt: '바다'})
+			},
+			function(){
+				$('p img').attr({src:"Jellyfish.jpg", alt: '해파리'})
+			},
+			function(){
+				$('p img').attr({src:"Building.jpg", alt: '건물'})
+			},
+			function(){
+				$('p img').attr({src:"flower.jpg", alt: '꽃'})
+			}
+		)
+
+
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

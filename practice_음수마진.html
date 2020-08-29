@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>음수마진 연습</title>
+        <link rel="stylesheet" href="common/css/base.css">
+        <link rel="stylesheet" href="common/css/common.css">
+        <link rel="stylesheet" href="common/css/ui.css">
+
+        <style>
+            .content {margin-top:20px; padding:20px 0;}
+            .section {width:1200px; margin:0 auto; background:#ddd;}
+            .section .inner {width:1000px; margin:0 auto;}
+
+            .lnb-wrap {margin:-20px;}
+            .lnb-wrap .lnb {display:flex;}
+            .lnb li { width:calc(100%/4); padding:20px;}
+            .lnb li a {display:block; height:40px; border:1px solid #000;}
+
+            .text {height:50px;}
+
+            .m-margin {display:flex; flex-flow:row wrap; margin:-20px;}
+            .test {width:calc(50%); padding:20px;}
+            .txt {display: flex; height:100px; border:1px solid #000; }
+            .txt > div {width:calc(50% - 30px); margin:10px auto; border:1px solid #000;}
+            .m-margin02 {display:flex; margin:-30px;}
+            .test02 {width:calc(100% / 3); padding:30px;}
+            .txt02 {height:100px; border:1px solid #000;}
+
+            .section .text p{display:block; width: 50px; height:50px; transform:rotate(-90deg)};
+        </style>
+    </head>
+    <body>
+        <div class="content">
+
+            <div class="section">
+                <div class="inner">
+                    <div class="lnb-wrap">
+                        <ul class="lnb">
+                            <li><a href="#">aaa</a></li>
+                            <li><a href="#">bbb</a></li>
+                            <li><a href="#">ccc</a></li>
+                            <li><a href="#">ddd</a></li>
+                        </ul>
+                    </div>
+                    <div class="text">
+                        <p>paragraph</p>
+                    </div>
+                    <div class="m-margin">
+
+                        <div class="test">
+                            <div class="txt">
+                                <div>
+                                    11111
+                                </div>
+                                <div>
+                                    11111
+                                </div>
+                            </div>
+                        </div>
+                        <div class="test">
+                            <div class="txt">
+                                222222
+                            </div>
+                        </div>
+                        <div class="test">
+                            <div class="txt">
+                                33333
+                            </div>
+                        </div>
+                        <div class="test">
+                            <div class="txt">
+                                44444
+                            </div>
+                        </div>
+                        <div class="test">
+                            <div class="txt">
+                                55555
+                            </div>
+                        </div>
+                        <div class="test">
+                            <div class="txt">
+                                66666
+                            </div>
+                        </div>
+                        <div class="test">
+                            <div class="txt">
+                                77777
+                            </div>
+                        </div>
+                        <div class="test">
+                            <div class="txt">
+                                88888
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-margin02">
+                        <div class="test02">
+                            <div class="txt02">
+                                asdfasdf
+                            </div>
+                        </div>
+                        <div class="test02">
+                            <div class="txt02">
+                                asdfasdf
+                            </div>
+                        </div>
+                        <div class="test02">
+                            <div class="txt02">
+                                asdfasdf
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div
+    </body>
+</html>

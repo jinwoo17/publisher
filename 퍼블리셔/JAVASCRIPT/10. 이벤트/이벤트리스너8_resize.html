@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>resize</title>
+  </head>
+  <body>
+    <h1>1</h1>
+    <script>
+      var i =1;
+      var heading = document.getElementsByTagName('h1')[0];
+
+      // window.onresize = function() {
+      // heading.innerText=i++;
+      // }
+      window.addEventListener('resize', function() { 
+        heading.innerText = i++;
+      });
+    </script>
+  </body>
+</html>

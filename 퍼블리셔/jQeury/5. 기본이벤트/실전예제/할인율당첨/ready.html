@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Jump for Joy</title>
+		<link href="styles/my_style.css" rel="stylesheet">
+		<script src="scripts/jquery-1.7.2.min.js"></script>
+		<script>
+            /* 할 일 목록
+						1. 클래스 guest_box를 클릭시
+							아이디 main내 제일 하단에
+							p태그로 "Your Discount is n%" 출력
+						2. n 값은 10,20,30,40,50 중 랜덤
+						3. 한번만 출력되도록
+						*/
+			$(document).ready(function(){
+				$('.guest_box').one('click', function(){
+					var discount = Math.ceil(Math.random()*5)*10;
+					$('#main').append('<p>Your Discount is' + discount + '%입니다</p>');
+					$('.guest_box').off();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<h2>Jump for Joy Sale</h2>
+		</div>
+		<div id="main">
+			<div class="guest_box"><img src="images/jump1.jpg"/></div>
+			<div class="guest_box"><img src="images/jump2.jpg"/></div>
+			<div class="guest_box"><img src="images/jump3.jpg"/></div>
+			<div class="guest_box"><img src="images/jump4.jpg"/></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>브라우저 크기별 색상변환</title>
+  </head>
+
+  <body>
+    <script>
+      console.log(window.innerWidth);
+      var bodyBg = document.getElementsByTagName('body')[0];
+      // bodyBg.style.backgroundColor = "beige" ->배경색 바꾸기
+      function bgColorName() {
+        if (window.innerWidth > 1000) {
+          bodyBg.style.backgroundColor = "beige";
+        }
+        else if (window.innerWidth >800) {
+          bodyBg.style.backgroundColor = "#e0c090";
+        }
+        else if (window.innerWidth >500) {
+          bodyBg.style.backgroundColor = "#a6eb7c";
+        }
+        else {
+          bodyBg.style.backgroundColor = "#9591e8";
+        }
+      }
+      bgColorName();
+
+    </script>
+  </body>
+</html>

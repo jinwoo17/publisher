@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>이벤트리스너</title>
+    <script>
+      // function hideMenu(){
+      //   alert("우클릭 금지");
+      //   return false;
+      // }
+      // document.oncontextmenu= hideMenu;
+      document.onmousedown = click;
+      function click() {
+        if (event.button == 2) {
+          alert("죄송합니다. \n 오른쪽 마우스는 사용할 수 없습니다")
+        }
+      }
+      //1:왼쪽버튼, 2:오른쪽버튼, 4:가운데버튼
+    </script>
+  </head>
+  <body>
+    <h3>oncontextmenu에서 컨텍스트 메뉴 금지</h3>
+    <br>
+    <p>마우스 오른쪽 클릭은 금지됩니다. 아무곳이나 눌러주세요</p>
+    <img src="images/beach2.png" alt="miami">
+  </body>
+</html>

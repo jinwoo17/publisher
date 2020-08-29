@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title> each() </title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<ul>
+    <li data-test="1">포도</li>
+    <li data-test="2">바나나</li>
+    <li data-test="3">사과</li>
+</ul>
+
+
+<!------------------------ jQuery 코드 ----------------------->
+<script>
+  console.log($('li').index());  //li의 index값 출력
+
+  $('li').each(function(index, element) {  //반복문(for)과 동일한 기능
+
+  	// 각 li의 인덱스 번호출력
+    console.log($(this).index())
+  	// 각 li의 요소출력
+    console.log($(this).html())
+  	// 각 li의 텍스트 출력
+    console.log($(this).text())
+  	// 각 li의 data-test 값 출력
+    // console.log($(this).attr('data-test'))
+    console.log($(this).data('test'))
+  	// li 마다 구분선 출력
+    $(this).append('<hr>')
+  });
+</script>
+
+</body>
+</html>

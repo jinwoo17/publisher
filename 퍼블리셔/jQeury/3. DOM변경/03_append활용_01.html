@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> append()활용  </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+
+<style>
+	div { border: 1px solid #000; }
+	img {padding:0px; margin:5px;}
+</style>
+</head>
+
+<body>
+
+	<div id="container">
+		<img src='pic1.jpg' alt='' width='100' />
+		<img src='pic2.jpg' alt='' width='100' />
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// pic3.jpg 파일을 세번째 추가
+		$('#container').append('<img src="pic3.jpg" alt="" width="100" />');  //따옴표 주의
+
+
+		// 첫번째 이미지를 마지막으로 이동
+		$('#container').append($('#container img:first'));
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

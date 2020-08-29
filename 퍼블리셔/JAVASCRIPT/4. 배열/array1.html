@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배열</title>
+    <script>
+      var fruit1 = new Array('사과', '수박', '메론', '참외', '망고', '딸기');
+      console.log(fruit1)
+      document.write(fruit1[0])
+
+      var fruit2 = ['사과', '수박', '메론', '참외', '망고', '딸기']
+      console.log(fruit2)
+      document.write(fruit2[0]+"<br>")
+      //
+      function fruit(){
+        return ['사과', '딸기', '자몽']
+      }
+      fruit = fruit() //배열을 불러올 땐 변수에 함수를 저장한다.
+      document.write(fruit[0]+"<br>");
+      document.write(fruit[1]+"<br>");
+      document.write(fruit[2]+"<br>");
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,65 @@
+@charset "utf-8";
+/*--------------------------------------------------------------------------------------------------------------------------
+	File : base.css
+	Company : The Webstyle co.,ltd
+    CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+    CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+    CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------
+    ## Reset
+-------------------------------------------------------------------*/
+html, body, div, ul, ol, dl, li, dt, dd, p, h1, h2, h3, h4, h5, h6, table, thead, tbody, tr, th, td, caption, address,
+canvas, details, figure, figcaption, footer, header, menu, nav, section, article, aside,
+button, select, textarea, input, fieldset, legend, label, a, span, strong, em, address, dfn, small, i, b, ::before, ::after {margin:0; padding:0; border:0; list-style:none; color:inherit; font-style:normal; font-size:100%; font-weight:inherit; font-family:inherit; line-height:inherit; word-break:inherit; word-wrap:inherit; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box;}
+body {font-family:"Noto Sans KR", "Dotum", "Dotumche", "돋움", "돋움체", "Arial"; font-size:14px; font-weight:400; line-height:1; word-break:keep-all; word-wrap:word-break; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none;}
+[hidden], hr {display:none;}
+img {vertical-align:middle;}
+button {background-color:transparent; cursor:pointer;}
+b, strong {font-weight:normal;}
+fieldset, iframe {width:100%;}
+img, a, frame, iframe, fieldset {border:0;}
+a {text-decoration:none;}
+table {width:100%; border-spacing:0; border-collapse:collapse;}
+caption {height:0; overflow:hidden; text-indent:-9999px;}
+legend {position:absolute; left:-9999em; top:-9999em;}
+button {overflow:hidden; background-color:transparent; cursor:pointer;}
+button::-moz-focus-inner {border:0px; padding:0px;}
+.dv-android [tabindex='0']:focus,
+.dv-android a:focus,
+.dv-android button:focus,
+.dv-android input:focus,
+.dv-android textarea:focus,
+.dv-android select:focus {outline:0;}
+.dv-ios [tabindex='0'],
+.dv-ios a,
+.dv-ios button,
+.dv-ios input,
+.dv-ios textarea,
+.dv-ios select {-webkit-tap-highlight-color:transparent;}
+
+/*-------------------------------------------------------------------
+    ## Fonts
+-------------------------------------------------------------------*/
+/* Noto Sans KR */
+@font-face {
+	font-family:"Noto Sans KR"; font-weight:100;
+	src: url("../fonts/NotoSans-Thin.eot");
+	src: local("※"), url("../fonts/NotoSans-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/NotoSans-Thin.woff") format("woff"); }
+@font-face {
+	font-family:"Noto Sans KR"; font-weight:300;
+	src: url("../fonts/NotoSans-Light.eot");
+	src: local("※"), url("../fonts/NotoSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/NotoSans-Light.woff") format("woff"); }
+@font-face {
+	font-family:"Noto Sans KR"; font-weight:400;
+	src: url("../fonts/NotoSans-Regular.eot");
+	src: local("※"), url("../fonts/NotoSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/NotoSans-Regular.woff") format("woff"); }
+@font-face {
+	font-family:"Noto Sans KR"; font-weight:500;
+	src: url("../fonts/NotoSans-Medium.eot");
+	src: local("※"), url("../fonts/NotoSans-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/NotoSans-Medium.woff") format("woff"); }
+@font-face {
+	font-family:"Noto Sans KR"; font-weight:700;
+	src: url("../fonts/NotoSans-Bold.eot");
+	src: local("※"), url("../fonts/NotoSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/NotoSans-Bold.woff") format("woff"); }

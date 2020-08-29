@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> show()  </title>
+<style type="text/css">
+	div { width: 200px;
+		   height: 200px;
+		   background: red;
+		   display: none;
+		  }
+</style>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<button id="show">표시</button>
+	<button id="hide">비표시</button>
+	<div></div>
+
+
+
+	<!---------- jQuery code Start ---------->
+	<script type="text/javascript">
+
+		// hide() : 현재 보이는 상태의 노드를 보이지 않도록 하는 명령어
+
+		// 각 버튼을 누르면 div가 나타났다가 사라지도록
+
+		// 애니메이션이 끝나기 전에는 다른 이벤트가 발생하지 않도록
+
+		// alert를 이용하여 show, hide 상태일때의 display 값 확인
+		$('#show').on('click',function(){
+			$('div:not(:animated)').show(1000);  //에니메이션이 진행되고 있지 않을 때 실행
+		})
+		$('#hide').on('click',function(){
+			$('div:not(:animated)').hide(1000);
+		})
+
+
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

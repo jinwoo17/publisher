@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>조건문, if문</title>
+    <script>
+    //조건문은 특정 조건에 대해서 반응하고 그것을 처리
+    //if문은 특정 조건이 성립할 경우 해당결과를 실행
+
+        var a = 20, b = 20;
+        if (a <= b) {   //항상 조건식이 참이므로 중괄호 안의 코드가 실행됨
+          console.log('a가 b보다 작습니다');
+        }
+        if (a == b) {
+          console.log('a가 b보다 같습니다');
+        }
+
+        var num = 0;
+        function testFnc(){
+          num++;
+          document.write(num, "<br>")
+          if(num == 10) return;
+          testFnc();
+        }
+        testFnc();
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

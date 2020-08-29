@@ -1,0 +1,92 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------------------------------------------------
+	File : Common.css
+	Company : TWS
+	Author : TWS 2019-02-28
+	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+	CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+-------------------------------------------------------------------------------------------------------------*/
+.gray {color:#999;}
+.darkGray {color:#333;}
+.lightGray {color:#666;}
+.lightBlue {color:#00a1ea;}
+.lightRed {color:#ff4545;}
+.waterBlue {color:#1983db}
+
+/*** input ***/
+.inputText {display:block; position:relative; min-width:200px; height:45px; line-height:45px; margin:0; padding:0 10px; border:0; border:solid #dcdcdc 1px; font-size:15px; border-radius:3px; outline:none;}
+.inputText::placeholder {font-size:15px; color:#999;}
+textarea.textarea {display:block; position:relative; width:100%; margin:0; padding:15px 10px; background-color:#FFF; border:solid #c6c6c6 1px; font-size:14px; outline:none;}
+textarea.textarea::placeholder {color:#ccc; font-size:14px;}
+
+.fileBox .fileName {display:inline-block; position:relative; min-width:360px; height:45px; line-height:45px; margin:0 20px 0 0; padding:0; border-bottom:solid #eee 1px; font-size:22px; outline:none}
+.fileBox .fileName::placeholder {font-size:28px; color:#eee;}
+.fileBox .btn_file {display:inline-block; position:relative; width:92px; height:36px; line-height:34px; border-radius:4px; border:solid 1px #999; text-align:center; font-weight:700; color:#999; top:4px;}
+.fileBox input[type="file"] {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* 체크박스 */
+.checkset {display:block; position:relative; margin:0; padding:0;}
+.checkset label {display:inline-block; position:relative; margin:0; padding:0}
+.checkset input[type="checkbox"] {display:none}
+.checkset span {display:inline-block; position:relative; margin:0; padding:0 0 0 0;}
+.checkset span:first-child {margin-left:12px;}
+.checkset input[type="checkbox"] + label::before {display:inline-block; width:30px; height:28px;  background:url('/images/membership/btn_check.png') no-repeat; background-size:100%; vertical-align:middle; content:"";}
+.checkset input[type="checkbox"]:checked + label::before {display:inline-block; width:30px; height:28px; background:url('/images/membership/btn_check_select.png') no-repeat; background-size:100%; content:"";}
+
+
+/*** button ***/
+.btnWrap {display:flex; position:relative; width:100%; margin:0; padding:0; flex-direction:row; justify-content:flex-end;}
+.btnWrap.betwin {justify-content:space-between;}
+.btnWrap.center {justify-content:center;}
+.btnWrap a + a {margin-left:20px;}
+button.btn {display:inline-block; position:relative; margin:0; padding:0; background-color:#FFF; border-radius:3px;}
+a.btn {display:table; position:relative; margin:0; padding:0; background-color:#FFF; border-radius:3px;}
+button.btn span {display:block; position:relative; width:100%; margin:0; padding:0;}
+a.btn span {display:table-cell; position:relative; width:100%; height:100%; margin:0; padding:0; vertical-align:middle; text-align:center;}
+.btn.btnLarge {min-width:100px; height:44px; padding:0 20px; font-size:16px; font-weight:500; line-height:28px; letter-spacing:-0.8px;}
+.btn.btnMid {min-width:66px; height:30px; padding:0 10px; font-size:14px; letter-spacing:-0.8px;}
+.btn.lightGray {background-color:#bebebe; color:#FFF;}
+.btn.lightBlue {background-color:#1983db; color:#FFF;}
+.btn.whiteGray {background-color:#FFF; color:#989898; border:solid #989898 1px;}
+a.btn_withdrawal {position: absolute; left:0; top:0; background-color:#bebebe; color:#FFF;}
+.btnWrap a + a.btn_withdrawal {margin-left:0;}
+
+.btn.half {width:50%;}
+.btn.full {width:100%;}
+
+/*** 간격 ***/
+.mgt0 {margin-top:0 !important;}
+.mgb30 {margin-bottom:30px !important;}
+.mgb80 {margin-bottom:80px !important;}
+
+.mgt20_10 {margin-top:20px !important;}
+.mgt30_15 {margin-top:30px !important;}
+.mgt50_25 {margin-top:50px !important;}
+.mgt60_30 {margin-top:60px !important;}
+
+/*** 링크리스트 ***/
+.linkList {display:inline-block; position:relative; margin:0; padding:0;}
+.linkList .toggleBtn {display:block; position:relative; width:100%; height:30px; margin:0; padding:0 24px 0 5px; vertical-align:middle; text-align:left; color:#9e9e9e; border:none; background-color:#656565;}
+.linkList .toggleBtn::after {content:''; display:block; position:absolute; right:10px; top:calc(50% - 10px); width:10px; height:10px; border:6px solid transparent; border-left:6px solid #9e9e9e; transform:rotate(90deg);}
+.linkList .toggleBtn.arrow::after {content:''; display:block; position:absolute; right:12px; top:calc(50% - 2px); width:8px; height:1px; background-color:#000; transform:rotate(45deg); transition:all 0.2s;}
+.linkList .toggleBtn.arrow::before {content:''; display:block; position:absolute; right:10px; top:calc(50% - 6px); width:1px; height:9px; background-color:#000; transform:rotate(45deg); transition:all 0.2s;}
+.linkList .list {display:none; position:absolute; left:0; top:30px; width:100%; max-height:158px; overflow:hidden; margin:0; padding:0; border:solid #333 1px; background-color:#FFF;}
+.linkList .list li {display:block; position:relative; width:100%; margin:0; padding:0; white-space:nowrap; word-break:break-all; text-overflow:ellipsis;}
+.linkList .list li a {display:block; position:relative; height:30px; line-height:30px; margin:0; padding:0 10px; font-size:13px; color:#333;}
+.linkList .list li + li {border-top:solid #ccc 1px;}
+.linkList.opened .toggleBtn::after {transform:rotate(-90deg);}
+.linkList.opened .toggleBtn.arrow::after,
+.linkList.opened .toggleBtn.arrow::before {transform:rotate(-45deg); transition:all 0.2s;}
+/* 링크리스트가 하단에 있을 경우 slideUp  */
+.linkList.slideUp.opened .toggleBtn {background-color:#333;}
+.linkList.slideUp .toggleBtn::after {transform:rotate(-90deg);}
+.linkList.slideUp.opened .toggleBtn::after {transform:rotate(90deg); top:calc(50% - 3px)}
+.linkList.slideUp .toggleBtn.arrow::after,
+.linkList.slideUp .toggleBtn.arrow::before {transform:rotate(-45deg); transition:all 0.2s;}
+.linkList.slideUp.opened .toggleBtn.arrow::after,
+.linkList.slideUp.opened .toggleBtn.arrow::before {transform:rotate(45deg); transition:all 0.2s;}
+.linkList.slideUp .list {z-index:100; top:initial; bottom:30px;}
+
+br.pc {display:block;}
+br.mo {display:none;}

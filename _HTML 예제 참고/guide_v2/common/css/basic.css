@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/*-------------------------------------------------------------------
+    ## Fonts
+-------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Noto+Sans+KR:100,300,400,500,700,900&display=swap');
+
+
+/*-------------------------------------------------------------------
+    ## Reset
+-------------------------------------------------------------------*/
+*, *:before, *:after {margin:0; padding:0; border:0; font-family:"Noto Sans KR", "Montserrat", "Malgun Gothic","맑은 고딕", "Dotum", "돋움", "Arial", sans-serif; box-sizing:inherit; -webkit-box-sizing:inherit; -moz-box-sizing:inherit; -o-box-sizing:inherit;}
+html {height:100%; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box;}
+body {height:100%; font-size:16px; color:#666; line-height:1;}
+address, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {display:block; margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6 {font-size:100%; font-weight:normal; color:#222;}
+img {vertical-align:middle;}
+ol, ul, li, dl, dt, dd {list-style:none;}
+table {width:100%; border-spacing:0px; border-collapse:collapse;}
+th, td {word-break:break-all; font-weight:normal;}
+fieldset {width:100%;}
+em, address {font-style:normal;}
+button, select, input, label {vertical-align:middle; font-family:"NSL";}
+hr {display:none;}
+a {text-decoration:none;}
+legend {position:absolute; left:-9999em; top:-9999em;}
+caption {visibility:hidden; height:0; line-height:0; font-size:0;}
+strong {font-weight:normal; font-weight:700;}
+i {font-style:normal;}
+
+
+/*-------------------------------------------------------------------
+    ## Font-face
+-------------------------------------------------------------------*/
+@font-face {
+    font-family:"NSB"; src:url('/common/fonts/NotoSans-Bold.eot'),
+		url('/common/fonts/NotoSans-Bold.eot?#iefix') format('embedded-opentype'),
+	    url('/common/fonts/NotoSans-Bold.woff') format('woff');}
+@font-face {
+    font-family:"NSM"; src:url('/common/fonts/NotoSans-Medium.eot'),
+		url('/common/fonts/NotoSans-Medium.eot?#iefix') format('embedded-opentype'),
+	    url('/common/fonts/NotoSans-Medium.woff') format('woff');}
+@font-face {
+    font-family:"NSR"; src:url('/common/fonts/NotoSans-Regular.eot'),
+		url('/common/fonts/NotoSans-Regular.eot?#iefix') format('embedded-opentype'),
+	    url('/common/fonts/NotoSans-Regular.woff') format('woff');}
+@font-face {
+    font-family:"NSL"; src:url('/common/fonts/NotoSans-Light.eot'),
+		url('/common/fonts/NotoSans-Light.eot?#iefix') format('embedded-opentype'),
+	    url('/common/fonts/NotoSans-Light.woff') format('woff');}
+@font-face {
+    font-family:"NST"; src:url('/common/fonts/NotoSans-Thin.eot'),
+		url('/common/fonts/NotoSans-Thin.eot?#iefix') format('embedded-opentype'),
+	    url('/common/fonts/NotoSans-Thin.woff') format('woff');}
+
+
+/*-------------------------------------------------------------------
+    ## Media query
+-------------------------------------------------------------------*/
+@media only screen and (max-width: 959px) { html {font-size:20px} }
+@media only screen and (max-width: 639px) { html {font-size:15px} }
+@media only screen and (max-width: 480px) { html {font-size:10px} }
+
+/* 반응형 가로모드 */
+@media only screen and (max-height: 480px) and (orientation:landscape) { html {font-size:15px} }

@@ -1,0 +1,203 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------------------------------------------------
+	File : Layout.css
+	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+	CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+-------------------------------------------------------------------------------------------------------------*/
+
+/* Wrapper */
+html, body {height:100%; overflow-x:hidden;}
+
+:root{
+	--headerHeight:63px;
+}
+
+#wrapper {display:block; position:relative; width:100%; height:100%; padding-top:var(--headerHeight);}
+.innerFixWrap {display:block; position:relative; width:100%; padding:0 15px; margin:0 auto;}
+.innerFormWrap {display:block; position:relative; width:100%; padding:0 35px; margin:0 auto;}
+
+
+/**** Header영역 구성 ****/
+.header {display:block; position:fixed; left:0; top:0; width:100%; height:var(--headerHeight); margin:0; padding:0; z-index:90; background:#fff;}
+.header::after {content:''; display:block; position:absolute; width:100%; height:1px; left:0; bottom:0px; background-color:#dcdcdc; z-index:0;}
+.header .unijnLogo {display:block; position:absolute; left:15px; top:19px; z-index:10; width:197px; height:23px; margin:0; padding:0; background:url(/images/common/unijnLogo.png) no-repeat left top; background-size:cover; font-size:1px; color:transparent; text-indent:-9999px;}
+.header .gnbOpen {display:block; position:absolute; right:15px; top:21px; width:25px; height:21px; padding:0 20px; background-color:#fff;}
+.header .gnbOpen span {display:block; position:relative; width:100%; height:100%; margin:0; padding:0; font-size:1px; color:transparent; text-indent:-9999px;}
+.header .gnbOpen::before {content:''; display:block; position:absolute; left:20px; top:0; width:25px; height:3px; background-color:#1a1818}
+.header .gnbOpen span::before {content:''; display:block; position:absolute; left:0px; top:9px; width:25px; height:3px; background-color:#1a1818}
+.header .gnbOpen span::after {content:''; display:block; position:absolute; left:0; bottom:0; width:25px; height:3px; background-color:#1a1818}
+
+
+/** 메뉴구성 **/
+.gnbDim {display:none; position:fixed; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:98;}
+.gnbDim.on {display:block;}
+.gnbWrap {display:block; position:fixed; right:-50%; top:0; width:50%; height:100%; margin:0; padding:0; background-color:#FFF; z-index:99; overflow-y:auto; transition:all 0.3s;}
+.gnbWrap.opened {right:0; transition:all 0.3s}
+.gnbWrap .gnb {display:flex; position:relative; width:100%; margin:0; padding:var(--headerHeight) 0 0 0;; flex-direction:column; flex-wrap:wrap;}
+.gnb::before {content:''; display:block; position:absolute; z-index:99; left:0; top:0; width:100%; height:100%; background-color:#fff; border-bottom:none}
+.gnbWrap .gnb::after {content:''; display:block; position:absolute; left:0; top:calc(var(--headerHeight) - 1px); width:100%; height:1px; background-color:#dcdcdc; z-index:101;}
+.gnb > * {position:relative; z-index:100;}
+
+.gnb .ctGroup {display:block; position:relative; width:100%; margin:0; padding:0; text-align:left;}
+.gnb .ctGroup > a {display:block; position:relative; width:100%; height:50px; margin:0; padding:0 30px 0 15px; font-size:18px; line-height:50px; font-weight:700; color:#333; border-bottom:solid #dcdcdc 1px;}
+.gnb .ctGroup > a::after {content:''; display:block; position:absolute; left:initial; right:15px; bottom:calc(50% - 1px); width:15px; height:3px; background-color:#333; transform:scaleX(-90deg);}
+.gnb .ctGroup > a::before {content:''; display:block; position:absolute; left:initial; right:15px; bottom:calc(50% - 1px); width:15px; height:3px; background-color:#333; transform:rotate(90deg);}
+.gnb .ctGroup > ul {display:none; position:relative; margin:0; padding:0; border-bottom:solid #dcdcdc 1px; background-color:rgb(0,174,239,0.1);}
+.gnb .ctGroup > ul li {display:block; position:relative; margin:0; padding:0;}
+.gnb .ctGroup > ul li a {display:block; position:relative; height:50px; line-height:50px; margin:0; padding:0 15px; font-size:16px; color:#666;}
+.gnb .ctGroup.current > a {color:#00a1ea; border-bottom:solid #00a1ea 3px;}
+.gnb .ctGroup.current > a::after {transform:scaleX(1.0); transition:all 0.3s; background-color:#00a1ea;}
+.gnb .ctGroup.current > a::before {display:none;}
+.gnb .ctGroup.current >ul {display:block;}
+.gnb .ctGroup > ul li.current > a {color:#00a1ea;}
+button.closeGnb {display:block; position:absolute; right:4px; top:13px; padding:20px; width:30px; height:30px; background-color:#FFF; font-size:1px; color:transparent; text-indent:-9999px; z-index:101;}
+button.closeGnb::before {content:''; display:block; position:absolute; left:calc(50% - 11px); top:calc(50% - 2px); width:22px; height:3px; background-color:#1a1818; transform:rotate(45deg); transition: all .3s}
+button.closeGnb::after {content:''; display:block; position:absolute; left:calc(50% - 11px); top:calc(50% - 2px); width:22px; height:3px; background-color:#1a1818; transform:rotate(-45deg); transition: all .3s}
+button.closeGnb:hover::before {transform:rotate(-315deg); transition: all .3s}
+button.closeGnb:hover::after {transform:rotate(315deg); transition: all .3s}
+
+/**** contentsWrap ****/
+.contentsWrap {display:block; position:relative; margin:0; padding:30px 0 60px 0;}
+.contentsWrap.bg_lightGray {background-color:#f0f1f2;}
+
+/**** Footer영역 구성 ****/
+.footer {display:block; position:relative; margin:0; padding:15px 0 25px 0; background-color:#444;}
+.footer .siteMenu {display:flex; position:relative; margin:0; padding:0; flex-direction:column-reverse; border-bottom:none;}
+.siteMenu .siteGroup {display:flex; position:relative; width:100%; margin:0; padding:0; flex-direction:column;}
+.siteGroup .logo {display:block; position:relative; width:70%; height:50px; margin:0 auto 0 auto; padding:0; background:url(/images/common/footerLogo.png) no-repeat left top; background-size:100% auto; font-size:1px; color:transparent; text-indent:-9999px;}
+.siteGroup .insite {display:flex; position:relative; margin:0; padding:0; justify-content:center;}
+.siteGroup .insite li {display:inline-block; position:relative; margin:0; padding:0;}
+.siteGroup .insite li + li {margin-left:15px;}
+.siteGroup .insite li a {display:inline-block; position:relative; margin:0; padding:0; font-size:13px; color:#757575;}
+.siteMenu .familyGroup {display:flex; position:relative; width:100%; margin-bottom:25px; padding:0; flex-direction:row; justify-content:flex-start;}
+.familyGroup .linkList {width:50%;}
+.familyGroup .linkList + .linkList {margin-left:10px;}
+
+.footer .address {display:block; position:relative; margin:0; padding:25px 0 0 0;}
+.address .jnLink {display:none;}
+.address .copyright {display:block; position:relative; margin:0; padding:0; font-size:12px; color:#7b7b7b; text-align:left;}
+.address .copyright span{display:block; text-indent:-9999px; font-size:0;}
+.address .copyright p + p {margin-top:6px;}
+.footer .btnTop {display:block; position:absolute; top:-45px; right:15px; z-index:11; width:30px; height:30px; background:#9a9a9a;}
+.footer .btnTop span {display:block; position:relative; text-indent:-9999px;}
+.footer .btnTop span::before {display:inline-block; position:absolute; top:calc(50% - 3px); left:calc(50% - 8px); width:15px; height:15px; border-left:3px solid #fff; border-bottom:3px solid #fff; transform:rotate(135deg); content:"";}
+
+
+/**** 레이어팝업  ****/
+.modalWrap {display:none; position:fixed; left:0; top:0; width:100%; height:100%; margin:0; padding:0; background-color:rgba(0,0,0,0.0); z-index:200;}
+.modalWrap .lpWrap {display:block; position:relative; margin:0 auto; padding:0; background-color:#FFF; box-shadow:2px 3px 10px rgba(0,0,0,0.2);}
+.modalWrap .lpWrap.small {width:calc(100% - 20px); margin:0 auto; padding:20px;}
+.lpWrap .lpHeader {display:block; position:relative; height:40px; margin:0; padding-right:30px; border-bottom:solid #c6c6c6 1px;}
+.lpWrap .lpHeader .title {display:inline-block; position:relative; margin:0; padding:0 0 10px 0; font-size:15px; color:#333;}
+.lpWrap .lpcontents {display:table; position:relative; width:100%; min-height:150px; margin:0; padding:20px; font-size:14px;}
+.lpWrap .lpcontents .cellin {display:table-cell; position:relative; height:100%; margin:0; padding:0; font-size:16px; color:#666; line-height:28px; letter-spacing:-0.8px; vertical-align:middle;}
+.lpWrap .lpBtn {display:flex; position:relative; width:100%; margin:0 0 60px 0; padding:0; flex-direction:row; justify-content:center;}
+.lpWrap .lpBtn .btn + .btn {margin-left:10px;}
+button.closeModal {display:block; position:absolute; right:20px; top:13px; width:30px; height:30px; background-color:#FFF; font-size:1px; color:transparent; text-indent:-9999px; z-index:101;}
+button.closeModal::before {content:''; display:block; position:absolute; left:calc(50% - 11px); top:calc(50% - 2px); width:22px; height:3px; background-color:#1a1818; transform:rotate(45deg); transition: all .3s}
+button.closeModal::after {content:''; display:block; position:absolute; left:calc(50% - 11px); top:calc(50% - 2px); width:22px; height:3px; background-color:#1a1818; transform:rotate(-45deg); transition: all .3s}
+
+/* 레이어팝업 - main화면 */
+.modalWrap.popUp {display:block; position:fixed; left:0; top:0; width:100%; height:100%; margin:0; padding:0; background-color:rgba(0,0,0,0.7); z-index:200;}
+.modalWrap.popUp .lpWrap {display:block; position:relative; margin:0 auto; padding:0; background-color:#FFF; box-shadow:2px 3px 10px rgba(0,0,0,0.2);}
+.modalWrap.popUp .lpWrap.small {display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:calc(100% - 20px); margin:0 auto;}
+.modalWrap.popUp .lpWrap .lpcontents {display:table; position:relative; width:100%; min-height:150px; margin:0; padding:5px;}
+.modalWrap.popUp .lpWrap .lpcontents .cellin img {display:block; width:100%;}
+.modalWrap.popUp .lpWrap .lpFooter {display:block; position:relative; width:100%; height:30px; background:#e7e7e7;}
+.modalWrap.popUp .lpWrap .lpFooter .closeCheck {display:inline-block; position:relative; margin:8px 0 0 25px;}
+.modalWrap.popUp .lpWrap .lpFooter .closeCheck .closeBtn {position:absolute; top:15%; right:-20px;}
+.modalWrap.popUp .lpWrap .lpFooter .closeCheck label {font-size:12px;}
+
+.modalWrap.popUp .closeWrap {display:block; position:relative;}
+.modalWrap.popUp button.closeModal {display:block; position:absolute; right:10%; top:auto; bottom:-3%; width:40px; height:30px; background-color:transparent; font-size:12px; color:#333; text-indent:0px; z-index:101; outline:none; cursor:pointer;}
+.modalWrap.popUp button.closeModal.todayNone {right:auto; left:6%; width:120px;}
+.modalWrap.popUp button.closeModal::before {content:''; display:block; position:absolute; left:auto; right:-10px; top:50%; width:12px; height:2px; background-color:#1a1818; transform:rotate(45deg); transition: all .3s}
+.modalWrap.popUp button.closeModal::after {content:''; display:block; position:absolute; left:auto; right:-10px; top:50%; width:12px; height:2px; background-color:#1a1818; transform:rotate(-45deg); transition: all .3s}
+
+
+/**** input 공통 , loginForm ****/
+.inpWrap {display:block; position:relative; margin:30px 0 0 0; padding:0;}
+.inpWrap .inp {display:block; position:relative; width:100%; height:40px; padding:5px 0 5px 5px; border:1px solid #c6c6c6; border-radius:3px;}
+.inpWrap .inp + .inp {margin-top:10px;}
+.inpWrap .inp input {width:75%; height:100%; border-radius:3px; line-height:28px; font-size:14px; color:#333; outline:none;}
+.inpWrap .inp input::placeholder {color:#ccc;}
+.inpWrap .inp.type01 input {width:90%;}
+
+/** 멤버십 메뉴 **/
+.gnbWrap .memberMenu {display:inline-block; position:relative; right:initial; top:initial;}
+.memberMenu ul {display:flex; position:relative; margin:0; padding:0; flex-direction:column; flex-wrap:nowrap;}
+.memberMenu ul li {display:block; position:relative; margin:0; padding:0;}
+.memberMenu ul li a {display:block; position:relative; height:40px; margin:0; padding-left:15px; line-height:40px; font-size:14px; color:#333;}
+.memberMenu ul li + li {margin-left:0; padding-left:0;}
+.memberMenu ul li + li::after {content:''; display:none; position:absolute; left:0; top:1px; width:1px; height:11px; background-color:rgba(0,0,0,0.2);}
+
+/** 멤버십 - 약관동의 **/
+.membershipForm {display:block; position:relative; margin-top:43px;}
+.membershipForm .agree {display:block; position:relative; margin:0; padding:0;}
+.membershipForm .agree + .agree {margin-top:35px;}
+.membershipForm .agree .checkset label {font-size:14px; line-height:40px; color:#333; font-weight:500;}
+.membershipForm .agree .checkset label .essential {color:#ff5454;}
+.membershipForm .agree .agreeContent {display:block; position:relative; overflow-y:scroll; width:100%; height:150px; margin-top:10px; border:1px solid #ddd;}
+.membershipForm .agree .agreeContent .txt {display:block; position:relative; width:100%; padding:15px 30px 0 15px;}
+.membershipForm .agree .agreeContent p {display:block; position:relative; font-size:16px; line-height:22px; color:#989898; font-size:14px;}
+.membershipForm .agree .agreeContent p + p {margin-top:15px;}
+.membershipForm .agree .agreeContent p span {font-size:16px;}
+
+/** 멤버십 - 정보입력 **/
+.setInformation .inpWrap .inp + .inp {margin-top:5px;}
+.inpWrap .essential {display:block; position:relative; margin-bottom:10px; font-size:11px; color:#ff5454;}
+.inpWrap .sub-txt {display:block; position:absolute; top:40px; left:0;}
+.inpArea + .inpArea {margin-top:25px;}
+.inpWrap .inp span {font-size:10px; color:#aaa;}
+.inpWrap .inp .dup {display:block; position:absolute; top:calc(50% - 12px); right:10px; background:transparent; font-size:14px; font-weight:500; color:#1983db; letter-spacing:-0.8px;}
+
+/** 멤버십 - 가입완료 **/
+.saveInformation .contentWrap {display:block; position:relative; margin-top:20px; text-align:center;}
+.saveInformation .contentWrap .img {display:block; position:relative; width:170px; height:141px; margin:0 auto;}
+.saveInformation .contentWrap .img img {width:100%;}
+.saveInformation .contentWrap .txt {display:block; position:relative; margin-top:30px; font-size:15px; letter-spacing: -1.5px; color:#666;}
+.saveInformation .contentWrap .txt + .txt {margin-top:10px; font-size:16px; font-weight:500; color:#00a1ea; letter-spacing:-1.6px;}
+
+/** 멤버십 - 회원탈퇴 **/
+.withdrawal .noticeText {display:block; position:relative; margin-top:30px; font-size:12px; line-height:normal; color:#666; letter-spacing:-1.2px}
+.withdrawal .noticeText + .noticeText {margin-top:15px;}
+.withdrawal .noticeText .id {color:#333;}
+.withdrawal .noticeText .import {color:#ff4545;}
+.withdrawal .checkset {display:block; position:relative; margin-top:35px; font-size:12px; text-align:center; color:#666; font-weight:500;}
+.withdrawal .inpWrap p {display:block; position:relative; text-align:center; color:#666; font-weight:500;}
+.withdrawal .inpWrap .inp {margin-top:22px;}
+
+/** 멤버십 - 내정보 관리 **/
+.myInformation .inpWrap p {display:block; position:relative; padding-bottom:5px; font-size:12px; color:#999;}
+.myInformation .inpWrap .inpArea + .inpArea {margin-top:15px;}
+.myInformation .inpWrap .inpArea + .inpArea.type02 {margin-bottom:30px;}
+.myInformation .inpWrap .inpArea .inp.disabled {background:#f8f8f8;}
+.myInformation .inpWrap .inpArea .inp.disabled input {pointer-events:none; background:#f8f8f8;}
+.myInformation .inpWrap .inpArea .inp.disabled input::placeholder {color:#999;}
+
+/* findResult */
+.findResult {display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; margin-top:30px; padding:15px 0; width:100%; height:auto; border:1px solid #c6c6c6; border-radius:3px;}
+.findResult p {display:block; text-align:center; font-size:14px; color:#666;}
+.findResult strong {display:block; padding-top:15px; text-align:center; font-size:18px; font-weight:500; color:#333;}
+.findResult.findPassword p {font-size:14px; line-height:20px;}
+.findResult.findPassword p + p {padding-top:15px; font-size:12px;}
+.findResult.findPassword p span {color:#26a8eb;}
+
+/** id,password 찾기 메뉴 **/
+.findMenu {display:block; position:relative; margin-top:15px;}
+.findMenu ul {display:flex; position:relative; justify-content:center; margin:0; padding:0; flex-direction:row; flex-wrap:nowrap;}
+.findMenu ul li {display:inline-block; position:relative; margin:0; padding:0;}
+.findMenu ul li a {display:block; position:relative; margin:0; padding:0; font-size:14px; color:#ccc;}
+.findMenu ul li + li {margin-left:5px; padding-left:5px;}
+.findMenu ul li + li::after {content:''; display:block; position:absolute; left:0; top:5px; width:1px; height:11px; background-color:rgba(0,0,0,0.2);}
+.findMenu ul li p {display:inline-block; position:relative; font-size:14px; color:#ccc;}
+.findMenu ul li .passwordFind {display:inline-block; position:relative; padding-left:11px; color:#1983db; text-decoration:underline;}
+
+/* passwordReset */
+.passwordReset .inpWrap .inp + .inp {margin-top:25px;}
+
+@media all and (min-width:760px) {
+	.siteGroup .logo {width:220px; height:25px; margin-bottom:20px;}
+	.address .copyright span {display:inline;}
+}

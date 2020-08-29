@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>날개짓하는 나비</title>
+    <style>
+      body { margin: 200px 0 0 200px; background: #625760;}
+    </style>
+  </head>
+  <body>
+    <img src="setInterval_날개짓하는나비/nabi_1.png" alt="나비" width="500">
+    <script>
+      var nabi = document.getElementsByTagName('img')[0];
+      //console.log(nabi);
+      var i = 1;
+      function wing() {
+        i++;
+        nabi.setAttribute("src", "setInterval_날개짓하는나비/nabi_" + i + ".png");
+        console.log(i);
+        
+      }
+      setInterval(wing, 500);
+    </script>
+  </body>
+</html>

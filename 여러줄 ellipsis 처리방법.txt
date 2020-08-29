@@ -1,0 +1,8 @@
+******텍스트 여러줄 일때 ...처리방법*****
+
+display:-webkit-box;
+overflow:hidden;
+max-height:00px; (여러줄 들어올 때 최대높이값)
+text-overflow:ellipsis;
+-webkit-box-orient:vertical;
+-webkit-line-clamp:2; (2줄일때 ...)

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> ID 선택자  </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+
+	<div id="container">
+
+		<header>
+			<h2> Welcome mySite </h2>
+		</header>
+
+		<nav>
+			<ul class="list">
+				<li id="sub">One</li>
+				<li id="main">Two</li>
+				<li id="total">Three</li>
+			</ul>
+		</nav>
+
+	</div>
+
+	<!---------- jQuery code Start ---------->
+
+	<script>
+
+		// id 를 이용하여 선택
+    $('h2').on('click',function() {    //h2클릭시, 배경색 변화
+      $('#main').css('background-color',"#ff0")
+    })
+
+	</script>
+
+
+
+
+
+</body>
+</html>

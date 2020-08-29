@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>이벤트리스너3</title>
+    <script>
+      var color = ['#8f9e26', '#3fcff7', '#cb5bb6', '#2ef483'];
+      var i=0;
+      function colorBg(){
+        if(i ==color.length){
+          i=0;
+        }
+        var bodyTag=document.getElementsByTagName("body")[0];
+        bodyTag.style.background = color[i];
+        i++;
+      }
+      //window.onload하는 이유<-없다고 생각하면 colorBg를 불러오기 전에 btn2가 실행되므로 onload를 통해 불러와야함
+      window.onload = function() { 
+        var btn2= document.getElementById("btn2");
+        //btn2.onclick=function() { colorBg() };
+        btn2.onclick = colorBg;
+        var btn4= document.getElementById("btn4");
+        btn4.onmouseover = colorBg;
+        var btn5= document.getElementById("btn5");
+        btn5.addEventListener('mouseout', colorBg);
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <button onclick="colorBg();">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <button onmouseover="colorBg()" onfocus="colorBg()">버튼3</button>
+    <button id="btn4">버튼4</button>
+    <button id="btn5">버튼5</button>
+  </body>
+</html>

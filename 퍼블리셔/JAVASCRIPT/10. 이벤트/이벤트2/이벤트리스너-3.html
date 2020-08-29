@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="utf-8">
+      <title> 이벤트 </title>
+      <script>
+         var color = ["#f9c6ec","#c4b8ed","#81dbc6","#debd91"];
+         var i = 0;
+         function colorBg(){
+            if ( i == color.length ) {
+              i=0;
+            }
+            var bodyTag = document.getElementsByTagName("body")[0];
+            bodyTag.style.backgroundColor = color[i];
+            i++;
+         }
+        window.onload = function() {
+           var btn2 = document.getElementById("btn2");
+           // btn2.onclick = function () { colorBg() };
+           btn2.onclick = colorBg;
+           var btn4 = document.getElementById("btn4");
+           btn4.onmouseover = colorBg;
+           var btn5 = document.getElementById("btn5");
+           btn5.addEventListener('mouseover', colorBg)
+        }
+
+
+      </script>
+   </head>
+   <body>
+      <button onclick="colorBg();">버튼1</button>
+      <button id="btn2">버튼2</button>
+      <button onmouseover="colorBg()" onfocus="colorBg()">버튼3</button>
+      <button id="btn4">버튼4</button>
+      <button id="btn5">버튼5</button>
+   </body>
+</html>

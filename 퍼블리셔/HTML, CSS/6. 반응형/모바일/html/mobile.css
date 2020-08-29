@@ -1,0 +1,62 @@
+@charset "UTF-8";
+body, h1, h2, h3, ul, p { margin: 0; padding: 0; }
+li { list-style: none; }
+a { text-decoration: none; }
+address { font-style: normal; }
+small { font-size: 1em; }
+ /* 웹폰트 - 구글웹폰트의 noto,sans 적용 */
+ body { font-family: 'Noto Sans KR', sans-serif; }
+/* 헤더 */
+#main_header { height: 43px; border-bottom: 1px solid #000;
+               text-align: center;
+               background:linear-gradient(180deg, #8e0000 0%, #700000 100%);
+               position: relative;}
+#main_header h1 { color: #fff; }
+#main_header a { display: block; height: 31px;
+                 background: url(sprites.png) no-repeat;
+                 position: absolute; top: 4px;
+                 text-indent: -9999px; }
+#main_header a.btn_main { width: 62px;
+                          left: 4px; }
+#main_header a.btn_toggle { width: 32px;
+                            background-position: right 0;
+                            right: 4px; }
+/* toggle GNB */
+#toggle_gnb { padding: 20px; background: #808080;  }
+#toggle_gnb ul { overflow: hidden; background: #fff; }
+#toggle_gnb ul li { width: 80px; height: 30px; float: left;
+                    text-align: center; line-height: 30px; }
+#toggle_gnb ul li a { color: #333; }
+#toggle_gnb ul li a:hover { color: #800000; }
+/* top GNB */
+#top_gnb { height: 35px; border-bottom: 2px solid #000; }
+#op_gnb ul {  }
+#top_gnb ul li { width: 25%; height: 35px; float: left; }
+#top_gnb ul a { display: block; width: 100%; height: 35px;
+                line-height: 35px; text-align: center;
+                background: #820e0e; color: #fff; }
+#top_gnb ul li a:hover { background: #fff; color: #000; }
+/* bottom GNB */
+#bottom_gnb { height: 35px; border-bottom: 1px solid #000;  }
+#bottom_gnb ul {  }
+#bottom_gnb ul li { width: 20%; height: 35px; float: left; }
+#bottom_gnb ul a { position: relative; display: block; color: #000;
+                   text-align: center; line-height: 35px; }
+#bottom_gnb ul li a:hover { background: #f1fbd3; }
+#bottom_gnb ul li a::after { content: "";
+                             position:absolute; top: 10px; left: -1px;
+                             height: 15px; border-left: 1px solid #000; }
+/* 컨텐츠 */
+#content_header { padding: 25px 20px 28px; }
+#content_header h1 { }
+#content_header time {  }
+section p { margin: 0 0 25px 9px; }
+section { margin-bottom: 150px; }
+/* 메인푸터 */
+#main_footer { position: fixed; left: 0; bottom: 0;
+               width: 100%; padding: 20px 0;
+               border-top: 3px solid #000;
+               text-align: center;
+               background: #fff; }
+#main_footer small { font-weight: bold; }
+#main_footer address { font-style: italic; }

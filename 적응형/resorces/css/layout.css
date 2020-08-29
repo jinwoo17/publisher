@@ -1,0 +1,177 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------------------------------------------------
+	File : Layout.css
+	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+	CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+-------------------------------------------------------------------------------------------------------------*/
+
+/* Wrapper */
+html, body {height:100%; overflow-x:hidden;}
+
+#wrapper {display:block; position:relative; width:100%; height:100%;}
+.innerFixWrap {display:block; position:relative; width:1050px; margin:0 auto; padding:0;}
+.innerFormWrap {display:block; position:relative; width:510px; margin:0 auto; padding:0;}
+
+/**** Header영역 구성 ****/
+.header {display:block; position:fixed; width:100%; height:100px; margin:0; padding:0; z-index:9999; background:#fff;}
+.header::after {content:''; display:block; position:absolute; width:100%; height:1px; left:0; bottom:0px; background-color:#dcdcdc; z-index:101;}
+.header .unijnLogo {display:block; position:absolute; left:0; top:39px; z-index:10; width:194px; height:23px; margin:0; padding:0; background:url(/images/common/unijnLogo.png) no-repeat left top; background-size:cover; font-size:1px; color:transparent; text-indent:-9999px;}
+.header .gnbOpen {display:none;}
+
+/** 메뉴구성 **/
+.gnbWrap {display:block; position:relative; margin:0; padding:24px 0 0 0}
+.gnbWrap .gnb {display:flex; position:relative; margin:0 auto; padding:0 0 0 254px; flex-direction:row; flex-wrap:wrap;}
+.gnbWrap .gnb::before {content:''; display:block; position:absolute; z-index:99; left:-42vw; top:75px; width:calc(184vw); height:calc(100% - 74px); background-color:#FFF; border-bottom:solid #dcdcdc 1px;}
+.gnb > * {position:relative; z-index:100;}
+.gnb .ctGroup {display:block; position:relative; width:135px; margin:0; padding:0; text-align:center;}
+.gnb .ctGroup > a {display:block; position:relative; height:75px; margin:0 auto; padding:18px 0 0 0; font-size:15px; font-weight:700; color:#333;}
+.gnb .ctGroup > a::after {content:''; display:block; position:absolute; left:0; bottom:0; width:100%; height:5px; background-color:#00a1ea; transform:scaleX(0);}
+.gnb .ctGroup > ul {display:none; position:relative; margin:0; padding:10px 0;}
+.gnb .ctGroup > ul li {display:block; position:relative; margin:0; padding:0;}
+.gnb .ctGroup > ul li a {display:block; position:relative; height:40px; line-height:40px; margin:0; padding:0; font-size:15px; color:#666;}
+.gnb .ctGroup.current > a {color:#00a1ea;}
+.gnb .ctGroup.current > a::after {transform:scaleX(1.0); transition:all 0.3s;}
+.gnb .ctGroup > ul li.current > a {color:#00a1ea;}
+button.closeGnb {display:none; position:absolute; right:0; top:124px; width:30px; height:30px; background-color:#FFF; font-size:1px; color:transparent; text-indent:-9999px; z-index:101;}
+button.closeGnb::before {content:''; display:block; position:absolute; left:calc(50% - 11px); top:calc(50% - 2px); width:22px; height:3px; background-color:#1a1818; transform:rotate(45deg); transition: all .3s}
+button.closeGnb::after {content:''; display:block; position:absolute; left:calc(50% - 11px); top:calc(50% - 2px); width:22px; height:3px; background-color:#1a1818; transform:rotate(-45deg); transition: all .3s}
+button.closeGnb:hover::before {transform:rotate(-315deg); transition: all .3s}
+button.closeGnb:hover::after {transform:rotate(315deg); transition: all .3s}
+
+/**** contentsWrap ****/
+.contentsWrap {display:block; position:relative; margin:0; padding:165px 0 120px 0;}
+.contentsWrap.bg_lightGray {background-color:#f0f1f2;}
+
+/**** Footer영역 구성 ****/
+.footer {display:block; position:relative; margin:0; padding:16px 0 27px 0; background-color:#444;}
+.footer .siteMenu {display:flex; position:relative; margin:0; padding:0 0 14px 0; flex-direction:row; border-bottom:solid #656565 1px;}
+.siteMenu .siteGroup {display:flex; position:relative; width:68%; margin:0; padding:0}
+.siteGroup .logo {display:block; position:relative; width:220px; height:25px; margin:0 58px 0 0; padding:0; background:url(/images/common/footerLogo.png) no-repeat left top; background-size:cover; font-size:1px; color:transparent; text-indent:-9999px;}
+.siteGroup .insite {display:flex; position:relative; margin:2px 0; padding:0;}
+.siteGroup .insite li {display:inline-block; position:relative; margin:0; padding:0;}
+.siteGroup .insite li + li {margin-left:24px;}
+.siteGroup .insite li a {display:inline-block; position:relative; margin:0; padding:0; font-size:13px; color:#7b7b7b;}
+.siteMenu .familyGroup {display:flex; position:relative; width:32%; margin:0; padding:0; flex-direction:row; justify-content:flex-end;}
+.familyGroup .linkList {width:155px;}
+.familyGroup .linkList + .linkList {margin-left:30px;}
+
+.footer .address {display:block; position:relative; margin:0; padding:30px 0 0 0;}
+.address .jnLink {display:flex; position:relative; margin:0 0 30px 0; padding:0; flex-direction:row; flex-wrap:wrap;}
+.address .jnLink li {display:inline-block; position:relative; margin:0; padding:0;}
+.address .jnLink li + li {margin-left:45px;}
+.address .copyright {display:block; position:relative; margin:0; padding:0; font-size:13px; color:#7b7b7b;}
+.address .copyright p + p {margin-top:6px;}
+.footer .btnTop {display:block; position:absolute; top:-76px; right:0; z-index:99; width:60px; height:60px; background:#9a9a9a;}
+.footer .btnTop span {display:block; position:relative; text-indent:-9999px;}
+.footer .btnTop span::before {display:inline-block; position:absolute; top:calc(50% - 5px); left:calc(50% - 15px); width:30px; height:30px; border-left:4px solid #fff; border-bottom:4px solid #fff; transform:rotate(135deg); content:"";}
+
+
+/**** 레이어팝업  ****/
+.modalWrap {display:none; position:fixed; left:0; top:0; width:100%; height:100%; margin:0; padding:0; background-color:rgba(0,0,0,0.0); z-index:200;}
+.modalWrap .lpWrap {display:block; position:relative; margin:0 auto; padding:0; background-color:#FFF; box-shadow:2px 3px 10px rgba(0,0,0,0.2);}
+.modalWrap .lpWrap.small {width:400px; padding:20px;}
+
+.lpWrap .lpHeader {display:block; position:relative; height:40px; margin:0; padding:0 40px 0 0; border-bottom:solid #c6c6c6 1px;}
+.lpWrap .lpHeader .title {display:inline-block; position:relative; margin:0; padding:0 0 16px 0; font-size:18px; color:#333;}
+.lpWrap .lpcontents {display:table; position:relative; width:100%; min-height:150px; margin:0; padding:20px; font-size:14px;}
+.lpWrap .lpcontents .cellin {display:table-cell; position:relative; height:100%; margin:0; padding:0; font-size:16px; color:#666; line-height:28px; letter-spacing:-0.8px; vertical-align:middle;}
+.lpWrap .lpBtn {display:flex; position:relative; width:100%; margin:0 0 60px 0; padding:0; flex-direction:row; justify-content:center;}
+.lpWrap .lpBtn .btn + .btn {margin-left:20px;}
+button.closeModal {display:block; position:absolute; right:20px; top:20px; width:30px; height:30px; background-color:#FFF; font-size:1px; color:transparent; text-indent:-9999px; z-index:101;}
+button.closeModal::before {content:''; display:block; position:absolute; left:calc(50% - 11px); top:calc(50% - 2px); width:22px; height:3px; background-color:#1a1818; transform:rotate(45deg); transition: all .3s}
+button.closeModal::after {content:''; display:block; position:absolute; left:calc(50% - 11px); top:calc(50% - 2px); width:22px; height:3px; background-color:#1a1818; transform:rotate(-45deg); transition: all .3s}
+
+/* 레이어팝업 - main화면 */
+.modalWrap.popUp {display:block; position:fixed; left:0; top:0; width:100%; height:100%; margin:0; padding:0; background-color:rgba(0,0,0,0.7); z-index:10000;}
+.modalWrap.popUp .lpWrap {display:block; position:relative; margin:0 auto; padding:0; background-color:#FFF; box-shadow:2px 3px 10px rgba(0,0,0,0.2);}
+.modalWrap.popUp .lpWrap.small {display:block; position:absolute; top:50%; left:50%; width:30%; transform:translate(-50%,-50%);}
+.modalWrap.popUp .lpWrap .lpcontents {display:table; position:relative; width:100%; min-height:150px; margin:0; padding:20px; font-size:14px;}
+.modalWrap.popUp .lpWrap .lpcontents .cellin img {display:block; width:100%;}
+.modalWrap.popUp .lpWrap .lpFooter {display:block; position:relative; width:100%; height:30px; background:#e7e7e7;}
+.modalWrap.popUp .lpWrap .lpFooter .closeCheck {display:inline-block; position:relative; margin:4px 0 0 30px;}
+.modalWrap.popUp .lpWrap .lpFooter .closeCheck .closeBtn {position:absolute; top:30%; right:-17px;}
+
+.modalWrap.popUp button.closeModal {display:block; position:absolute; right:40px; top:auto; bottom:0; width:40px; height:30px; background-color:transparent; font-size:14px; color:#333; text-indent:0px; z-index:101; outline:none; cursor:pointer;}
+.modalWrap.popUp button.closeModal.todayNone {right:auto; left:30px; width:130px;}
+.modalWrap.popUp button.closeModal::before {content:''; display:block; position:absolute; left:auto; right:-10px; top:50%; width:12px; height:2px; background-color:#1a1818; transform:rotate(45deg); transition: all .3s}
+.modalWrap.popUp button.closeModal::after {content:''; display:block; position:absolute; left:auto; right:-10px; top:50%; width:12px; height:2px; background-color:#1a1818; transform:rotate(-45deg); transition: all .3s}}
+
+
+/**** input 공통 , loginForm ****/
+.inpWrap {display:block; position:relative; margin:60px 0 0 0; padding:0;}
+.inpWrap .inp {display:block; position:relative; width:100%; height:50px; padding:10px 0 10px 10px; border:1px solid #c6c6c6; border-radius:3px;}
+.inpWrap .inp + .inp {margin-top:20px;}
+.inpWrap .inp input {width:400px; height:30px; border-radius:3px; line-height:30px; font-size:14px; color:#333; outline:none;}
+.inpWrap .inp input::placeholder {color:#ccc;}
+
+/** 멤버십 메뉴 **/
+.gnbWrap .memberMenu {display:inline-block; position:absolute; right:0; top:44px;}
+.memberMenu ul {display:flex; position:relative; margin:0; padding:0; flex-direction:row; flex-wrap:nowrap;}
+.memberMenu ul li {display:inline-block; position:relative; margin:0; padding:0;}
+.memberMenu ul li a {display:block; position:relative; margin:0; padding:0; font-size:12px; color:#333;}
+.memberMenu ul li + li {margin-left:8px; padding-left:10px;}
+.memberMenu ul li + li::after {content:''; display:block; position:absolute; left:0; top:1px; width:1px; height:11px; background-color:rgba(0,0,0,0.2);}
+
+/** 멤버십 - 약관동의 **/
+.membershipForm {display:block; position:relative; margin-top:80px;}
+.membershipForm .agree {display:block; position:relative; margin:0; padding:0;}
+.membershipForm .agree + .agree {margin-top:101px;}
+.membershipForm .agree .checkset label {font-size:22px; line-height:40px; color:#333; font-weight:500;}
+.membershipForm .agree .checkset label .essential {color:#ff5454;}
+.membershipForm .agree .agreeContent {display:block; position:relative; overflow-y:scroll; width:100%; height:300px; margin-top:23px; border:1px solid #ddd;}
+.membershipForm .agree .agreeContent .txt {display:block; position:relative; width:836px; padding:49px 0 0 51px;}
+.membershipForm .agree .agreeContent p {display:block; position:relative; font-size:16px; line-height:30px; color:#989898; font-size:14px;}
+.membershipForm .agree .agreeContent p + p {margin-top:40px;}
+.membershipForm .agree .agreeContent p span {font-size: 16px;}
+
+/** 멤버십 - 정보입력 **/
+.setInformation .inpWrap .inp + .inp {margin-top:10px;}
+.inpWrap .essential {display:block; position:relative; margin-bottom:20px; color:#ff5454;}
+.inpWrap .sub-txt {display:block; position:absolute; top:55px; left:0;}
+.inpArea + .inpArea {margin-top:42px;}
+.inpWrap .inp span {font-size:12px; color:#aaa;}
+.inpWrap .inp .dup {display:block; position:absolute; top:calc(50% - 12px); right:10px; background:transparent; font-size:16px; font-weight:500; color:#1983db; letter-spacing:-0.8px;}
+
+/** 멤버십 - 가입완료 **/
+.saveInformation .contentWrap {display:block; position:relative; margin-top:40px; text-align:center;}
+.saveInformation .contentWrap .img {display:block; position:relative; width:350px; height:292px; margin:0 auto;}
+.saveInformation .contentWrap .img img {width:100%;}
+.saveInformation .contentWrap .txt {display:block; position:relative; margin-top:42px; font-size:26px; letter-spacing: -1.3px; color:#666;}
+.saveInformation .contentWrap .txt + .txt {margin-top:20px; font-size:30px; font-weight:500; color:#00a1ea; letter-spacing:-1.5px;}
+
+/** 멤버십 - 회원탈퇴 **/
+.withdrawal .noticeText {display:block; position:relative; margin-top:58px; font-size:14px; line-height:24px; color:#666; letter-spacing:-0.9px}
+.withdrawal .noticeText + .noticeText {margin-top:0;}
+.withdrawal .noticeText .id {color:#333;}
+.withdrawal .noticeText .import {color:#ff4545;}
+.withdrawal .checkset {display:block; position:relative; margin-top:60px; text-align:center; color:#666; font-weight:500;}
+.withdrawal .inpWrap p {display:block; position:relative; text-align:center; color:#666; font-weight:500;}
+
+/** 멤버십 - 내정보 관리 **/
+.myInformation .inpWrap p {display:block; position:relative; padding-bottom:10px; font-size:14px; color:#999;}
+.myInformation .inpWrap .inpArea + .inpArea {margin-top:30px;}
+.myInformation .inpWrap .inpArea + .inpArea.type02 {margin-bottom:52px;}
+.myInformation .inpWrap .inpArea .inp.disabled {background:#f8f8f8;}
+.myInformation .inpWrap .inpArea .inp.disabled input {pointer-events:none; background:#f8f8f8;}
+.myInformation .inpWrap .inpArea .inp.disabled input::placeholder {color:#999;}
+
+/* findResult */
+.findResult {display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; margin-top:60px; width:100%; height:116px; border:1px solid #c6c6c6; border-radius:3px;}
+.findResult p {display:block; text-align:center; font-size:16px; color:#666;}
+.findResult strong {display:block; padding-top:16px; text-align:center; font-size:20px; font-weight:500; color:#333;}
+.findResult.findPassword p {line-height:28px;}
+.findResult.findPassword p span {color:#26a8eb;}
+
+/** id,password 찾기 메뉴 **/
+.findMenu {display:block; position:relative; margin-top:30px;}
+.findMenu ul {display:flex; position:relative; justify-content:flex-end; margin:0; padding:0; flex-direction:row; flex-wrap:nowrap;}
+.findMenu ul li {display:inline-block; position:relative; margin:0; padding:0;}
+.findMenu ul li a {display:block; position:relative; margin:0; padding:0; font-size:14px; color:#999;}
+.findMenu ul li + li {margin-left:8px; padding-left:10px;}
+.findMenu ul li + li::after {content:''; display:block; position:absolute; left:0; top:5px; width:1px; height:11px; background-color:rgba(0,0,0,0.2);}
+.findMenu ul li p {display:inline-block; position:relative; color:#999;}
+.findMenu ul li .passwordFind {display:inline-block; position:relative; padding-left:11px; color:#1983db; text-decoration:underline;}
+
+/* passwordReset */
+.passwordReset .inpWrap .inp + .inp {margin-top:43px;}

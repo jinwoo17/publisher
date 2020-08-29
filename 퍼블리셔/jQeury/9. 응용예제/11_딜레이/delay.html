@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>delay</title>
+    <style>
+      h1, h2 { position: absolute; left: 20px; opacity: 0;}
+      h1 { top: 20px; }
+      h2 { top: 100px; }
+    </style>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('h1').delay(1000).animate({opacity: 1}, 1000)
+        $('h2').delay(1200).animate({opacity: 1}, 1000)
+      })
+    </script>
+  </head>
+  <body>
+    <h1>애니메이션1</h1>
+    <h2>애니메이션2</h2>
+  </body>
+</html>

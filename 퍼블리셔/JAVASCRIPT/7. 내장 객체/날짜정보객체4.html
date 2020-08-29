@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>시계출력</title>
+
+  </head>
+  <body>
+    <h1 id="timing"> </h1>
+
+    <script>
+    var timing = document.getElementById('timing');
+    //console.log(timing);
+
+      function clock() {
+        var time = new Date();
+        var hour = time.getHours();
+        var minutes = time.getMinutes();
+        var seconds = time.getSeconds();
+        //console.log(hour, minutes, seconds);
+        timing.innerHTML = "현재시각은 "+hour+ "시, "+minutes+"분, "+seconds+"초";
+      }
+      clock();
+      setInterval(clock, 1000/*1초*/);
+
+    </script>
+  </body>
+</html>

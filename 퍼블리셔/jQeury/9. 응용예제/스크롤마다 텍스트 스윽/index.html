@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>스크롤에니메이션</title>
+    <style>
+      html, body { height: 100%;}
+      * {margin: 0; padding: 0;}
+      header { height: 100%; text-align: center; font-size: 100px;}
+      section{height: 100%;}
+      #content1 { background: #f1dc9e;}
+      #content2 { background: #bfcbdf;}
+      #content3 { background: #d8b8e6;}
+      section>h2{ opacity: 0; position: relative;top: 200px; font-size: 100px;}
+    </style>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('section').each(function(){
+          // var secPos = $(this).position().top;
+          // console.log(secPos);
+          var $section = $(this);
+          var secPos = $section.position().top;
+          $(window).on('scroll',function(){
+            if($(window).scrollTop() >= secPos){
+              $section.children('h2').animate({opacity: 1, top: 150})
+            }
+          })
+        })
+      })
+
+
+        // $(window).on('scroll',function(){
+        //   if ($(window).scrollTop() >= 500 ) {=
+        //     $('#content1 h2').animate({opacity: 1, top: 150})
+        //   }
+        //   if ($(window).scrollTop() >= $(window).height()+500 ) {
+        //     $('#content2 h2').animate({opacity: 1, top: 150})
+        //   }
+        //   if ($(window).scrollTop() >= $(window).height()*2+500 ) {
+        //     $('#content3 h2').animate({opacity: 1, top: 150})
+        //   }
+      //   })
+      // })
+    </script>
+  </head>
+  <body>
+    <header>
+      <h2>제목</h2>
+    </header>
+    <section id="content1">
+      <h2>스토리1</h2>
+    </section>
+    <section id="content2">
+      <h2>스토리2</h2>
+    </section>
+    <section id="content3">
+      <h2>스토리3</h2>
+    </section>
+  </body>
+</html>

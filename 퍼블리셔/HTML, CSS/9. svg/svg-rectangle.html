@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>사각형</title>
+    <style>
+      svg {
+            width: 300px; height: 300px;
+            padding: 50px;
+            border: 1px solid #000;
+            }
+      rect {
+             width: 300px; height: 300px;
+             stroke: #000;
+             stroke-width: 5;
+             fill: #ff0;
+             stroke-dasharray: 1200;
+             stroke-dashoffset: -1200;
+             animation: linear 5s rectAni forwards;
+            }
+
+       @keyframes rectAni {
+         to { stroke-dashoffset: 0; }
+       }
+    </style>
+  </head>
+  <body>
+    <svg>
+      <rect  />
+    </svg>
+  </body>
+</html>

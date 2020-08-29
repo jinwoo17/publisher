@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>카운트 정지</title>
+  </head>
+
+  <body>
+    <button id="btn" onclick="clearInterval(auto)">정지</button>
+    <p id="counting"></p>
+    <script>
+      var counting = document.getElementById("counting");
+      var btn = document.getElementById("btn");
+      var n = 0;
+      function counter() {
+        n += 1; //n++ , n=n+1
+        counting.innerHTML = n;
+      }
+      var auto = setInterval(counter, 1000) //중요
+      //clearInterval(변수명)
+      //setInterval(function() {}, 반복시간) -> 기본 문법
+      //== window.setInterval
+    </script>
+
+  </body>
+</html>

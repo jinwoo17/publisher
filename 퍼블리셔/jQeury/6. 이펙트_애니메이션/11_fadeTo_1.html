@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<title> fadeTo()  </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<button id="fade100">표시</button>
+	<button id="fade50">반투명</button>
+	<button id="fade0">비표시</button>
+	<p><img src="flower.jpg" alt="flower" /></p>
+
+
+
+	<!---------- jQuery code Start ---------->
+	<script>
+				//opacity 0 ~ 1
+		// 버튼 클릭시 이미지가 반투명하게
+		// $("selector").fadeTo(속도, 투명도);
+		$('#fade0').on('click', function(){
+			$('p img').fadeTo(1000, 0)
+		})
+		$('#fade50').on('click',function(){
+			$('p img').fadeTo(1000, 0.5)
+		})
+		$('#fade100').on('click',function(){
+			$('p img').fadeTo(1000, 1)
+		})
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

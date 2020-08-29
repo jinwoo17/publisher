@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>날짜 정보 객체</title>
+    <script>
+      var t = new Date();
+
+      var nowMonth = t.getMonth() +1; //현재 월을 반환하며 1적게 나옵니다
+      var nowDate = t.getDate(); //현재 일자를 반환합니다.
+      var nowDay = t.getDay(); //현재 요일을 반환합니다.(0:일~ 6:토)
+      document.write("현재 월:" + nowMonth,"<br />");
+      document.write("현재 일:" + nowDate,"<br />");
+      document.write("현재 요일:" + nowDay,"<br />");
+
+      //var m = new Date(2015, 01, 20);
+      //console.log(m);
+      //2002년도 5월 31일
+      var soccer = new Date(2002, 5, 31);
+      var theMonth = soccer.getMonth();
+      var theDate = soccer.getDate();
+      var theDay = soccer.getDay();
+
+
+      //아래 사항이 출력되도록 위에 변수들 생성
+      document.write("2002월드컵 몇 월: " + theMonth,"<br />");
+      document.write("2002월드컵 몇 일: " + theDate,"<br />");
+      document.write("2002월드컵 무슨 요일: " + theDay,"<br />");
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

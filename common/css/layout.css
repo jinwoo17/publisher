@@ -1,0 +1,85 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------------------------------------------------
+	File : Layout.css
+	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+	CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+-------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------
+    Layout
+-------------------------------------------------------------------*/
+/* Wrapper */
+
+/* SkipNav */
+.skipNav {position:absolute; left:0; top:0; width:100%; height:0;}
+.skipNav a {display:block; position:absolute; left:0; bottom:0; width:100%; line-height:30px; background-color:#000; color:#fff; text-align:center; transform:translateY(0);}
+.skipNav a:focus {transform:translateY(100%);}
+
+/* Header */
+.inner {position:relative; width:1050px; height:100%; margin:0 auto;}
+.hidden {display:none; text-indent:-9999px;}
+.bg-blue {background:#00a1ea;}
+
+.header {display:block; position:relative; width:100%; width:100%; height:150px;}
+.header .header-top {display:block; position:relative; height:100px; background:#fff;}
+.header .header-top .left-area {display:block; position:absolute; left:0; top:calc(50% - 11px);}
+.header .header-top .left-area .logo-wrap {display:block; position:relative; width:194px; height:23px;}
+.header .header-top .left-area .logo-wrap img {width:100%;}
+.header .header-top .lnb-wrap .lnb {display:flex; position:relative; flex-direction:row; justify-content:center; align-items:center; padding-top:43px;}
+.header .header-top .lnb-wrap .lnb li + li {margin-left:60px;}
+.header .header-top .lnb-wrap .lnb li a {display:block; font-size:15px; font-weight:bold;  color:#000;}
+.header .header-top .lnb-wrap.lnb li:last-child {margin-right:0;}
+.header .header-top .right-area {display:block; position:absolute; right:0; top:calc(50% - 20px); width:219px; height:40px; background:#f4f4f4; border-radius:20px;}
+.header .header-top .right-area .util-menu {display:flex; position:relative; flex-direction:row; padding:14px;}
+.header .header-top .right-area .util-menu li {display:block; position:relative; font-size:12px;}
+.header .header-top .right-area .util-menu li::after {display:inline-block; position:absolute; left:42px; top:0; content:"|";}
+.header .header-top .right-area .util-menu li:nth-child(2)::after {left:50px;}
+.header .header-top .right-area .util-menu li:nth-child(3)::after {display:none;}
+.header .header-top .right-area .util-menu li:nth-child(1) {margin-right:20px;}
+.header .header-top .right-area .util-menu li:nth-child(2) {margin-right:17px;}
+.header .header-bottom {display:block; position:relative; width:100%; height:50px;}
+.header .header-bottom .home {display:block; position:absolute; top:13px; left:0; width:24px; height:24px; background:url('/images/ico_home.png') no-repeat center center; background-size:cover; content:"";}
+.header .header-bottom .dropdown-wrap {display:flex; flex-direction:row; padding-left:44px;}
+.header .header-bottom .dropdown-wrap .dropdown-shortcut {display:block; position:relative; width:196px; height:50px; padding-left:20px; font-size:14px; color:#fff; text-align:left; cursor:pointer;}
+.header .header-bottom .dropdown-wrap .dropdown-shortcut.line {border-left:1px solid rgba(255,255,255,0.3); border-right:1px solid rgba(255,255,255,0.3);}
+.header .header-bottom .dropdown-wrap .dropdown-shortcut.line:first-child {border-right:none;}
+.header .header-bottom .dropdown-wrap .dropdown-shortcut::after {display:block; position:absolute; top:21px; right:21px; width:10px; height:6px; background:url('/images/btn_dropbox_header.png') no-repeat center center; background-size:cover; content:"";}
+
+/* Container */
+
+/* Footer */
+.bg-darkgray {background:#444;}
+.footer {display:block; position:relative; width:100%; height:210px;}
+.footer li, .footer p, .footer button {color:#7b7b7b;}
+.footer .footer-header {display:flex; flex-direction:row; align-items:center; width:100%; height:60px; border-bottom:1px solid #656565;}
+.footer .footer-header .footer-logo .logo-wrap {display:blok; position:relative; width:218px; height:25px;}
+.footer .footer-header .footer-logo .logo-wrap img {width:100%;}
+.footer .footer-header .footer-navWrap {margin-left:58px; margin-right:137px;}
+.footer .footer-header .footer-navWrap .footer-nav {display:flex; flex-direction:row;}
+.footer .footer-header .footer-navWrap .footer-nav li {font-size:13px;}
+.footer .footer-header .footer-navWrap .footer-nav li + li {margin-left:19px;}
+.footer .footer-header .dropdown-wrap {display:flex; flex-direction:row;}
+.footer .footer-header .dropdown-wrap .dropdown-shortcut {display:block; position:relative; width:150px; height:30px; padding-left:10px; background:#656565; color:#9e9e9e; text-align:left;}
+.footer .footer-header .dropdown-wrap .dropdown-shortcut:first-child {margin-right:30px;}
+.footer .footer-header .dropdown-wrap .dropdown-shortcut::after {display:block; position:absolute; top:12px; right:12px; width:10px; height:6px; background:url('/images/btn_dropbox_footer.png') no-repeat center center; background-size:cover; content:"";}
+.footer .footer-bottom {display:block; position:relative; width:100%; height:149px;}
+.footer .footer-bottom .cooperation-nav {display:flex; flex-direction:row; padding:30px 0;}
+.footer .footer-bottom .cooperation-nav li {display:block; height:25px; position:relative;}
+.footer .footer-bottom .cooperation-nav li + li {margin-left:45px;}
+.footer .footer-bottom .cooperation-nav li:nth-child(1) {width:78px;}
+.footer .footer-bottom .cooperation-nav li:nth-child(2) {width:116px;}
+.footer .footer-bottom .cooperation-nav li:nth-child(3) {width:96px;}
+.footer .footer-bottom .cooperation-nav li:nth-child(4) {width:71px;}
+.footer .footer-bottom .cooperation-nav li:nth-child(5) {width:145px;}
+.footer .footer-bottom .cooperation-nav li:nth-child(6) {width:85px;}
+.footer .footer-bottom .cooperation-nav .logo-wrap img {width:100%;}
+.footer .footer-bottom p {font-size:13px; line-height:1.85; letter-spacing:-0.59px;}
+/*-------------------------------------------------------------------
+    Main Layout
+-------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------
+    Sub Main Layout
+-------------------------------------------------------------------*/

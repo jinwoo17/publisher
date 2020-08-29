@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> addClass() </title>
+<script src="jquery-1.7.2.min.js"></script>
+<style>
+
+	img { padding:5px; background:#666;}
+
+	img.type1 { padding:5px; background: orange;}
+	img.type2 { padding:5px; background: blue;}
+	img.type3 { padding:5px; background: pink;}
+
+</style>
+</head>
+
+<body>
+
+	<img src="th1.jpg" alt="" />
+	<img src="th2.jpg" alt="" />
+	<img src="th3.jpg" alt="" />
+
+	<!---------- jQuery code Start ---------->
+
+	<script>
+
+		// 각 이미지를 클릭시 클래스 네임 type1, type2, type3 을 적용하시오
+		// $('img:eq(0)').on('click',function(){
+    //   $(this).addClass('type1');
+    // })
+    // $('img:eq(1)').on('click',function(){
+    //   $(this).addClass('type2');
+    // })
+    // $('img:eq(2)').on('click',function(){
+    //   $(this).addClass('type3');
+    // })
+
+    //간단하게
+    $('img').on('click', function(){
+      var n = $(this).index()+1;  //내가 클릭한 객체의 인덱스 번호(+1은 class명 맞추기위해)
+      console.log(n);
+      $(this).addClass('type'+n);
+    })
+
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

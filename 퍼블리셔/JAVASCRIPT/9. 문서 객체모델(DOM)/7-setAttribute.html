@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>setAttribute,속성바꾸기</title>
+  </head>
+  <body>
+    <a href="#" id="goNaver">네이버</a>
+    <img src="images/car3.jpg" alt="파란색 차">
+    <script>
+      var anchor = document.querySelector("#goNaver");
+      anchor.setAttribute("href", "http://naver.com");
+      anchor.setAttribute("target", "_blank");
+
+    //var image = document.getElementsByTagName("img");
+    //car[0].setAttribute("src", "images/car4.jpg");
+    //car[0].setAttribute("alt", "녹색 차");
+      var car = document.querySelector("img");
+      car.setAttribute("src", "images/car4.jpg");
+      car.setAttribute("alt", "녹색 차");
+    </script>
+  </body>
+</html>

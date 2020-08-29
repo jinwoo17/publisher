@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>eval</title>
+  </head>
+  <body>
+    <h3>onclick, 계산기 만들기</h3>
+    <p>계산하고자 하는 수식을 입력하고 계산 버튼을 눌러봐요.</p>
+    <form>
+      <label for="exp">식</label>
+      <input type="text" id="exp" value=""><br>
+      <label for="result">값</label>
+      <input type="text" id="result" value=""><br>
+      <input type="button" value="계산">
+    </form>
+    <script>
+      function calculate() {
+        var exp = document.getElementById('exp');
+        var result = document.getElementById('result');
+        result.value = eval(exp.value);
+      }
+      var btn = document.querySelectorAll('input')[2];
+      btn.onclick = calculate;
+      btn.ondblclick = function() { //더블클릭시 값이 지워지도록
+        exp.value = "";
+        result.value = "";
+        /*eval() 텍스트로 된 자바스크립트 코드를 실행시킬 수 있는 함수 입니다.
+        이 함수를 사용하면 소스 코드를 동적으로 실행이 가능 */
+      }
+    </script>
+  </body>
+</html>

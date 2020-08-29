@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>변수타입</title>
+    <script>
+      var a = 100; //정수
+      var b = 3.14; //실수
+      var c = 1e-3; //지수표기법 1x10 -3승과 동일
+
+      console.log(a, typeof(a))
+      console.log(b, typeof(b))
+      console.log(c, typeof(c))
+
+      console.log(typeof(1), typeof("1"));
+
+      var height = prompt("키를 입력하시오");
+      console.log(height, typeof(height));
+
+      var height_int = parseInt(height); //소수점을 정수화
+      var height_float = parseFloat(height); //소수점을 실수화
+      console.log(height_int, height_float);
+      console.log(typeof(height_int), typeof(height_float));
+
+      var a = 1/0;
+      console.log(a, typeof(a));
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

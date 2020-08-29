@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>여름방학 특강 신청</title>
+</head>
+<body>
+    <h1>여름방학 특강 신청</h1>
+    <form>
+        <fieldset>
+            <legend>수강과목</legend>
+            <label for="subj">영어회화(초급)</label>
+            <input type="text" id="subj" value="오전 9:00 ~ 11:00" readonly>
+        </fieldset>
+        <fieldset>
+            <legend>신청자</legend>
+            <label for="uname">이름</label>
+            <input type="text" id="uname" required autofocus>
+            <br>
+            <label for="uid">학번</label>
+            <input type="text" id="uid" maxlength="7" placeholder="7자로 작성하시오" required>
+            <br>
+            <label for="uclass">학과</label>
+            <select id="uclass">
+                <option value="archi">건축공학과</option>
+                <option value="mechanic">기계공학과</option>
+                <option value="indust">산업공학과</option>
+                <option value="elec">전기전자공학과</option>
+                <option value="computer" selected>컴퓨터공학과</option>
+                <option value="chemical">화학공학과</option>
+            </select>
+            <br>
+            <label for="utel">연락처</label>
+            <select id="utel">
+	            <option>010</option>
+              <option>011</option>
+              <option>016</option>
+              <option>017</option>
+              <option>018</option>
+              <option>019</option>
+            </select>
+            -<input type="tel" maxlength="4" required>
+            -<input type="tel" maxlength="4" required>
+            <!--<input type="tel" id="utel" maxLength="11" required>-->
+        </fieldset>
+
+        <fieldset>
+            <legend>교재 주문</legend>
+            <label for="book">교재</label>
+            <input type="range" id="book" min="0" max="5" value="0">
+            <br>
+            <label for="wsheet">워크시트</label>
+            <input type="number" id="wsheet" min="1" max="10" value="0">
+            <br>
+            <label for="group">단체주문</label>
+            <input type="number" id="group" min="10" max="50" step="10" value="0">
+            <br>
+            <label for="pre">관심분야-문법, 어휘, 회화,리스닝</label>
+            <input type="text" id="pre" list="interest">
+            <datalist id="interest">
+              <option value="grammar" label="문법"></option>
+              <option value="voca" label="어휘"></option>
+              <option value="speaking" label="회화"></option>
+              <option value="listening" label="리스닝"></option>
+            </datalist>
+        </fieldset>
+        <fieldset>
+            <legend>신청과 재입력</legend>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </fieldset>
+    </form>
+</body>
+</html>

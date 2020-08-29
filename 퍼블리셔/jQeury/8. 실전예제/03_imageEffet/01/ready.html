@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>역동적 오버효과</title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+<style>
+
+	body {
+		margin:20px auto;
+		padding:0;
+		width:620px;
+		background:#192839;
+	}
+
+	ul#navigation {	list-style: none;	}
+
+	ul#navigation li a
+	{
+		display:block;
+		width:150px;
+		height:30px;
+		margin-bottom: 5px;
+		color:#000;
+		border:1px solid #FC0;
+		text-decoration: none;
+	}
+
+	ul#navigation li a:hover {	color: #ffff66;	}
+
+</style>
+</head>
+
+<body>
+
+	<ul id="navigation">
+		<li><a href="#" data-img="bg1.jpg">Menu 1</a></li>
+		<li><a href="#" data-img="bg2.jpg">Menu 2</a></li>
+		<li><a href="#" data-img="bg3.jpg">Menu 3</a></li>
+		<li><a href="#" data-img="bg4.jpg">Menu 4</a></li>
+	</ul>
+
+
+	<!---------- jQuery code Start ---------->
+
+	<script>
+		$('#navigation li a').each(function(){
+			var bgPath = $(this).data('img');
+			$(this).css({ backgroundImage: "url("+bgPath+")"})
+		}).hover(function(){
+				$(this).stop().animate({ height: 120, marginLeft: 15})
+			}, function(){
+				$(this).stop().animate({ height: 30, marginLeft: 0})
+			}
+		)
+
+
+		/* 할 일 목록
+		Tip1. CSS의 a 영역을 확인
+		1. 먼저 모든 a 태그 영역에 배경을 입힌다.
+			=> each() 를 이용
+		2. hover() 이펙트 사용
+		3. mouseover 시 왼쪽으로 15px, 높이는 이미지 높이만큼 애니메이션
+			mouseout 되었을 때는 원래대로
+			(스타일시트에서 확인)
+		*/
+
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

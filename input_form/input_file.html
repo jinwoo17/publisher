@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>input 파일찾기</title>
+<link rel="stylesheet" href="../common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+<style>
+section + section {margin-top:50px;}
+/* file - input 버튼 추가 */
+.form-file .file-box {position:relative; min-height:40px; overflow:hidden;}
+.form-file .file-box input[type="file"] {display:block; position:absolute; top:0; left:0; width:300px; height:40px; opacity:0;}
+.form-file .file-box .upload-name {float:left; width:300px; height:40px; padding:0 10px; border:1px solid #ccc; background-color:#fff; vertical-align:middle;
+/* 네이티브 외형 감추기 */ -webkit-appearance:none; -moz-appearance:none; appearance:none;}
+.form-file .file-box label {float:left; width:80px; height:40px; margin-left:4px; background-color:#f1f1f1; color:#222; line-height:40px; text-align:center; cursor:pointer; vertical-align:middle;}
+.form-file .btn-file {float:left; height:40px; margin-left:4px; padding:0 10px; background-color:#f1f1f1;}
+.form-file .file-box + .file-box {margin-top:10px;}
+
+
+/* file - input 감추고 파일명 리스트로 추가 */
+.form-list {display:block;}
+.form-list .form-file .filebox {position:relative; min-height:40px; overflow:hidden;}
+.form-list .form-file .filebox input[type="file"] {display:block; position:absolute; width:300px; height:40px; top:0; left:0; opacity:0;}
+.form-list .form-file .filebox .upload-name {float:left; width:300px; height:40px; padding:0 10px; border:1px solid #ccc; background-color:#fff; vertical-align:middle;
+/* 네이티브 외형 감추기 */ -webkit-appearance:none; -moz-appearance:none; appearance:none;}
+.form-list .form-file .filebox label {float:left; width:80px; height:40px; margin-left:4px; background-color:#f1f1f1; color:#222; line-height:40px; text-align:center; cursor:pointer;}
+.form-list .form-file .filebox + .filebox {display:none;}
+.form-list .form-file .file-list {padding-top:8px;}
+.form-list .form-file .file-list .file-name {display:inline-block; position:relative; vertical-align:middle;} /*margin-right값 주면 안됨,,,추가후 삭제시 마진값이 남음*/
+.form-list .form-file .file-list .file-name .item {display:block; position:relative;}
+.form-list .form-file .file-list .delete {display:inline-block; position:relative; width:16px; height:16px; margin:0 5px; vertical-align:middle; border:1px solid #000; border-radius:100%;}
+.form-list .form-file .file-list .delete span {display:block; position:relative; color:transparent;}
+.form-list .form-file .file-list .delete span::before {display:block; position:absolute; top:6px; left:2px; width:10px; height:1px; background:#000; transform:rotate(45deg);content:"";}
+.form-list .form-file .file-list .delete span::after {display:block; position:absolute; top:6px; left:2px; width:10px; height:1px; background:#000; transform:rotate(-45deg);content:"";}
+
+</style>
+</head>
+<body>
+    <!-- s: file type1 -->
+    <section>
+        <p class="tit">File : input 버튼 추가</p>
+        <div class="form-file file-input">
+            <div class="file-box">
+                <input class="upload-name" value="파일찾기" disabled="disabled">
+                <input type="file" id="ex-filename" class="upload-hidden" onchange="fileChange(this)">
+                <!-- <input type="file" id="ex-filename" class="upload-hidden" onchange="fileChange(this)"> ajax 호출시 비동기로 -->
+                <label for="ex-filename">파일찾기</label>
+                <button type="button" class="btn btn-file file-plus">추가</button>
+            </div>
+        </div>
+    </section>
+    <!-- e: file type1 -->
+
+    <!-- s: file type2 -->
+    <section>
+        <p class="tit">File : input 감추고 파일명 리스트로 추가</p>
+        <div class="form-list">
+            <div class="form-file">
+                <div class="filebox">
+                    <input class="upload-name" value="파일찾기" disabled="disabled">
+                    <input type="file" id="filename" class="upload-hidden" onchange="fileAttach(this)">
+                    <label for="filename">파일찾기</label>
+                </div>
+                <div class="file-list"></div><!-- 파일추가 리스트형 -->
+            </div>
+        </div>
+    </section>
+    <!-- e: file type2 -->
+
+<script>
+/*-------------------------------------------------------------------
+    ## Input - file field 추가
+-------------------------------------------------------------------*/
+// Input - file : upload input 추가
+var fileTarget = $('.form-file .upload-hidden');
+fileTarget.on('change', function (e){ // 값이 변경되면
+    if (window.FileReader) { // modern browser
+        var filename = $(this)[0].files[0].name;
+    } else { // old IE
+        var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+    }
+    // 추출한 파일명 삽입
+    $(this).siblings('.upload-name').val(filename);
+});
+// file field type 추가삭제
+$('.file-plus').on('click', function (e){
+    var fileIndex = $('.file-input').children().length;
+    $('.file-input').append(
+        '<div class="file-box">' +
+        '<input class="upload-name" value="파일찾기" disabled="disabled">' +
+        '<input type="file" id="ex-filename' + fileIndex + '" class="upload-hidden"> <label for="ex-filename' + fileIndex + '">파일찾기</label>' +
+        '<button type="button" class="btn btn-file file-minus" onclick="javascript:removeFile(this);">삭제</button>' +
+        '</div>');
+});
+
+/*-------------------------------------------------------------------
+	## File Functions
+-------------------------------------------------------------------*/
+// Input - file : 파일명 하단 리스트 추가 타입
+function fileAttach(obj) {
+	if (window.FileReader) {
+		var filename = $(obj)[0].files[0].name;
+	} else {
+		var filename = $(obj).val().split('/').pop().split('\\').pop();
+	}
+	var fileIndex = $('.filebox').children().length;
+	$(obj).siblings('.upload-hidden').val(filename);
+	$(obj).closest('.form-list').find('.form-file').prepend(
+		'<div class="filebox">' +
+		'<input class="upload-name" value="파일찾기" disabled="disabled">' +
+		'<input type="file" id="filename' + fileIndex + '" class="upload-hidden" onchange="fileAttach(this)">' +
+		'<label for="filename' + fileIndex + '">파일찾기</label>' +
+		'</div>');
+	console.log(fileIndex);
+	$(obj).closest('.form-list').find('.file-list').append(
+		'<div class="file-name">' +
+		'<span class="item">' + filename + '<button type="button" class="delete" onclick="removeFile(this)"><span>삭제</span></button></span>' +
+		'</div>');
+}
+// Input: file upload 삭제 호출
+function removeFile(minus) {
+    var $minus = $(minus);
+    $minus.parent().remove();
+}
+</script>
+
+</body>
+</html>

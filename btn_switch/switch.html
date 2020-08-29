@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>토글 버튼 스위치</title>
+<link rel="stylesheet" href="../common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+
+<style>
+/* switch style1 */
+.form-switch {position:relative;}
+.form-switch .form-label {display:inline-block; margin-right:20px; vertical-align:middle;}
+.form-switch .switch {display:inline-block; position:relative; width:80px; height:36px; vertical-align:middle;}
+.form-switch .switch input[type="checkbox"] {display:none;}
+.form-switch .switch-slide {display:inline-block; position:absolute; top:0; right:0; bottom:0; left:0; border-radius:34px; background-color:#ccc; cursor:pointer;}
+.form-switch .switch-slide:before {content:''; display:block; position:absolute; left:4px; bottom:4px; width:28px; height:28px; border-radius:50%; background-color:#fff; -webkit-transition:all 0.3s; transition:all 0.3s;}
+.form-switch .switch-slide:after {content:'OFF'; display:block; position:absolute; top:11px; right:10px; font-size:14px; color:#222;}
+.form-switch .switch > input[type="checkbox"]:checked + .switch-slide {background-color:#2196F3;}
+.form-switch .switch > input[type="checkbox"]:checked + .switch-slide:before {-webkit-transform:translateX(44px); -ms-transform:translateX(44px); transform:translateX(44px);}
+.form-switch .switch > input[type="checkbox"]:checked + .switch-slide:after {content:'ON'; display:block; position:absolute; top:11px; left:10px; font-size:14px; color:#fff;}
+</style>
+
+</head>
+
+<body>
+    <!-- s: switch -->
+    <section>
+        <p class="tit">Switch</p>
+        <div class="form-switch">
+            <span class="form-label">SMS</span>
+            <span class="switch">
+                <input type="checkbox" name="sSwitch" id="sSwitch1" value="">
+                <label for="sSwitch1" class="switch-slide"></label>
+            </span>
+        </div>
+    </section>
+    <!-- e: switch -->
+</body>
+</html>

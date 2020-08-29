@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>screen</title>
+  </head>
+  <body>
+    <script>
+      screen.width; //모니터 넓이
+      screen.height; //모니터 높이
+      screen.availWidth; //작업표시줄을 제외한 화면의 너비값
+      screen.availHeight; //작업표시줄을 제외한 화면의 높이값
+      screen.colorDepth; //사용자 모니터가 표현 가능한 컬러 bit를 반환
+
+      console.log(screen.width);
+      console.log(screen.height);
+      console.log(screen.availWidth);
+      console.log(screen.availHeight);
+      console.log(screen.colorDepth);
+
+      //document.body.style.background
+      //colorDepth가 24비트와 8비트 일때를 조건으로 배경색 적용
+      if (screen.colorDepth == 24) {
+        document.body.style.background="#f4c19d";
+      } else {
+          document.body.style.background="#bdedd3";
+      }
+    </script>
+  </body>
+</html>

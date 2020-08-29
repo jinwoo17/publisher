@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> fadeInOut 갤러리 </title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<style>
+
+	body {
+		margin:20px auto;
+		padding:0;
+		width:620px;
+		background:#192839;
+	}
+	.fadeShow {
+		background:#666;
+		width:600px;
+		height:350px;
+		border:2px solid #FDF6DD;
+	}
+
+	.fadeShow img { position:absolute; }
+
+	.fadeShow .active { z-index: 1; }
+
+
+</style>
+</head>
+
+<body>
+
+<div class="fadeShow">
+     <img src="slide1.jpg" class="active" alt="image1" />
+     <img src="slide2.jpg" alt="image2" />
+</div>
+
+
+	<!---------- jQuery code Start ---------->
+	<script>
+		function fading(){
+			$('.fadeShow .active').animate({opacity: 0}, function(){
+				$('.fadeShow').append($(this));
+				$(this).css({opacity: 1}).removeClass('active');
+				$('.fadeShow img:first').addClass('active');
+			})
+		}
+		setInterval(fading, 2000)
+
+		/* 할 일 목록
+
+		Tip1.  position 속성적용으로 slide2 이미지가 slide1 이미지보다 위에 보임
+
+		Tip2. 처음에는 첫번째 이미지가 보이도록 class를 적용하고 css 에서 설정
+
+
+		1. 화면전환이 반복되도록 setInterval 을 적용한다
+			=> 실행될 함수이름은 fading
+
+		2. 클래스가 active인 요소를 fadeOut 되도록 이펙트를 적용
+
+		3. 이펙트가 진행된 후 클래스가 active인 요소를  구조상 맨 마지막으로 옮기고
+
+		4. class를 삭제하고, 요소를 보이도록 한다
+
+		*/
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

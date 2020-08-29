@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>loadingBar</title>
+<link rel="stylesheet" href="./common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="./common/js/libs/jquery-3.3.1.min.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+<style>
+
+.wraper {position:relative; width:100%; height:100%;}
+.container {max-width:1380px; margin:0 auto; padding:30px;}
+.section {margin-bottom:30px;}
+
+.btn-wrap {position:relative; margin-top:20px;}
+.btn-wrap.btn-right {text-align:right;}
+.btn-wrap button {height:40px; padding:0 15px; border:1px solid #ddd; font-size:14px; line-height:38px; color:#000; background-color:#fff;}
+.btn-wrap:after {content:""; display:block; clear:both;}
+.video-content:after {content""; display:block; clear:both;}
+
+.video-title {margin-bottom:40px;}
+.video-title h1 {font-size:30px;}
+.video-view-wrap {display:block; position:relative; float:left; width:85%;}
+.video-view {display:block; position:relative; padding-bottom:56.25%; background-color:#000;}
+.video-view.fixed {position:fixed; top:0px; left:0px; z-index:20; width:100%; height:100%; padding-bottom:0px;}
+.video-view .caption {display:none; position:absolute; top:0px; left:0px; z-index:10; width:100%; height:50px; font-size:14px; line-height:50px; color:#fff; text-align:center; background-color:rgba(0,0,0,0.5);}
+.video-view  iframe {position:absolute; z-index:1; width:100%; height:100%;}
+.video-area {display:block; position:relative; float:right; width:15%; padding-left:20px;}
+.video-list {overflow:hidden;}
+.video-list li {position:relative;}
+.video-list li + li {margin-top:20px;}
+.video-list li a.video {display:block; position:relative; overflow:hidden; width:100%; max-height:115px; cursor:pointer;}
+.video-list a.video img {width:100%; height:auto;}
+
+.video-list li a.video .duration { display:inline-block; position:absolute; bottom:0px; right:0px; width:60px; font-size:12px; line-height:20px; color:#fff; text-align:center; background-color:#000;}
+
+
+@media all and (max-width:1024px){
+    .container {padding:10px;}
+
+    .video-view-wrap, .video-area {float:none;}
+    .video-view-wrap {width:auto;}
+    .video-view-wrap.landscape {margin:0 -10px;}
+
+    .video-area {width:100%; margin-top:20px; padding-left:0px;}
+    .video-list {width:auto; margin:0 -5px;}
+    .video-list li {float:left; width:20%; padding:0 5px;}
+    .video-list li + li {margin-top:0px;}
+
+}
+
+#lecture {min-height:240px;}
+
+/* loading bar */
+.loading {position:fixed; top:0px; left:0px; z-index:9999; width:100%; height:100%; text-align:center; background-color:rgba(0,0,0,0.3);}
+.loaderWrap {display:inline-block; position:relative; top:50%; transform:translateY(-50%);}
+.loader {font-size:10px; width:1em; height:1em; border-radius:50%; position:relative; text-indent:-9999em; -webkit-animation:load5 1.1s infinite ease; animation:load5 1.1s infinite ease; -webkit-transform:translateZ(0); -ms-transform:translateZ(0); transform:translateZ(0);}
+@-webkit-keyframes load5 {
+    0%,
+    100% {box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);}
+    12.5% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);}
+    25% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff, 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    37.5% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff, 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    50% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.5), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    62.5% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5), 0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff, -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    75% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.5), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff, -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    87.5% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;}
+}
+@keyframes load5 {
+    0%,
+    100% {box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);}
+    12.5% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);}
+    25% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff, 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    37.5% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff, 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    50% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.5), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    62.5% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5), 0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff, -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    75% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.5), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff, -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);}
+    87.5% {box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;}
+
+
+    /* Popup */
+    .pop-modal {display:none; position:fixed; top:0px; left:0px; z-index:100; width:100%; height:100%; background-color:rgba(0,0,0,0.6);}
+    .pop-wrapper {display:block; position:relative; top:50%; left:0px; z-index:10; width:100%; margin:0 auto; padding-top:70px; transform:scale(1) translateY(-50%); background-color:#fff; transition:all ease 0.2s;}
+    .pop-wrapper.zoomOut {top:50%; transform:scale(0.5) translateY(-50%);}
+    .pop-wrapper:focus{outline:0;}
+    .pop-container {position:relative; padding:30px; max-height:500px; overflow-Y:auto;}
+    .pop-header {position:absolute; top:0px; left:0px; width:100%; height:70px; padding-left:30px; background-color:#ddd;}
+    .pop-header h2 {font-size: 30px; line-height:70px; color:#000;}
+    .pop-content {position:relative;}
+    .pop-wrapper .btn-pop-close {display:inline-block; position:absolute; top:10px; right:20px; z-index:10; width:40px; height:40px; background:transparent;}
+    .pop-wrapper .btn-pop-close span {display:inline-block; overflow:hidden; width:0px; height:0px; font-size:0px;}
+    .pop-wrapper .btn-pop-close:before {content:"X"; display:inline-block; font-size:30px; color:#333;}
+    .pop-modal .pop-footer {position:relative; overflow:hidden; width:0px; height:0px;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <!-- main-banner -->
+        <div class="video-content">
+            <div class="video-title">
+                <h1>타이틀</h1>
+                <div style="margin-top:20px;">
+                    <!-- inline방식 -->
+
+                    <button type="button" onClick="javascript:startLoading();" style="margin-left:40px">로딩바</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function startLoading(){
+    var loadingHtml;
+
+    loadingHtml = '<div class="loading">' +
+                  '<div class="loaderWrap"><div class="loader"></div></div>' +
+                  '</div>';
+
+    //console.log('ajaxStart');
+
+    $("body").append(loadingHtml);
+}
+
+function endLoading(){
+    //console.log('ajaxEnd');
+    $(".loading").remove();
+}
+
+jQuery(document).ready(function(e){
+    $(document).ajaxStart(function(){
+        startLoading()
+    }).ajaxStop(function(){
+        endLoading()
+    });
+})
+</script>
+</body>
+</html>

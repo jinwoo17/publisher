@@ -1,0 +1,27 @@
+***게시판 참고 사이트
+https://www.nebooks.co.kr/pages/customer/notice/
+
+https://www.gscaltex.com/kr/company/History (메뉴)
+https://cslguplus.co.kr/Home (메뉴)
+
+http://www.cj-openlibrary.co.kr/front/index.php?g_page=community&m_page=community01
+
+http://kicce.re.kr/main/board/index.do?menu_idx=92&manage_idx=64
+
+https://www.aquaplanet.co.kr/jeju/customer/noticeList.do (리스트 게시판, 풀다운 네비게이션)
+
+https://www.kup.co.kr/ (풀다운 네비게이션)
+
+http://www.dkgholdings.co.kr/customer_support/notice/board_list.php (리스트 게시판)
+
+http://www.noodlefoodle.com/challenge/list_challenge_winning (table-반응형 게시판)
+
+http://www.kicce.re.kr/main/board/index.do?menu_idx=92&manage_idx=64 (table-반응형 게시판)
+
+https://www.komsco.com/kor/article/notice (반응형 리스트 게시판), 상세페이지 참고, 마크업참고
+
+https://www.kolonls.co.kr/ir/notice_list (반응형 리스트 게시판)
+
+http://www.hwajinkorea.com/sub0501 (반응형 리스트 게시판)
+
+https://www.usquare.co.kr/kor/center/notice.do (제플린과 같은 레이아웃)

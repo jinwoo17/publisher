@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> slideDown()  </title>
+<style>
+	img { display: none; }
+</style>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<div>
+		<img src="sample1.jpg" alt=" " width="200" />
+	</div>
+
+	<button id="down">slide 보이기</button>
+
+
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+        // show()와 달리 slideDown()은 위에서 아래로 나타나는 애니메이션
+				$('#down').on('click',function(){
+					$('img').slideDown(1000)  //img보다는 div에 적용해야 자연스럽다
+				})
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>float를 이용한 레이아웃 완성하기</title>
+    <style>
+
+      body { margin: 0;}
+      #header { width: 800px; height: 200px;
+                background: rgb(32, 124, 3);
+                margin: 0 auto;
+              }
+
+      #container {  width:800px;
+                  margin: 0 auto;
+                  background: rgb(226, 224, 73);
+
+              }
+      #container::after { content:"";
+                  display: block; clear: both;
+              }
+
+      #section { width: 500px; height: 500px;
+                background: rgb(172, 158, 249);
+                float: left;
+              }
+
+      #aside { width: 200px; height: 300px;
+                background: rgb(78, 212, 169);
+                float: right;
+
+              }
+
+      #footer { width: 800px; height: 150px;
+                background: #000;
+                margin: 0 auto;
+              }
+        /*
+        float 적용시 레이아웃이 깨지는 현상을 막는 방법 4가지
+          1. float를 적용한 요소의 부모가 없을 경우
+            형제요소에게 clear를 적용(left, right, both)
+
+          [float를 적용한 요소의 부모가 있을 경우]
+          2. 부모요소에게 높이 적용 (ex. heitht: 500px;)
+          3. 부모요소에게 overflow 적용( hidden, auto )
+          4. 부모요소에게 ::after 선택자 적용 후
+            content: ""; dispay: block; clear: both 적용
+
+         */
+    </style>
+  </head>
+  <body>
+      <div id="header"></div>
+      <div id="container">
+        <div id="section"></div>
+        <div id="aside"></div>
+      </div>
+      <div id="footer"></div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./common/css/base.css">
+<link rel="stylesheet" href="./common/css/common.css">
+<!-- <link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="./common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="./common/js/libs/swiper.min.js"></script>
+<script src="./common/js/libs/jquery-ui.min.js"></script>
+<script src="./common/js/ui.js"></script>
+<title>skip navigation</title>
+<style>
+/* SkipNav */
+/* .skipNav {position:absolute; left:0; top:0; width:100%; height:0;}
+.skipNav a {display:block; position:absolute; left:0; bottom:0; width:100%; line-height:30px; background-color:#000; color:#fff; text-align:center; transform:translateY(0);}
+.skipNav a:focus {transform:translateY(100%);} */
+.skipNav {position: relative;}
+.skipNav a {position: absolute; top: -200px; left: 0; border: 1px solid #fff; color: #fff; background: #333; line-height: 30px; width: 160px; text-align: center; text-decoration: none;}
+.skipNav a:active, .skipNav a:focus {top: 0;}
+</style>
+</head>
+<body>
+    <!-- s: SkipNav -->
+	<div class="skipNav">
+        <ul>
+            <li><a href="#content">본문으로 바로가기</a></li>
+        </ul>
+	</div>
+	<!-- e: SkipNav -->
+    <div id="content">
+
+    </div>
+</body>
+</html>

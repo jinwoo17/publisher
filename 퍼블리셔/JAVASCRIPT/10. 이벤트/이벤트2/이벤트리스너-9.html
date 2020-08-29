@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>마우스 따라다니기</title>
+    <style>
+        img { position: absolute; top: 0px; left: 0px;
+              border: 1px solid #000; }
+    </style>
+  </head>
+  <body>
+      <img src="images/strawberry.png" alt="딸기">
+      <script>
+        var img = document.getElementsByTagName('img')[0];
+        function berry(event) {
+            img.style.left = (event.clientX + 1) + "px";
+            img.style.top = (event.clientY + 1) + "px";
+            console.log(event.clientX)
+        }
+        document.addEventListener('mousemove', berry);
+      </script>
+  </body>
+</html>

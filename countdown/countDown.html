@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>카운트다운</title>
+<link rel="stylesheet" href="../common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="../common/js/libs/moment.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Sep 7, 2020 23:59:59").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        //document.getElementById("countDday").innerHTML = days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초 ";
+
+        days = days < 10 ? "0" + days : days;
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        $('.days').html(days);
+        $('.hours').html(hours);
+        $('.minutes').html(minutes);
+        $('.seconds').html(seconds);
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+        clearInterval(x);
+        $('.days').text('00');
+        $('.hours').text('00');
+        $('.minutes').text('00');
+        $('.seconds').text('00');
+        //document.getElementById("countDday").innerHTML = "<span>00</span>일 <span>00</span>시간 <span>00</span>분 <span>00</span>초";
+        $('.countdownWrap').addClass("end");
+        }
+    }, 0);
+
+
+    $(document).ready(function(){
+        //F12 방지
+        $(document).bind('keydown',function(e){
+            if ( e.keyCode == 123 /* F12 */) {
+                e.preventDefault();
+                e.returnValue = false;
+            }
+        });
+
+        //마우스 우클릭 방지
+        $('body').attr('oncontextmenu', 'return false');
+    });
+    </script>
+<style>
+.countdownWrap {display:table; position:relative; width:100%; height:200px; margin:0; padding:0;}
+.countdownWrap p {display:table-cell; position:relative; margin:0; ;padding:0; font-size:44px; font-weight:700; text-align:center; color:#ccc; vertical-align:middle;}
+.countdownWrap p span {display:inline-block; position:relative; min-width:60px; margin:0; padding:0; color:#999; text-align:right;}
+</style>
+</head>
+<body>
+<div id="wrapper" class="">
+	<!--#Include Virtual="/includes/header.asp"-->
+	<div class="contentsWrap" id="contentsWrap">
+		<div class="innerFixWrap" id="contents">
+            <div class="countdownWrap">
+                <p>남은시간</p>
+                <p id="countDday">
+                    <span class="days"></span>일
+                    <span class="hours"></span>시간
+                    <span class="minutes"></span>분
+                    <span class="seconds"></span>초
+                </p>
+            </div>
+		</div>
+		<!-- //innerFixWrap -->
+	</div>
+	<!-- //contentsWrap  -->
+	<!--#Include Virtual="/includes/footer.asp"-->
+</div>
+<!--#wrapper -->
+</body>
+</html>

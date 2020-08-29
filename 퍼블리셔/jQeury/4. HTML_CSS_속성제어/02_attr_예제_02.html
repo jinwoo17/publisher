@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>attr( )</title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<div>
+		<img src="th1.jpg" />
+		<img src="th2.jpg" />
+		<img src="th3.jpg" />
+	</div>
+
+	<!-- jQuery code Start -->
+	<script>
+
+		// 이미지 태그에 alt 속성 추가하기
+		//다만, alt는 스크립트로 추가할시 문서오류검사에서는 읽히지 않는 부분이므로
+		//오류로 계속 인식된다.
+		//따라서, 접근성에 중요한 속성은 스크립트가 아닌 태그에 직접 적용해야 한다.
+		$('div img').attr('alt','')
+
+	</script>
+
+
+
+
+
+</body>
+</html>

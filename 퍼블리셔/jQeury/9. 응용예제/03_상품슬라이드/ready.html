@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>상품 슬라이드</title>
+<meta charset="utf-8">
+<style>
+	/*초기화*/
+	body, ul { margin: 0; padding: 0;}
+	li { list-style: none;}
+	/* 리스트랩 */
+	#scroll_wrap { position: relative; padding: 50px 50px 50px 50px;
+								 width: 400px; border: 1px solid #000;}
+	/* 리스트버튼 */
+	#scroll_wrap span {position: absolute; top: 100px;}
+	#scroll_wrap span.left { left: 20px;}
+	#scroll_wrap span.right { right: 20px;}
+	/* 상품리스트 */
+	.scroll { width: 400px; overflow: scroll; }
+	.scroll ul { width: 1000px; }
+	.scroll ul li {width: 90px; margin: 0 5px; float: left;}
+}
+
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<div id="scroll_wrap">
+		<span class="left"><img src="btn_left.gif" alt=""></span>
+		<span class="right"><img src="btn_right.gif" alt=""></span>
+
+		<div class="scroll">
+			<ul>
+				<li><img src="01.jpg" alt=""></li>
+				<li><img src="02.jpg" alt=""></li>
+				<li><img src="03.jpg" alt=""></li>
+				<li><img src="04.jpg" alt=""></li>
+				<li><img src="05.jpg" alt=""></li>
+				<li><img src="01.jpg" alt=""></li>
+				<li><img src="02.jpg" alt=""></li>
+				<li><img src="03.jpg" alt=""></li>
+				<li><img src="04.jpg" alt=""></li>
+				<li><img src="05.jpg" alt=""></li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+	// 스크롤 이용해서 사진 이동하기
+		$('.right').on('click',function(){
+			$('.scroll:not(:animated)').animate({ scrollLeft: '+=100px'})  //스크롤은 오른쪽으로 움직이니까
+		})
+		$('.left').on('click',function(){
+			$('.scroll:not(:animated)').animate({ scrollLeft: '-=100px'})
+		})
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

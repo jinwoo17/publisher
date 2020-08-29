@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>풀다운네비게이션</title>
+<link rel="stylesheet" href="../common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+<style>
+/* 공통 초기화 */
+.a11y-hidden {overflow:hidden; position:absolute; clip:rect(0,0,0,0); width:1px; height:1px; margin:-1px; padding:0; border:0;}
+.wrapper {display:block; position:relative; width:100%; height:100%; margin:0; padding:0;}
+.container {display:block; position:relative; margin:0; padding:0;}
+.content {display:block; position:relative; margin:0; padding:0;}
+.inner {display:block; position:relative; width:1200px; margin:0 auto;}
+/* header */
+.header {display:block; position:fixed; z-index:99; width:100%; height:60px; margin:0; padding:0; background:#fff;}
+.header::before {display:block; position:absolute; left:0; bottom:0; z-index:99; width:100%; height:1px; background:#dcdcdc; content:""} /*header border-bottom역할*/
+/* .header.on {border-bottom:1px solid #d4d4d4;} */
+.logo {display:block; position:absolute; z-index:99; left:0; top:15px; width:144px; height:28px; background:url("../images/logo_webstyle.gif") no-repeat center center; background-size:100%;}
+.gnb-wrap {display:block; position:relative; height:60px; margin:0; padding:0; text-align:center;}
+.gnb-wrap .gnb {display:block; position:relative; max-width:600px; margin:0 auto;}
+.gnb-wrap .gnb::before {content:""; display:block; position:absolute; top:59px; /*top:59px -> 하위메뉴 hide시 header의 border와 겹치지 않기위해 숨기기 위한것*/ left:50%; /*width:100vw;*/width:calc(184vw); height:calc(100% - 60px); background:#fff; transform:translateX(-50%); border-bottom:1px solid #d4d4d4;} /*height:calc(100% - 60px); -> 마우스over시 gnb높이값에 따라 유동적으로 높이가 잡히도록 하기 위한 처리*/
+/* .gnb-wrap .gnb.on::before {height:200px; transition:0.2s; border-bottom:1px solid #d4d4d4;} */
+.gnb-wrap .gnb::after {content:""; display:block; clear:both;}
+.gnb-wrap .gnb .depth1 {display:block; position:relative; float:left; width:calc(100%/4); line-height:60px;} /*ul > li에 높이주면 .gnb-wrap .gnb::before에 height:calc(100% - 60px) 적용안됨*/
+.gnb-wrap .gnb .depth1 > ul {display:none; position:relative; margin:0; padding:30px 0;}
+.gnb-wrap .gnb .depth1 > ul > li {display:block; position:relative; height:30px; line-height:30px;}
+.gnb-wrap .gnb .depth1 > a {height:60px; font-weight:700;}
+.gnb-wrap .gnb .depth1 > a:hover {color:#db6565;}
+.gnb-wrap .gnb .depth1 > ul > li a:hover {color:#455bb4; font-weight:500;}
+.lang-menu {display:block; position:absolute; right:0; top:25px;}
+.lang-menu .lang {display:block; position:relative;}
+.lang-menu .lang::after {content:""; display:block; clear:both;}
+.lang-menu .lang li {display:block; position:relative; float:left;}
+.lang-menu .lang li + li {margin-left:20px;}
+.lang-menu .lang li + li::before {content:""; display:block; position:absolute; left:-10px; top:3px; width:1px; height:10px; background:#000;}
+/* contents */
+.content section {display:block; position:relative; margin:0; padding:100px 0;}
+/* footer */
+.footer {display:block; position:relative; width:100%; height:100px; background:#565657;}
+</style>
+<script>
+function gnb(){
+    var $gnb = $('.gnb');
+
+    $gnb.on({
+        'mouseenter': function(){
+            var $this = $(this);
+            $this.children('.depth1').find('ul').stop().slideDown(200);
+        },
+        'mouseleave': function(){
+            var $this = $(this);
+            $this.children('.depth1').find('ul').stop().slideUp(200);
+        }
+    })
+};
+
+function minHeight() { //container높이 최소값
+    var windowHeight = $(window).height() + 60;  //header가 fixed일 경우 헤더높이만큼 +해주기
+    var commonHeight = $('.header').outerHeight() + $('.footer').outerHeight();
+    var minHeight = windowHeight - commonHeight;
+    $(".container").css('min-height', minHeight);
+};
+
+$(document).ready(function(){
+    minHeight();
+    gnb();
+
+    // $('.gnb').on('mouseenter focusin',function(){
+    //     $('.gnb > .depth1 ul').stop().slideDown(200);
+        // $('.header').addClass('on');
+    //})
+
+    //$('.gnb').on('mouseleave focusout',function(){
+    //    $('.gnb > .depth1 ul').stop().slideUp(200);
+        // $('.header').removeClass('on');
+    //})
+
+
+
+    // $('.gnb').hover(
+    //     function(){
+    //         $('.gnb > .depth1 ul').stop().slideDown(200);
+    //         $('.header').addClass('on');
+    //         // $('.gnb-wrap .gnb').addClass('on');
+    //     },
+    //     function(){
+    //         $('.gnb > .depth1 ul').stop().slideUp(200);
+    //         $('.header').removeClass('on');
+    //         // $('.gnb-wrap .gnb').removeClass('on');
+    //     })
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="inner">
+            <a href="javascript:;" class="logo">
+                <h1><span class="a11y-hidden">더웹스타일</span></h1>
+            </a>
+            <nav class="gnb-wrap">
+                <ul class="gnb">
+                    <li class="depth1">
+                        <a href="javascript:;">menu1</a>
+                        <ul>
+                            <li><a href="javascript:;">sub1</a></li>
+                            <li><a href="javascript:;">sub2</a></li>
+                            <li><a href="javascript:;">sub3</a></li>
+                            <li><a href="javascript:;">sub4</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth1">
+                        <a href="javascript:;">menu2</a>
+                        <ul>
+                            <li><a href="javascript:;">sub1</a></li>
+                            <li><a href="javascript:;">sub2</a></li>
+                            <li><a href="javascript:;">sub3</a></li>
+                            <li><a href="javascript:;">sub4</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth1">
+                        <a href="javascript:;">menu3</a>
+                        <ul>
+                            <li><a href="javascript:;">sub1</a></li>
+                            <li><a href="javascript:;">sub2</a></li>
+                            <li><a href="javascript:;">sub3</a></li>
+                            <li><a href="javascript:;">sub4</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth1">
+                        <a href="javascript:;">menu4</a>
+                        <ul>
+                            <li><a href="javascript:;">sub1</a></li>
+                            <li><a href="javascript:;">sub2</a></li>
+                            <li><a href="javascript:;">sub3</a></li>
+                            <li><a href="javascript:;">sub4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lang-menu">
+                <ul class="lang">
+                    <li><a href="javascript:;">KOR</a></li>
+                    <li><a href="javascript:;">ENG</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="inner">
+                <section>
+                    <h2>lorem ipsum</h2>
+                    <p>What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="inner">
+            <div class="address">
+                <address>서울특별시 구로구 구로동</address>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

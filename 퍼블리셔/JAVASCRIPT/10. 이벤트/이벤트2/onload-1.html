@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서의 onload</title>
+</head>
+<body>
+      <h3>HTML 문서의 로딩 완료, onload</h3>
+      <hr>
+      <script>
+          // window.onload = siteMoving;
+          // siteMoving();
+          window.onload = function () {
+            alert("2초 후에 페이지가 이동됩니다");
+            setTimeout(function(){
+              location.href="http://www.naver.com"
+            } , 2000);
+          }
+      </script>
+</body>
+</html>

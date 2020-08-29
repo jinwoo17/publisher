@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vgrid</title>
+<style>
+	body { padding: 10px 0 0 10px; margin: 0; }
+	#grid-content { list-style-type: none; }
+	#grid-content li { width: 150px; height: 80px;
+							border: 1px solid #000;
+							background-color: #aaa;
+							color: #fff;
+							margin: 5px;
+							padding: 3px;
+						}
+</style>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.vgrid.min.js"></script>
+</head>
+<body>
+	<div>
+		<ul id="grid-content">
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+			<li>demo</li>
+		</ul>
+	</div>
+	
+	
+	<script>
+		// http://blog.xlune.com/2009/09/vgrid/demo001.html
+		$("#grid-content").vgrid();
+		/*
+		$("#grid-content").vgrid({
+			easeing: "easeOutQuint",
+			time: 400,
+			delay: 20,
+			fadeIn: {
+				time: 500,
+				delay: 50
+			}
+		});
+		*/
+		
+	</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>문자열 인덱스와 자르기</title>
+    <script>
+      var str = "abcdeabcde";
+      console.log(str.length);
+      console.log(str.charAt(0))//첫번째문자만 출력
+      console.log(str.charAt(9))//마지막문자 출력
+      console.log(str.charAt(10))//공백
+      console.log(str.charAt(-1))//공백
+      console.log(str[0]);
+      console.log(str[9]);
+      console.log(str[10]);//x
+      console.log(str[-1]);//x
+      console.log(str.charAt(str.length-5));//끝에서 5번째문자
+
+      var str2 = str.substring(3,6)//(시작되는인덱스요소번호,마지막인덱스요소) -> dea출력
+      console.log(str2);
+
+      var str3 = str.substr(3,3); //시작되는인덱스요소부터 몇번째요소까지 ->dea출력
+      console.log(str3);
+      console.log(str.substring(3));//인덱스3부터 뒤에꺼 출력
+      console.log(str.substr(3));//인덱스3부터 뒤에꺼 출력
+      console.log(str.substr(-7));//뒤에서부터 7번째인 문자 이후부터 출력 -> deabcde
+      console.log(str.substr(-7,2));// ->de
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

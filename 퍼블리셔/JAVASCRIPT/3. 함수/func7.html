@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배경색상변경</title>
+  </head>
+  <body>
+    <button id="btn" onclick="bgColorName()">색상변경하기</button>
+    <script>
+    function bgColorName() {
+        var colorArray = [ "red", "green", "blue" ];
+        var num =  Math.floor(Math.random() *3); // 0 ~ 0.9999까지 랜덤
+         //console.log(num);
+         //console.log(colorArray[num]);
+         var bodyBg = document.getElementsByTagName("body")[0];
+         bodyBg.style.backgroundColor = colorArray[num]
+      }
+      //bgColorName();
+
+    </script>
+  </body>
+</html>

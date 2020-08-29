@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> html() / html(String)  </title>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<div id = "intro">
+		<p> intro 입니다.</p>
+	</div>
+
+	<div id = "main">
+		<p>여기는 main 입니다.</p>
+		<p><img src='pic1.jpg'/></p>
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// html()은 html을 가져올 때 사용
+		// div#main 요소 내부를 div#intro 내부의 태그요소들로 변경하시오
+		var intro = $('#intro').html();
+		var main = $('#main').html();
+		//console.log(html);
+		console.log(main);
+
+		$('#main').html(intro);
+	</script>
+
+
+
+
+
+</body>
+</html>

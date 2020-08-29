@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<link rel="stylesheet" href="./common/css/libs/jquery.mCustomScrollbar.min.css">
+<script src="common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="./common/js/libs/jquery.mCustomScrollbar.min.js"></script>
+<style>
+
+    /* mCustom scrollbar */
+    .tit {display:block; position:relative; font-size:20px; font-weight:700;}
+    .custom-scroll {position:relative; height:200px; background:#ddd; overflow:hidden;}
+    .custom-scroll .scroll-cont {width:100%; padding:30px;}
+    .custom-scroll .scroll-cont p {font-size:18px; line-height:1.5;}
+
+    .mScroll .mCSB_scrollTools .mCSB_draggerContainer {top:4px; bottom:4px;}
+    .mScroll .mCSB_scrollTools .mCSB_draggerRail {width:4px;}
+
+</style>
+</head>
+<body>
+    <!-- mCustomscroll -->
+    <section>
+        <p class="tit">mCustom scroll</p>
+        <!-- <div class="mScroll-wrap"> -->
+            <div class="custom-scroll mScroll">
+                <div class="scroll-cont">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+        <!-- </div> -->
+    </section>
+    <script>
+
+        	// mCustom scrollbar
+        	$(window).on('load',function(){
+        		$(".mScroll").mCustomScrollbar({
+        			theme:'dark',
+                    // theme:"minimal-dark",
+        			mouseWheelPixels : 600, // 마우스휠 속도
+        			scrollInertia : 400 // 부드러운 스크롤 효과 적용
+        		});
+        	});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>논리연산자</title>
+    <script>
+      console.log( true && false); //AMD, 둘 다 참이어야 참
+      console.log( true && true);
+      console.log( false && false);
+
+      console.log( true || true); //OR, 하나라도 참이면 참
+      console.log( true || false);
+      console.log( false || false);
+
+      console.log(!true); // NOT, 반대
+      console.log(!false);
+
+      //
+      var height = 180;
+      var age = 20;
+
+      console.log( height >= 180 && age >= 20);
+      console.log( height >= 180 && age < 20);
+      console.log( height >= 180 || age < 20);
+      console.log( height >= 180 && age >= 15 && age < 30);
+      console.log( height > 170 && age >= 15 && age < 30);
+
+      /* 연산자 우선순위
+      1. ++,--
+      2. !
+      3. *, /, %, +, -
+      4. >, <, <=, >=, ==, !=
+      5. &&
+      6. ||
+      */
+
+      var b = 2 * 3 > 4 + 5 && 6 / 3 == 2 || !false;
+      console.log(b);
+
+      var height = prompt("키를 입력하시오");
+      var gender = prompt("성별을 입력하시오"); //male, female;
+
+      var answer = height >= 180 && gender =="male" || height >= 165 && gender == "female"
+      console.log(answer);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

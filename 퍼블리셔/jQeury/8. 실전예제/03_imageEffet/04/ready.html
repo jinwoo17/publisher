@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title> png 애니메이션 </title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+
+<style>
+	div#ani {
+		width:320px;
+		height:240px;
+		position:relative;
+		background:url(img/bg.jpg);
+	}
+
+	div#ani img{
+		position:absolute;
+		/* display:none;  */
+	}
+</style>
+</head>
+
+<body>
+
+	<div id ="ani"></div>
+
+	<!-- jQuery 코드 -->
+	<script>
+		// 초기설정
+		arrangeImg();
+		var timer;
+		var count = 0;
+		$("#ani img").hide();
+		$("#ani img:eq(0)").show();
+
+		function arrangeImg() {
+			for ( var i=0; i<21; i++) {
+				$("#ani").append("<img src='seq/seq"+i+".png'>")
+			}
+		}
+		$("#ani").hover(function() {
+				setInterval(nextFrame, 100);
+		}, function() {
+				prevFrame();
+		})
+
+		function nextFrame() {
+			count++;
+			if(count>20){
+				count = 20;
+				clearInterval(timer);
+			}
+			$("#ani img:visible").hide();
+			$("#ani img:eq("+count+")").show();
+		}
+		function prevFrame() {
+
+
+			
+
+		}
+	</script>
+
+</body>
+</html>

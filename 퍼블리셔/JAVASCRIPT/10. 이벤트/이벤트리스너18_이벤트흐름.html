@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>이벤트의 디폴트 행동 취소</title>
+    <style>
+      div { width: 100px; height: 100px;
+            padding: 50px; border: 1px solid #000; }
+      p { width: 100px; height: 100px;
+          line-height: 100px; text-align: center;
+          margin: 0; border: 1px solid #000; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>Click Me!!</p>
+    </div>
+    <span id="num1"></span>
+
+    <script>
+
+      var i = 0;
+      var num1, num2;
+      function showMsg() {
+        num1 = document.querySelector('#num1');
+        num1.innerHTML = i++;
+        event.stopPropagation(); //자식의 이벤트가 부모에게 전달되는걸 방지한다.
+      }
+      var div = document.getElementsByTagName('div')[0];
+      var p = document.getElementsByTagName('p')[0];
+      div.onclick = showMsg;
+      p.onclick = showMsg;
+
+    </script>
+  </body>
+</html>

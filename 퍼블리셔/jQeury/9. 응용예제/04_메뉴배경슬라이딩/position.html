@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+	* { margin:0; padding:0; }
+	div { padding: 15px; background: yellow; }
+	p { margin-top:10px; }
+	p.hello { background: red; }
+
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<div>
+		<p class="hello">Hello World</p>
+	</div>
+	<p class="first"></p>
+	<p class="last"></p>
+
+	<script>
+		var posY = $('p').position().top;
+		var offY = $('p').offset().top;
+		$('.first').text(posY)
+		$('.last').text(offY)
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

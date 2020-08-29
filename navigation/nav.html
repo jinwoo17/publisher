@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="common/js/libs/jquery-3.3.1.min.js"></script>
+<style>
+html,body,ul,li,a {display:block; position:relative; margin:0; padding:0; list-style:none; text-decoration:none;}
+.btn-open {display:none; text-indent:-9999px;}
+.dim {display:none;}
+.gnb {display:block; position:relative; width:1000px; height:60px; margin:0 auto; text-align:center; background-color:#999;}
+.gnb::before {display:block; position:absolute; left:0; top:61px; width:100%; height:calc(100% - 60px); z-index:99; background-color:#bdd9b3; content:"";}
+.gnb::after {display:block; clear:both; content:"";}
+.gnb > * {position:relative; z-index:100;}
+.gnb > li {display:block; position:relative; float:left; width:calc(100% / 4); height:60px;}
+.gnb > li a {display:block; position:relative; width:100%; height:100%; line-height:60px;}
+
+</style>
+<script>
+$(document).ready(function(){
+    $('.sub-gnb').hide();
+    $('.gnb > li').hover(function(){
+      $('.sub-gnb').slideDown(100);
+    },function(){
+      $('.sub-gnb').slideUp(100);
+    })
+
+})
+</script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <nav>
+            <button type="button" class="btn-open"><span>메뉴열기</span></button>
+            <div class="dim"></div>
+            <ul class="gnb">
+                <li><a href="">메뉴1</a>
+                    <ul class="sub-gnb">
+                        <li><a href="">서브메뉴</a></li>
+                        <li><a href="">서브메뉴</a></li>
+                    </ul>
+                </li>
+                <li><a href="">메뉴2</a>
+                    <ul class="sub-gnb">
+                        <li><a href="">서브메뉴</a></li>
+                        <li><a href="">서브메뉴</a></li>
+                        <li><a href="">서브메뉴</a></li>
+                    </ul>
+                </li>
+                <li><a href="">메뉴3</a>
+                    <ul class="sub-gnb">
+                        <li><a href="">서브메뉴</a></li>
+                        <li><a href="">서브메뉴</a></li>
+                    </ul>
+                </li>
+                <li><a href="">메뉴4</a>
+                    <ul class="sub-gnb">
+                        <li><a href="">서브메뉴</a></li>
+                        <li><a href="">서브메뉴</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</div>
+</body>
+</html>

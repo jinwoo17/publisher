@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      div { position: absolute; top: 50px;
+            width: 100px; height: 100px; background-color: #ffa6a6;}
+    </style>
+  </head>
+  <body>
+    <button id="btn">플레이</button>
+    <div id="box"></div>
+
+    <script>
+      var btn = document.getElementsByTagName('button')[0];
+      var box = document.getElementsByTagName('div')[0];
+      var i = 10;
+      var animate;
+      box.style.left = '10px';
+      btn.onclick = function moveRight() {
+        animate = setInterval(function() {
+            if(box.style.left=="300px"){
+              clearInterval(animate)
+            } else{
+            // 현 위치에서 10px만큼 움직이도록
+            box.style.left = /*정수형으로변환*/parseInt(box.style.left) + i + "px";
+            }
+        }, 50)
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>굴러가는 원</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { position: relative; }
+        #box {
+            position: absolute;
+            width: 200px; height: 200px;
+            border-radius: 100px;
+            text-align: center;
+            background: #00d0ff;
+            background: linear-gradient(180deg, #00d0ff, yellow);
+            color: #fff;
+            box-shadow:#034562 5px 5px inset;
+            line-height: 200px;
+
+            animation-name: ballAni;
+            animation-duration: 0.7s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in;
+            }
+        @keyframes ballAni {
+          from { left: 300px; top: 100px; }
+          to { left: 300px; top: 700px; }
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="box">
+        <h1>Rotation</h1>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../common/css/base.css">
+        <link rel="stylesheet" href="../common/css/common.css">
+        <link rel="stylesheet" href="../common/css/ui.css">
+        <title>table</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <div class="content">
+
+                    <div class="table-wrap">
+                        <!-- table1 -->
+                        <table class="tbl tbl-board">
+                            <caption>채용공고</caption>
+                            <colgroup>
+                                <col width="10%">
+                                <col width="auto">
+                                <col width="10%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">모집내용</th>
+                                    <th scope="col">접수기간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2</td>
+                                    <td><a href="#none"><span>진행중</span>2019년도 전문기능직 인턴사원 모집요강</a></td>
+                                    <td>2019.1021 ~ 2019.10.29</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><a href="#none"><span>진행중</span>2019년 여천NCC 일반사무직 신입사원 모집</a></td>
+                                    <td>2019.09.17 ~ 2019.09.24</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- // table1 -->
+                    </div>
+
+                    <div class="table-wrap">
+                        <!-- table2 -->
+                        <table class="tbl tbl-info">
+                            <caption>결제방법</caption>
+                            <colgroup>
+                                <col width="10%">
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="20%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">구분</th>
+                                    <th scope="col">기업카드(무기명식)</th>
+                                    <th scope="col">기업카드(기명식)</th>
+                                    <th scope="col">개인체크카드</th>
+                                    <th scope="col">현금.자기앞수표</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">구입방법</th>
+                                    <td>구입자 신분확인 후 구입 가능</td>
+                                    <td colspan="2">구입자 신분확인 후 구입가능(대리인 결제 불가)</td>
+                                    <td rowspan="2">수표는 별도 확인 후 구입 가능</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">신분확인</th>
+                                    <td>신분증, 사업자등록증, 명함 (또는 사원증)</td>
+                                    <td>신분증, 사업자등록증</td>
+                                    <td>신분증</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- // table2 -->
+                    </div>
+
+                    <div class="table-wrap">
+                        <!-- table3 -->
+                        <!-- <table class="tbl tbl-form">
+                            <colgroup>
+                                <col width="10%">
+                                <col width="auto">
+                            </colgroup>
+                            <tr>
+                                <th scope="row">프로토텍을 알게된 경로<span>*</span></th>
+                                <td>
+                                    <span class="radio-txt">
+                                        <input type="radio" id="google_search" name="route"><label for="google_search">구글 검색</label>
+                                    </span>
+                                    <span class="radio-txt">
+                                        <input type="radio" id="etc" name="route"><label for="etc">기타</label>
+                                    </span>
+                                    <span class="radio-txt">
+                                        <input type="radio" id="naver_search" name="route"><label for="naver_search">네이버 검색</label>
+                                    </span>
+                                    <span class="radio-txt">
+                                        <input type="radio" id="daum_search" name="route"><label for="daum_search">다음 검색</label>
+                                    </span>
+                                    <span class="radio-txt">
+                                        <input type="radio" id="blog" name="route"><label for="blog">블로그</label>
+                                    </span>
+                                    <span class="radio-txt">
+                                        <input type="radio" id="magazine" name="route"><label for="magazine">잡지 및 학회지</label>
+                                    </span>
+                                    <span class="radio-txt">
+                                        <input type="radio" id="exhibition" name="route"><label for="exhibition">전시회</label>
+                                    </span>
+                                    <span class="radio-txt">
+                                        <input type="radio" id="introduce" name="route"><label for="introduce">지인소개</label>
+                                    </span>
+                                    <span class="radio-txt">
+                                        <input type="radio" id="news" name="route">
+                                        <label for="news">포털뉴스</label>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">문의 유형<span>*</span></th>
+                                <td>
+                                    <select class="size200" name="type">
+                                        <option value="select">선택</option>
+                                        <option value="3Dscanner">3D 스캐너</option>
+                                        <option value="3Dprinter" selected>3D 프린터</option>
+                                        <option value="software">소프트웨어</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이름<span>*</span></th>
+                                <td>
+                                    <input type="text" class="size200">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이메일<span>*</span></th>
+                                <td>
+                                    <input type="text"><span class="at">@</span><input type="text" maxlength="20">
+                                    <select name="" id="" class="size200">
+                                        <option value="">직접입력</option>
+                                        <option value="">naver.com</option>
+                                        <option value="">gmail.com</option>
+                                        <option value="">daum.net</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연락처</th>
+                                <td>
+                                    <select name="number" id="" class="size70">
+                                        <option value="">선택</option>
+                                        <option value="">02</option>
+                                        <option value="">031</option>
+                                        <option value="">053</option>
+                                        <option value="">054</option>
+                                    </select>
+                                    <span class="bar">-</span>
+                                    <input type="text">
+                                    <span class="bar">-</span>
+                                    <input type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">휴대폰<span>*</span></th>
+                                <td>
+                                    <select name="phone-num" id="" class="size70">
+                                        <option value="">010</option>
+                                        <option value="">011</option>
+                                        <option value="">016</option>
+                                        <option value="">017</option>
+                                        <option value="">018</option>
+                                    </select>
+                                    <span class="bar">-</span>
+                                    <input type="text">
+                                    <span class="bar">-</span>
+                                    <input type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">회사명<span>*</span></th>
+                                <td>
+                                    <input type="text" class="size200">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">산업군<span>*</span></th>
+                                <td>
+                                    <select name="number" id="" class="size200">
+                                        <option value="">선택</option>
+                                        <option value="">가전제품</option>
+                                        <option value="">건축</option>
+                                        <option value="">교육</option>
+                                        <option value="">기타</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="col">부서명</th>
+                                <td>
+                                    <input type="text" class="size200">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">문의사항<span>*</span></th>
+                                <td>
+                                    <textarea name="question" id="" cols="100" rows="12" placeholder="* 제작 관련 문의는 '시제품 제작 서비스'에 작성해 주시기 바랍니다.(상단'견적의뢰'메뉴 -> '시제품 제작 서비스'클릭 / 첨부파일 가능)"></textarea>
+                                </td>
+                            </tr>
+                        </table> -->
+                        <!-- // table3 -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

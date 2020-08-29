@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> animate()  </title>
+    <style>
+        div { width: 400px; height: 267px; overflow: hidden; }
+        p { width: 800px; height: 267px; margin: 0; }  /*사진을 가로로 배열하기 위해 p사용*/
+    </style>
+    <!-- jQuery library -->
+    <script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+    <div>
+        <p>
+            <img src="flower.jpg" alt="flower" id="flower" /><img src="building.jpg" alt="building" id="building" />
+        </p>
+    </div>
+
+
+
+    <!---------- jQuery code Start ---------->
+    <script>
+
+
+
+        // 스크립트를 적용하기 전 먼저 CSS를 이용하여 이미지 하나만 보이도록 한다
+
+        // 버튼 클릭시 이미지가 각각 좌우로 슬라이딩 되는 애니메이션을 만들어보자
+
+        // margin 속성을 이용
+
+        $("#flower").click(function () {
+          $('p').animate({ marginLeft: -400 })
+        });
+
+        $("#building").click(function () {
+          $('p').animate({ marginLeft: 0 })
+        });
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

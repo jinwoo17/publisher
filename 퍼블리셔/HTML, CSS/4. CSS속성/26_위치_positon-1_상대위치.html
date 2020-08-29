@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>상대위치</title>
+    <style>
+      div { width: 100px; height: 100px;
+            color: #fff; font-size: 24px; }
+      div:nth-child(1) {background-color: red;
+                        /* margin: 100px 0px 0px 100px; */
+                        position: relative;
+                        top: 100px; left: 100px;
+                        z-index: 1;
+                        /* z-index 의 최소값이 최우선 */
+      }
+      div:nth-child(2) {background-color: blue;
+                        position: relative;
+                        top: 50px; left: 50px;
+                        z-index: 1;
+      }
+
+      div:nth-child(3) {background-color: green;
+                        position: relative;
+                        /* bottom: 100px; right: 50px; */
+                        top: -100px; left: -50px;
+        /* 위치속성 중 position: relative 제일 마지막에 생성된 것을 가장 앞에 보이게한다.
+        top, left, bottom, right 위치속송을 이용해 움직이는데 요소를 기준으로 움직인다. */
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div>박스1</div>
+    <div>박스2</div>
+    <div>박스3</div>
+  </body>
+</html>

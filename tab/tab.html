@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../common/css/libs/swiper.min.css">
+<link rel="stylesheet" href="../common/css/base.css">
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/ui.css">
+<link rel="stylesheet" href="../common/css/content.css">
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="../common/js/libs/swiper.min.js"></script>
+<script src="../common/js/libs/jquery-ui.min.js"></script>
+<script src="../common/js/ui.js"></script>
+<title></title>
+<style>
+.tab {display:block; position:relative;}
+.tab .tab-nav {display:inline-block; overflow:hidden;}
+.tab .tab-nav > li {display:block; float:left; width:200px; height:60px; border-bottom:1px solid #999; line-height:60px; text-align:center;}
+.tab .tab-nav > li.on {border-bottom:3px solid #222;}
+.tab .tab-nav > li a {display:block; height:60px; color:#222;}
+.tab-container {display:block; position:relative; margin-top:30px;}
+.tab-container .tab-content {display:none;}
+.tab-container .tab-content.on {display:block;}
+/*
+    //TAB
+    1.Link type, Layer type, ajax type
+    2.link type: a태그를 이용한 단순 페이지 이동
+    3.ajax type: ajax를 통해 불러오기
+    .
+*/
+</style>
+
+</head>
+<body>
+  <!-- tab -->
+  <div class="tab-wrap">
+      <p class="tit">TAB</p>
+      <div class="tab">
+          <ul class="tab-nav">
+              <li class="on"><a href="#" role="button" title="현재탭">Tab01</a></li>
+              <li><a href="#" role="button">Tab02</a></li>
+              <li><a href="#" role="button">Tab03</a></li>
+              <li><a href="#" role="button">Tab04</a></li>
+          </ul>
+          <div class="tab-container">
+              <div class="tab-content on">탭 내용1</div>
+              <div class="tab-content">탭 내용2</div>
+              <div class="tab-content">탭 내용3</div>
+              <div class="tab-content">탭 내용4</div>
+          </div>
+      </div>
+      <a href="#">확인</a>
+  </div>
+
+<script>
+  $('.tab-nav > li').on('click focusin', function(e){
+      var index = $(this).index();
+      $(this).addClass('on').siblings('li').removeClass('on');
+      $('.tab-container > .tab-content').eq(index).addClass('on').siblings('.tab-content').removeClass('on');
+      $('.tab-nav > li a').removeAttr('title');
+      $('.tab-nav > li.on a').attr('title','현재탭');
+  });
+</script>
+
+</body>
+</html>

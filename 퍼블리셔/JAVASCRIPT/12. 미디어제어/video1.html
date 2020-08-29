@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>비디오제어</title>
+    <style>
+      html, body { height: 100%; }
+      body { margin: 0; }
+      #videoWrap { position: fixed; top: 0; left: 0;
+                    width: 100%; height: 100%; }
+      #video { position: absolute; top:0; left: 0;
+               width: 100%; min-width: 1920px;
+               height: auto; min-height: 100%; }
+      button { display: block;
+               width: 100px; height: 100px;
+               position: relative; z-index: 99;
+               border: 0; font-size: 30px; color: #fff;
+               background: #9c94ff; }
+    </style>
+  </head>
+  <body>
+    <div id="videoWrap">
+      <video src="media/main_movie1.mp4" id="video" autoplay muted></video>
+      <button>||</button>
+    </div>
+
+    <script src="video1.js"></script>
+
+  </body>
+</html>

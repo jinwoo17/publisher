@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>메뉴배경슬라이딩</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <style>
+      ul { list-stye: none; width: 1020px; margin: 0; padding: 0;}
+      li { width: 200px; height: 50px; float: left;
+           text-align: center; line-height: 50px;
+           border: 1px solid #000; }
+     .arrow { position: absolute; top: 9px; left: 9px;
+              width: 190px; height: 38px;
+              border: 5px solid #f00;
+              text-align: center; line-height: 38px;}
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>리스트1</li>
+      <li>리스트2</li>
+      <li>리스트3</li>
+      <li>리스트4</li>
+      <li>리스트5</li>
+      <li>리스트6</li>
+      <li>리스트7</li>
+      <li>리스트8</li>
+      <li>리스트9</li>
+      <li>리스트10</li>
+    </ul>
+    <div class="arrow"></div>
+    <script>
+      $('ul li').mouseover(function(){
+        var pos = $(this).position();
+        $('.arrow').stop().animate({left: pos.left+1, top: pos.top+1}, 200);
+        $('.arrow').text($(this).index()+1)
+      })
+    </script>
+  </body>
+</html>

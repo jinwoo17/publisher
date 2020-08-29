@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>dblclick()</title>
+<style>
+
+	div { background: blue; color: white;
+			height:100px; width:150px;
+			margin-bottom: 10px;
+			}
+
+	div.dbl { background:yellow; color:black; }
+
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<span>div를 클릭하여 dbl  클래스 스타일을 입히자</span>
+	<div></div>
+	<div></div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// div 태그를 더블 클릭시 클래스 명 dbl이 추가되었다 삭제되게 하시오
+		$('div').on('dblclick', function() {
+			$(this).toggleClass('dbl');
+
+		})
+
+
+	</script>
+
+</body>
+</html>

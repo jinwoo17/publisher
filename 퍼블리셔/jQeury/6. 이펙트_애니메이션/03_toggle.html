@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> toggle() </title>
+<style type="text/css">
+	div { width: 200px;
+		   height: 200px;
+		   background: red;
+		   display: none;
+			 float: right;
+		  }
+</style>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<button>표시 / 비표시</button>
+	<div></div>
+
+
+
+	<!---------- jQuery code Start ---------->
+	<script type="text/javascript">
+
+		// toggle() : show()와 hide()를 한 이벤트에 binding
+		// $("selector").toggle(속도);
+        // 버튼을 클릭때마다 나타나고 사라지는 애니메이션 구현
+			$('button').on('click',function(){
+				$('div:not(:animated)').toggle(1000);
+			})
+
+		/*
+			$('button').toggle(
+				function(){
+					$('div:not(:animated)').show(1000);
+				},
+				function(){
+					$('div:not(:animated)').hide(1000);
+				}
+			)
+		*/
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

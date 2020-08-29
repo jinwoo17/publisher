@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>위성에니메이션</title>
+    <style>
+      #wrap { position: relative; margin: 0 auto;
+              width: 500px; height: 400px;
+              margin: 100px auto 0;
+              padding-top: 100px;
+              border: 1px solid #ccc;
+              border-radius: 50%;
+              color: #fff;
+              text-align: center; }
+
+      #earth { width: 300px; height: 300px;
+               margin: 0 auto;
+               border-radius: 50%;
+               background: #2a76da;
+               line-height: 300px;
+               font-size: 30px;
+
+               animation-name: rotateAni;
+               animation-duration: 2s;
+               animation-iteration-count: infinite;
+               animation-direction: reverse;
+               animation-timing-function: linear; }
+
+      #moon { position: absolute; top: 0; left: 0;
+              width: 85px; height: 85px;
+              border-radius: 50%;
+              background: #e91e63;
+              line-height: 70px;
+
+              animation-name: rotateAni;
+              animation-duration: 2s;
+              animation-iteration-count: infinite;
+              animation-timing-function: linear;
+              transform-origin: 250px 250px; }
+
+      @keyframes rotateAni {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="earth">earth</div>
+      <div id="moon">moon</div>
+    </div>
+  </body>
+</html>

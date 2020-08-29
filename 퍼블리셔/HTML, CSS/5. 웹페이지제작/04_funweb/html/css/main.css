@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* slider */
+#sliderWrap { height: 363px;
+              background: url(../images/sliderBg1.png) no-repeat center top / cover; }
+#sliderWrap .slider { width: 1000px; margin: 0 auto;
+                      padding-top: 70px; text-align: center; }
+#sliderWrap .slider p { font-size: 60px; color: #fff; letter-spacing: 0.02em;
+                        margin-bottom: 35px;
+                        text-transform: uppercase;
+                        text-shadow: 2px 2px 1px #000;
+                        font: bold 60px NanumBarunGothic; }
+#sliderWrap .slider a { display: block;  margin: 0 auto;
+                        width: 156px; height: 40px; line-height: 40px;
+                        color: #fff; background: #dd4856; text-transform: capitalize; }
+
+/* 본문 */
+/* solution */
+#solutionWrap { background: #ebebeb; }
+#solution { width: 930px;
+            margin: 0 auto; padding: 83px 35px 80px;
+            overflow: hidden; }
+#solution .solution { width: 176px;
+                      background: url(../images/bgSolution.png) no-repeat;
+                      float: left;
+                      padding: 0 34px 0 100px; }
+#solution .hosting { background-position: -35px -83px; }
+#solution .security { background-position: -345px -83px; }
+#solution .payment { background-position: -655px -83px; }
+
+#solution .solution a { color: #333; }
+#solution .solution a h3 { font-size: 15px; margin-bottom: 10px; }
+#solution .solution a p { font-size: 13px}
+
+/* Customer Center */
+#board { width: 1000px; margin: 32px auto; overflow: hidden; }
+#board > section { width: 420px; float: left; }
+#board h3 { background: url(../images/bgBoard.png) no-repeat;
+            height: 21px;
+            font-size: 14px; text-indent: 22px; line-height: 21px; }
+/* security news */
+#sec_news { margin: 0 80px 0 40px; }
+#sec_news h3 span { color: #f36420; }
+#sec_news dl { margin-top: 18px; padding-left: 5px; font-size: 14px; }
+#sec_news dl dt a { color: #ff001c; }
+#sec_news dl dd { margin-bottom: 7px; line-height: 15px; }
+#sec_news dl dd a { color: #000; }
+/* notice */
+#notice h3 { color: #827b00; margin-bottom: 21px; }
+#notice ul li { overflow: hidden; border-bottom: 1px dotted #999;
+                height: 26px; line-height: 26px; font-size: 13px; text-indent: 16px;
+                background: url(../images/bulletNotice.png) no-repeat 0 center;}
+#notice ul li a { float: left; color: #000; }
+#notice ul li span { float: right; margin-right: 14px; }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>반응형 기본</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+      /* 초기화 */
+      body, h1, p { margin: 0; padding: 0; }
+      /* 공통 */
+      /* 1200 이상 */
+      body { background: #f5f3d4; }
+      div { width: 1200px; margin: 0 auto;
+            padding: 50px 0;
+            background: #3f5891;
+            text-align: center; }
+      h1 { margin-bottom: 50px; font-size: 50px; color: #def551; }
+      p { margin: 0 20px 30px; color: #fff; }
+      img { border: 10px solid #ccffc4; }
+
+      /* 미디어쿼리 */
+      /* 넓이 600 ~ 1199 */
+      @media screen and ( max-width: 1199px ) /*and ( min-width: 600px )*/{
+        body { background: #70d971; }
+        div { width: 600px; background: #058519; }
+        img { width: 580px; }
+      }
+      /* 599 이하 */
+      @media screen and ( max-width: 599px ) {
+        body { background: #d6b4f5; }
+        div { width: 100%; }
+        img { width: 90%; border: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>기차여행</h1>
+      <p>강원도로 기차여행을 가보았다.<br>
+         유난히 날씨가 맑은 하루여서 기분이 좋은 여행이 되었다.
+      </p>
+      <img src="station.jpg" alt="기차역">
+    </div>
+  </body>
+</html>

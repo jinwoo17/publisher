@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>함수예시</title>
+    <script>
+      var count = 0; //전역변수, 모든곳에서 변수 공유
+      myFnc(); //호출1, 함수는 순서상관x
+      function myFnc() {
+        count++;
+        document.write("hello" + count, "<br>");
+      }
+      myFnc(); //다시 호출2
+
+      var theFnc = function() {
+        count++;
+        document.write("bye" + count, "<br>");
+      }
+      theFnc();
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

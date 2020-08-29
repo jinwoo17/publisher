@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>함수</title>
+    <script>
+      /*
+      함수란?
+      어떤 입력을 받아 특정한 기능이나 계산을 수행 후 값을 되돌려주는 코드
+      단, 입력이나 결과없이 특정기능만 수행도 가능
+      함수를 실행하는 걸 보통 호출한다 라고 표현
+      */
+
+      /*문법
+      function 함수이름(매개변수1, 매개변수2) {
+        실행할 코드
+        return 결과값;
+      }
+      함수이름(변수1, 변수2)*/
+
+      function test() {
+        console.log("실행되는 코드");
+        return; //반환(종료된다는 뜻)
+      }
+      test();
+
+      function test1() {
+        return;
+        console.log("실행되지 않아요");
+      }
+      test1();
+
+      function test2() {
+        console.log("function in")
+        console.log(test() );
+        console.log("function out");
+      }
+      test2();
+
+      function test3() {
+        var a = 10;
+        var b = 20;
+        var c = a + b;
+        return c;
+      }
+      console.log(test3() );
+
+      function test4(n, m) {
+        var total = n + m;
+        return total;
+      }
+      console.log( test4(10, 20) );
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Sliding Captions 갤러리 </title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<style type="text/css">
+
+	body {
+		margin:20px auto;
+		padding:0;
+		width: 620px;
+		background:#4085cc;
+	}
+	.thumbs {
+	   width:100px;
+	   float:left;
+	}
+	.thumbs img {
+		border:solid 1px #ccc;
+		padding:5px;
+		margin-bottom:3px;
+	}
+	.thumbs img:hover {
+		border-color: #EF4018;
+	}
+
+	#largeImg {
+		border:solid 1px #ccc;
+		width: 500px;
+		height: 280px;
+		padding:5px;
+		margin-left:110px;
+		overflow:hidden;
+
+	}
+
+	#caption { background:url(captionBg.png) repeat-y;
+			   border:#CCC 1px thin;
+			   padding:10px;
+			   position:relative;
+			   color:#FFFFFF; }
+
+</style>
+</head>
+
+<body>
+
+	<div class="thumbs">
+
+			<a href="images/pic1.jpg" title="image1"><img src="images/th_pic1.jpg" /></a>
+			<em>Lorem Ipsum is simply dummy text of the pdrinting and typesetting industry.</em>
+
+
+			<a href="images/pic2.jpg" title="image2"><img src="images/th_pic2.jpg" /></a>
+			<em> Lorem Ipsum is simply dummy tely dummy thely dummy tegxt of thely try.
+				 Sed facilisis, sem a luctus bibendum, dui risus pellentesque velit, quis tempor magna
+				sem vel justo. Etiam eget ipsum ante. </em>
+
+			<a href="images/pic3.jpg" title="image3"><img src="images/th_pic3.jpg" /></a>
+			<em> Lorem Ipsum is simply dummy.</em>
+
+	</div>
+
+	<div id="largeImg">
+		<img src="images/pic1.jpg" alt="image1" />
+
+		<!-- 아이디 caption인 div 추가 -->
+
+	</div>
+
+
+	<!---------- jQuery code Start ---------->
+	<script>
+		$('em').hide();
+		$('.thumbs a').on('click',function(e){
+			var imgPath = $(this).attr('href');
+			var altText = $(this).attr('title');
+			$('#largeImg img').attr({ src: imgPath, alt: altText});
+			$('#caption').remove();   //기존 text삭제
+			$('#largeImg').append('<div id="caption"></div>');  //#caption div 추가
+			$('#caption').text($(this).next().text())  //text
+									 .animate({ top: -parseInt($('#caption')/*.innerHeight()-4써도 됨*/.css('height'))-20});  //-20은 패딩값 뺀거
+
+			e.preventDefault();
+		})
+		/* 할 일 목록
+
+		1. em 태그를  hide() 메서드를 이용, 처음엔 안보이도록 한다
+
+		2. 이미지를  클릭할 때마다 큰이미지가 바뀌도록 한다
+
+		3. a태그 값 삭제
+
+		4. 클래스 thumbs의 a 태그를 클릭시 em이 추가될 위치를 지정
+			( 아이디 largeImg 내 끝에 아이디 caption인 div 추가 )
+
+		5. 이미지 클릭시 해당 em 태그 내용이 아이디 caption에 전달되도록 하고,
+			큰이미지의 하단에서 나타나도록
+
+		6. 아이디 caption 요소 삭제
+
+		완료후, 큰이미지에도 부드럽게 화면전환하는 effect를 적용한다
+
+		*/
+
+
+
+
+
+	</script>
+</body>
+</html>

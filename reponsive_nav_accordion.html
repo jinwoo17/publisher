@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+<title>반응형 메뉴, 모바일 아코디언 메뉴</title>
+<link rel="stylesheet" href="common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="common/js/libs/jquery-3.3.1.min.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+<script>
+$(document).ready(function(){
+
+    var windowWidth = $(window).width();
+    function resizing() {
+        if (windowWidth > 768) {
+            $('.sub_lnb').hide();
+            $(".left_gnb > li").off();
+            $('.left_gnb > li').hover(
+                function(){
+                    $(this).children('.sub_lnb').stop().slideDown(200);
+                },
+                function(){
+                    $(this).children('.sub_lnb').stop().slideUp(200);
+                })
+        } else {
+            $(".left_gnb > li").off();
+            // menu버튼 클릭시 모바일 메뉴 나오게하기
+            $('.menu').on('click', function(){
+                $('.left_gnbWrap').addClass('on');
+                $('.bg-fix').addClass('on');
+            })
+            $('.left_gnbWrap .close').on('click', function(){
+                $('.left_gnbWrap').removeClass('on');
+                $('.bg-fix').removeClass('on');
+            })
+
+            // depth1의 각메뉴 클릭시 depth2 나오게 하기
+            // 변수 선언
+            $depth1_wrap = $('.left_gnb>li');
+            $depth1 = $depth1_wrap.children('ul');
+            $depth1_btn = $depth1_wrap.children('a');
+
+            $('.left_gnb>li>a').click(function(event){
+                var $this = $(this);
+                var $this_ul = $this.siblings('ul');
+                var check = $this.hasClass('on');
+
+                if(check){
+                    $this.removeClass('on');
+                    $this_ul.stop(true,true).slideUp();
+                } else {
+                    $depth1_btn.removeClass('on');
+                    $depth1.stop().slideUp();
+                    $this.addClass('on');
+                    $this_ul.stop(true,true).slideDown();
+                }
+            })
+        }
+    }
+    resizing();
+
+    $(window).resize(function() {
+        resizing();
+    });
+})
+</script>
+</head>
+<body>
+
+<style>
+.menu {display:none;}
+.menu .menu-btn {display:none;}
+.menu .menu-btn::before {display:none;}
+.menu .menu-btn span {display:none;}
+.menu .menu-btn span::before {display:none;}
+.menu .menu-btn span::after {display:none;}
+
+.left_gnbWrap {display:block; position:relative; z-index:9999; width:1080px; height:70px; margin:0 auto; background-color:#fff;}
+.left_gnbWrap.on {right:0;} /*menu눌렀을 때 addClass*/
+.left_gnbWrap .close {display:none;}
+.left_gnbWrap .close span {display:none;}
+.left_gnbWrap .close span::before {display:none;}
+.left_gnbWrap .close span::after {display:none;}
+
+.left_gnbWrap .left_gnb {display:flex; position:relative; margin:0; padding:0;}
+.left_gnbWrap .left_gnb > li {display:block; position:relative; width:calc(100% / 4); text-align:center;}
+.left_gnbWrap .left_gnb > li > a {display:block; position:relative; background-color:#ff7f50; line-height:70px; color:#000;}
+.left_gnbWrap .left_gnb > li > a.on {background-color:#7fff00;}
+/* .left_gnbWrap .left_gnb .sub_lnb {display:none;} */
+.left_gnbWrap .left_gnb > li > ul > li > a {display:block; position:relative; width:100%; height:50px; background-color:#d89c86; line-height:50px; color:#000; text-align:center;}
+
+.bg-fix.on {display:none;}
+
+
+@media screen and (max-width:768px){
+    .menu {display:block; position:absolute; top:10%; right:5%; transform:translateY(-50%);}
+    .menu .menu-btn {display:block; width:100%; height:100%; background:}
+    .menu .menu-btn::before {display:block; position:relative; left:0; top:0; width:20px; height:2px; background:#333; content:"";}
+    .menu .menu-btn span {display:block; position:relative; width:30px; height:30px; text-indent:-9999px; color:transparent;}
+    .menu .menu-btn span::before {display:block; position:relative; left:0; top:6px; width:20px; height:2px; background:#333; content:"";}
+    .menu .menu-btn span::after {display:block; position:relative; left:0; top:-2px; width:20px; height:2px; background:#333; content:"";}
+
+    .left_gnbWrap {position:fixed; top:0; right:-200px; z-index:9999; width:200px; height:100%; padding-top:50px; background-color:#ffc0cb; transition:all 0.3s;}
+    .left_gnbWrap.on {right:0;} /*menu눌렀을 때 addClass*/
+    .left_gnbWrap .close {display:block; position:absolute; top:0; right:0; width:50px; height:50px; color:#000; line-height:50px; text-align:center;}
+    .left_gnbWrap .close span {display:block; position:relative; text-indent:-9999px;}
+    .left_gnbWrap .close span::before {display:block; position:absolute; top:50%; left:calc(50% - 7px); width:15px; height:2px; transform:rotate(45deg); background:#333; content:"";}
+    .left_gnbWrap .close span::after {display:block; position:absolute; top:50%; left:calc(50% - 7px); width:15px; height:2px; transform:rotate(-45deg); background:#333; content:"";}
+    .left_gnbWrap .left_gnb {display:block;}
+    .left_gnbWrap .left_gnb > li {width:100%;}
+    .left_gnbWrap .left_gnb > li > a {display:block; position:relative; width:100%; height:50px; background-color:#ff7f50; text-align:center; line-height:50px; color:#000;}
+    .left_gnbWrap .left_gnb > li > a.on {background-color:#7fff00;}
+    .left_gnbWrap .left_gnb > li > ul {display:none;}
+    .left_gnbWrap .left_gnb > li > ul > li > a {display:block; position:relative; width:100%; height:50px; background-color:#d89c86; line-height:50px; color:#000; text-align:center;}
+
+    .bg-fix.on {display:block; position:fixed; top:0; left:0; right:0; width:100%; height:100%; bottom:0; background:rgba(0,0,0,0.3);}
+}
+</style>
+
+<div class="wrapper">
+    <div class="menu">
+      <button type="button" class="menu-btn"><span>menu</span></button>
+    </div>
+    <nav class="left_gnbWrap">
+        <button type="button" class="close"><span>close</span></button>
+        <ul class="left_gnb">
+            <li>
+                <a href="#">menu1</a>
+                <ul class="sub_lnb">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu2</a>
+                <ul class="sub_lnb">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu3</a>
+                <ul class="sub_lnb">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu4</a>
+                <ul class="sub_lnb">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="bg-fix"></div>
+
+    <div class="container">
+        <div class="content">
+        </div>
+    </div>
+</div>
+</body>
+</html>

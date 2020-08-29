@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> detach ( )  </title>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		<img src='th_pic1.jpg'/>
+		<img src='th_pic2.jpg'/>
+		<img src='th_pic3.jpg'/>
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// remove() 함수와 마찬가지로 노드를 제거한다
+		// 단, DOM에서 제거되었더라고 temp에 임시로 저장이 되어있어 제거와 삽입을 반복할 수 있다
+		// 제거방법 중에서는 remove()가 가장 빠르다
+
+		// 첫번째 이미지를 노드에서 제거하시오
+	 $('.container img:first').detach();  //쉽게말해 휴지통으로 버려졌다가 복구 되는 것
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>홀수 출력</title>
+    <script>
+    /*for(var i=0; i<=10; i++){  //홀수출력 방법 1
+        if(i % 2 == 1){
+          console.log(i);
+        }
+      } */
+      for(var i=0; i<=10; i++){  //홀수출력 방법2
+        if(i % 2 == 0){
+          continue; //조건이 맞으면 continue 뒤에는 무시, 그래서 홀수만 출력
+        }
+        document.write(i+"<br>");
+      } //continue는 이후 나오는 명령을 수행하지 않고 다시 앞으로 되돌린다.(for문과 같이 쓰임)
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

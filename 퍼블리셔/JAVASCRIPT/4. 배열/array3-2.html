@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배열객체</title>
+    <script>
+      var greenArr = ["교대", "방배", "강남"];
+      var yellowArr = ["미금", "정자", "수서"];
+
+      //greenArr.slice(2, 1, "서초", "역삼");
+      var data1 = yellowArr.pop(); //수서
+      var data2 = yellowArr.shift(); //미금
+      console.log(data1, data2, yellowArr);
+      
+      yellowArr.push(data2); //정자, 미금
+      yellowArr.unshift(data1); //수서, 정자, 미금
+      console.log(yellowArr);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,5 @@
+---팝업 모듈화
+
+seperate 폴더에 inline방식, ajax방식 분리
+
+ajax로 호출시 ajax_load폴더에 있는 파일에서 불러옴

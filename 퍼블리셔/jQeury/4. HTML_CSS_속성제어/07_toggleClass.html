@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> toggleClass </title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<style>
+
+	img{ padding:5px; background:#666;}
+
+	img.type1 { padding:5px; background: orange; }
+	img.type2 { padding:5px; background: blue; }
+	img.type3 { padding:5px; background: pink; }
+
+	img.type4 { padding:5px; background: purple; }
+	img.type5 { padding:5px; background: yellow; }
+
+</style>
+</head>
+
+<body>
+	<img src="th1.jpg" alt=" " />
+	<img src="th2.jpg" alt=" " />
+	<img src="th3.jpg" alt=" " />
+
+	<!---------- jQuery code Start ---------->
+
+	<script>
+
+		// toggleClass는 addClass와 removeClass를 번갈아가며 실행
+		$('img').on('click',function() {
+      $(this).toggleClass('type1');
+    })
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

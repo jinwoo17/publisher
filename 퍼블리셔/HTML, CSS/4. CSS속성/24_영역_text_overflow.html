@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>글자 줄이는 속성</title>
+    <style>
+      p { width: 250px; border: 1px solid #054621; padding: 10px;
+
+        /* 1. 한줄로 */
+      white-space: nowrap;
+
+      /* 2. 넘치는 내용은 보이지 않게 */
+      overflow: hidden;
+
+      /* 3. ...처리 */
+      text-overflow: ellipsis;
+      /* 블락요소에만 가능 */
+
+      }
+
+    </style>
+  </head>
+  <body>
+      <p>Lorem Ipsum is simplyLorem Ipsum is simplyLorem Ipsum is simplyLorem Ipsum is simplyLorem Ipsum is simply</p>
+  </body>
+</html>

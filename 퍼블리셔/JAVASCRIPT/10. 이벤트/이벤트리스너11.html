@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>마우스 관련 이벤트 리스너</title>
+    <style>
+      button { padding: 10px; border: 2px solid #000; background: #fff; }
+    </style>
+  </head>
+  <body>
+    <h3>마우스 관련 이벤트 리스너</h3>
+    <hr>
+    <div>마우스 관련
+      <button onmousedown="downColor(this);">이벤트</button>가 발생합니다.
+    </div>
+    <script>
+      var btn = document.getElementsByTagName('button')[0];
+
+      function overColor(){
+        this.style.borderColor = "#3240e3";
+      }
+      btn.onmouseover=overColor;
+
+      btn.onmouseout=function(){
+        this.style.borderColor = "#da56pd";
+      }
+      function downColor(obj){
+        obj.style.backgroundColor= "#9bf2de";
+      }
+      btn.addEventListener('mouseup', function() {
+        this.style.borderColor = "#f2fabf;"
+      })
+    </script>
+  </body>
+</html>

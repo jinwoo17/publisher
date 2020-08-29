@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LG 와 함께하는 협력사 임직원 전용 복지몰</title>
+	<link rel="stylesheet" href="common/css/base.css">
+	<link rel="stylesheet" href="common/css/common.css">
+	<link rel="stylesheet" href="common/css/animate.css">
+	<link rel="stylesheet" href="common/css/main.css">
+	<script src="common/js/lib/jquery-1.12.4.min.js"></script>
+	<script src="common/js/lib/jquery.bxslider.js"></script>
+<script>
+	$(document).ready(function(){
+		var $eleAnimateSec = $('.to-animate-sec');
+		var clsAnimate = 'animated';
+		var percent = 0.2;
+		var time = null;
+		var winHOld;
+		var direction;
+
+		function action(){
+			var winH = $(window).scrollTop() + $(window).outerHeight();
+			var winH2 = $(window).scrollTop();
+			if (winHOld > winH2){ direction = 'up' }
+			if (winHOld < winH2){ direction = 'down' }
+			winHOld = winH2;
+			$eleAnimateSec.each(function(){
+				var $this = $(this);
+				var objH = $this.offset().top + ($this.outerHeight() * percent);
+				var objH2 = $this.offset().top;
+				console.log(direction, winH2, objH2);
+
+				// 내릴때 실행
+				if (winH > objH && direction == 'down'){
+					$this.addClass(clsAnimate).addClass($this.attr('data-animate'));
+					$this.find('.to-animate').each(function(){
+						$(this).addClass(clsAnimate).addClass($(this).attr('data-duration')).addClass($(this).attr('data-animate'));
+					})
+				}
+
+				// 올릴때 실행
+				if (winH2 < objH2 && direction == 'up'){
+					$this.addClass(clsAnimate).addClass($this.attr('data-animate'));
+					$this.find('.to-animate').each(function(){
+						$(this).addClass(clsAnimate).addClass($(this).attr('data-duration')).addClass($(this).attr('data-animate'));
+					})
+				}
+
+				//올렸을때 초기화
+				if (winH < objH2){
+					$this.removeClass(clsAnimate).removeClass($this.attr('data-animate'));
+					$this.find('.to-animate').each(function(){
+						$(this).removeClass(clsAnimate).removeClass($(this).attr('data-duration')).removeClass($(this).attr('data-animate'));
+					})
+				}
+
+				//내렸을때 초기화
+				if (winH2 > (objH2  + ($this.outerHeight() * 1))){
+					$this.removeClass(clsAnimate).removeClass($this.attr('data-animate'));
+					$this.find('.to-animate').each(function(){
+						$(this).removeClass(clsAnimate).removeClass($(this).attr('data-duration')).removeClass($(this).attr('data-animate'));
+					})
+				}
+			})
+		}
+		$(window).on('scroll', function(){
+			clearTimeout(time);
+			time = setTimeout(function(){ action() });
+		})
+
+		action();
+
+
+		// section_visual
+		$('.main_slider').bxSlider({
+			mode: 'horizontal',
+			auto:true,
+			slideMargin: 0,
+			infiniteLoop: true,
+			speed: 800,
+			pause:5000,
+			controls:true,
+			pager:true,
+		});
+
+		//서비스 셀렉트
+		$('.serviceSelect .option_box').on("click",function(e){
+			var cls = $(this).hasClass('open');
+			if(cls){
+				$(this).removeClass('open')
+			}
+			else{
+				$(this).addClass('open')
+				$(this).parent().siblings().find('.option_box').removeClass('open')
+			}
+		});
+	});
+
+	$(document).ready(function(){
+
+	})
+</script>
+</head>
+<body>
+	<!-- Contents -->
+	<article id="Content" class="main">
+		<div class="section section01">
+			<h2 class="blind">LG B2B MALL</h2>
+			<div class="section_body">
+				<ul class="main_slider">
+					<li class="item item01">
+						<div class="inner">
+							<div class="txt_box">
+								<h3>사장님<br>맞춤견적<br>서비스</h3>
+								<p class="txt">사장님의 금고를 풍성하게 채워줄<br>지능형 쇼핑몰</p>
+							</div>
+						</div>
+					</li>
+					<li class="item item02">
+						<div class="inner">
+							<div class="txt_box">
+								<h3>사장님<br>맞춤견적<br>서비스22</h3>
+								<p class="txt">사장님의 금고를 풍성하게 채워줄<br>지능형 쇼핑몰</p>
+							</div>
+						</div>
+					</li>
+					<li class="item item03">
+						<div class="inner">
+							<div class="txt_box">
+								<h3>사장님<br>맞춤견적<br>서비스33</h3>
+								<p class="txt">사장님의 금고를 풍성하게 채워줄<br>지능형 쇼핑몰</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="section section02">
+			<div class="section_body section_body01 ui-animate-sec to-animate-sec"  data-animate="fadeInUp">
+				<div class="inner ui-animate-head to-animate" data-duration="dur-03" data-animate="fadeInUp">
+					<h3>맞춤 견적 서비스를 이용하시려면?</h3>
+					<p>업종, 매장 평수, 신규창업여부를 선택해주세요.</p>
+				</div>
+			</div>
+			<div class="section_body section_body02 ">
+				<div class="serviceSelect_box ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+					<div class="serviceSelect_wrap ui-animate-head to-animate"  data-duration="dur-05" data-animate="fadeInUp">
+						<div id="" class="serviceSelect select01">
+							<div class="tit_wrap">
+								<p class="tit">업종</p>
+								<p class="order_num">1</p>
+							</div>
+							<div class="option_box">
+								<a title="옵션 선택" class="selected">
+									<span id="cmShopSuperType" selecteditemid="101">외식업</span>
+								</a>
+								<div class="option_wrap">
+									<ul id="uxBizShopMainTypes">
+										<li class="on"><a class="type"><span property="0">업종 선택</span></a></li>
+										<li><a class="type"><span property="101">외식업</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="" class="serviceSelect select02">
+							<div class="tit_wrap">
+								<p class="tit">서비스</p>
+								<p class="order_num">2</p>
+							</div>
+							<div class="option_box">
+								<a title="옵션 선택" class="selected">
+									<span id="cmShopType" selecteditemid="0">서비스 선택</span>
+								</a>
+								<div class="option_wrap">
+									<ul id="cmSubBizTypes">
+										<li class="on"><a><span property="0">서비스 선택</span></a></li>
+										<li><a><span property="102">한식/분식/중식/일식</span></a></li>
+										<li><a><span property="103">뷔페/레스토랑</span></a></li>
+										<li><a><span property="104">제빵/피자/카페</span></a></li>
+										<li><a><span property="105">호프/와인/BAR</span></a></li>
+										<li><a><span property="106">기타</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="" class="serviceSelect select03">
+							<div class="tit_wrap">
+								<p class="tit">평 수</p>
+								<p class="order_num">3</p>
+							</div>
+							<div class="option_box">
+								<a title="옵션 선택" class="selected">
+									<span id="cmShopSize" selecteditemid="0">평수 선택</span>
+								</a>
+								<div class="option_wrap">
+									<ul>
+										<li class="on"><a><span property="">평수 선택</span></a></li>
+										<li><a><span property="BIZ1021">10평대 이하</span></a></li>
+										<li><a><span property="BIZ1022">10~20평대</span></a></li>
+										<li><a><span property="BIZ1023">20~30평대</span></a></li>
+										<li><a><span property="BIZ1024">30~40평대</span></a></li>
+										<li><a><span property="BIZ1025">40~50평대</span></a></li>
+										<li><a><span property="BIZ1026">50~100평대</span></a></li>
+										<li><a><span property="BIZ1027">100평대 이상</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="" class="serviceSelect select04">
+							<!-- 디자인수정(클래스수정:select03 -> select04) -->
+							<div class="tit_wrap">
+								<p class="tit">신규/기존 사업자</p>
+								<p class="order_num">2</p>
+							</div>
+							<div class="option_box">
+								<a title="옵션 선택" class="selected">
+									<span id="cmBizAge" selecteditemid="0">신규/기존 여부</span>
+								</a>
+								<div class="option_wrap">
+									<ul>
+										<li class="on"><a><span property="0">신규/기존 여부</span></a></li>
+										<li><a><span property="NEW">신규 창업자</span></a></li>
+										<li><a><span property="OLD">기존 사업자</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<a id="btBizGotoStore" class="btn_service bg_red"><span>맞춤견적서비스 이용하기</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section03">
+			<div class="section_header ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+				<h3 class="to-animate" data-duration="dur-02" data-animate="fadeInUp">사장님을 위한 특별한 서비스</h3>
+			</div>
+			<div class="section_body section_body01 ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+				<div class="inner">
+					<div class="txt_box">
+						<p class="tit ui-animate-head to-animate" data-duration="dur-03" data-animate="fadeInUp">
+							<span class="step">01</span>상권분석 서비스
+						</p>
+						<p class="txt ui-animate-head to-animate" data-duration="dur-05" data-animate="fadeInUp">
+							특정 상권에 대한 업종 현황, 매출 현황, <br>
+							유동인구 등 고객 현황분석<br>
+							건당 11,000원의 서비스를 무료로 제공
+						</p>
+						<div class="btn_area ui-animate-head to-animate" data-duration="dur-08" data-animate="fadeInUp">
+							<a href="#" class="btn btn_special_serv"><span>상권분석 서비스 이용하기</span></a>
+						</div>
+					</div>
+					<div class="img_box_wrap">
+						<div class="img_box1 ui-animate-head to-animate" data-duration="dur-05" data-animate="fadeInUp">
+							<img src="images/main/section03_1_1.png" alt="">
+						</div>
+						<div class="img_box2 ui-animate-head to-animate" data-duration="dur-08" data-animate="fadeInUp">
+							<img src="images/main/section03_1_2.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section_body section_body02 reverse">
+				<div class="inner">
+					<div class="img_box_wrap ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+						<div class="img_box1 ui-animate-head to-animate" data-duration="dur-11" data-animate="bounceIn">
+							<img src="images/main/section03_2_1.png" alt="">
+						</div>
+						<div class="img_box2 ui-animate-head to-animate" data-duration="dur-12" data-animate="fadeIn">
+							<img src="images/main/section03_2_2.png" alt="">
+						</div>
+						<div class="img_box3 ui-animate-head to-animate" data-duration="dur-13" data-animate="fadeIn">
+							<img src="images/main/section03_2_3.png" alt="">
+						</div>
+						<div class="img_box4 ui-animate-head to-animate" data-duration="dur-14" data-animate="fadeIn">
+							<img src="images/main/section03_2_4.png" alt="">
+						</div>
+					</div>
+					<div class="txt_box ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+						<p class="tit ui-animate-head to-animate" data-duration="dur-03" data-animate="fadeInUp">
+							<span class="step">02</span>금융 서비스
+						</p>
+						<p class="txt ui-animate-head to-animate" data-duration="dur-05" data-animate="fadeInUp">
+							무서류 사업자 대출, 개인 사업자 카드 신청<br>
+							쇼핑할인혜택, 손해보상등의 안심서비스 제공
+						</p>
+						<div class="btn_area ui-animate-head to-animate" data-duration="dur-06" data-animate="fadeInUp">
+							<a href="#" class="btn btn_special_serv"><span>금융 서비스 둘러보기</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section_body section_body03 reverse ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+				<div class="inner">
+					<div class="txt_box ui-animate-head to-animate" data-duration="dur-03" data-animate="fadeInUp">
+						<p class="tit"><span class="step">03</span>인테리어 상담 서비스</p>
+						<p class="txt ui-animate-head to-animate" data-duration="dur-05" data-animate="fadeInUp">
+							업종별 전문 컨설팅을 통한 인테리어 상담서비스 제공<br>
+							전문시공업체 견적 제공
+						</p>
+						<div class="btn_area ui-animate-head to-animate" data-duration="dur-08" data-animate="fadeInUp">
+							<a href="#" class="btn btn_special_serv"><span>인테리어 상담 서비스 이용하기</span></a>
+						</div>
+					</div>
+					<div class="img_box_wrap">
+						<div class="img_box1 ui-animate-head to-animate" data-duration="dur-03" data-animate="fadeInUp">
+							<img src="images/main/section03_3_1.png" alt="">
+						</div>
+						<div class="img_box2 ui-animate-head to-animate" data-duration="dur-05" data-animate="fadeInUp">
+							<img src="images/main/section03_3_2.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section_body section_body04 ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+				<div class="inner">
+					<div class="txt_box ui-animate-head to-animate" data-duration="dur-03" data-animate="fadeInUp">
+						<p class="tit"><span class="step">04</span>경영 토탈 서비스</p>
+						<p class="txt ui-animate-head to-animate" data-duration="dur-05" data-animate="fadeInUp">
+							세무, 법무, 구인, 마케팅에 필요한<br>
+							경영 토탈 서비스 제공
+						</p>
+						<div class="btn_area ui-animate-head to-animate" data-duration="dur-08" data-animate="fadeInUp">
+							<a href="#" class="btn btn_special_serv"><span>경영 토탈 서비스 이용하기</span></a>
+						</div>
+					</div>
+					<div class="img_box_wrap">
+						<div class="img_box1 ui-animate-head to-animate" data-duration="dur-13" data-animate="bounceIn">
+							<img src="images/main/section03_4_1.png" alt="">
+						</div>
+						<div class="img_box2 ui-animate-head to-animate" data-duration="dur-15" data-animate="bounceIn">
+							<img src="images/main/section03_4_2.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="section section04 ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+			<div class="inner">
+				<a href="#" class="ui-animate-head to-animate" data-duration="dur-03" data-animate="fadeInUp">
+					<div class="img"><img src="images/main/banner.png" alt=""></div>
+				</a>
+			</div>
+		</div>
+		<div class="section section05">
+			<div class="inner ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+				<div class="section_header ui-animate-head to-animate" data-duration="dur-03" data-animate="fadeInUp">
+					<h3>타 매장 제품 설치사례</h3>
+					<p>LG전자 제품이 설치된 다양한 사례들을 통해 동종업계 동향과 추천제품을 만나보세요.</p>
+				</div>
+				<div class="section_body ui-animate-head to-animate" data-duration="dur-05" data-animate="fadeInUp">
+					<ul class="store_list">
+						<li><a href="#"><img src="images/main/store01.jpg" alt=""></a></li>
+						<li><a href="#"><img src="images/main/store02.jpg" alt=""></a></li>
+						<li><a href="#"><img src="images/main/store03.jpg" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</article>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------------------------------------------------
+	File : Content.css
+	Company : TWS
+	Author : TWS 2019-02-28
+	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+	CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+-------------------------------------------------------------------------------------------------------------*/
+
+.menu {display:none;}
+.menu .menu-btn {display:none;}
+.menu .menu-btn::before {display:none;}
+.menu .menu-btn span {display:none;}
+.menu .menu-btn span::before {display:none;}
+.menu .menu-btn span::after {display:none;}
+
+.left_gnbWrap {display:block; position:relative; z-index:9999; width:1080px; height:70px; margin:0 auto; background-color:#fff;}
+.left_gnbWrap.on {right:0;} /*menu눌렀을 때 addClass*/
+.left_gnbWrap .close {display:none;}
+.left_gnbWrap .close span {display:none;}
+.left_gnbWrap .close span::before {display:none;}
+.left_gnbWrap .close span::after {display:none;}
+
+.left_gnbWrap .left_gnb {display:flex; position:relative; margin:0; padding:0;}
+.left_gnbWrap .left_gnb > li {display:block; position:relative; width:calc(100% / 4); text-align:center;}
+.left_gnbWrap .left_gnb > li > a {display:block; position:relative; background-color:#ff7f50; line-height:70px; color:#000;}
+.left_gnbWrap .left_gnb > li > a.on {background-color:#7fff00;}
+/* .left_gnbWrap .left_gnb .sub_lnb {display:none;} */
+.left_gnbWrap .left_gnb > li > ul > li > a {display:block; position:relative; width:100%; height:50px; background-color:#d89c86; line-height:50px; color:#000; text-align:center;}
+
+.bg-fix.on {display:none;}

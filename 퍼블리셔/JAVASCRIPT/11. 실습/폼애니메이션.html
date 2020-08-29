@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>폼애니메이션</title>
+  </head>
+  <body>
+    <h3>onfocus와 onblur</h3>
+    <hr>
+    <p>이름을 입력하지 않고 다른 창으로 이동할 수 없습니다.</p>
+    <form>
+      <label for="name">이름</label>
+      <input type="text" id="name">
+      <br>
+      <label for="classNum">학번</label>
+      <input type="text" id="classNum">
+    </form>
+
+    <script>
+      document.getElementById('name').focus();
+      window.onload = function() {
+        var name = document.getElementById('name');
+        name.onblur = function(){  //포커스 잃을 시 실행
+          if(name.value == "") {
+            alert("이름을 입력하세요");
+            setTimeout(function() {
+              name.focus()} , 10
+            );
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

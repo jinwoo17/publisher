@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배열 추가</title>
+    <script>
+      var li = ['a', 'b', 'c', 'd', 'e'];
+
+      li.push('f'); //배열의 마지막에 원소 추가
+      console.log(li);
+
+      li = li.concat('g', 'h') //배열에 복수의 원소를 추가
+      console.log(li);
+
+      li.unshift('z') //배열의 시작에 원소 추가
+      console.log(li);
+
+      li.splice(2, 0, 'B'); //들어갈 위치, 제거할 원소개수, 추가될 원소
+      console.log(li);
+
+      li.pop(); //배열의 마지막 원소 삭제
+      console.log(li);
+
+      li.shift(); //배열의 시작 원소 삭제
+      console.log(li);
+
+      liSlice = li.slice(1, 3); //인덱스 1번에서부터 총길이가3번째인꺼까지 잘라냄
+      console.log(liSlice, li);
+
+      li = li.reverse(); //현재의 값에서 순서 거꾸로 배치
+      console.log(li);
+
+      li = li.sort(); //정렬
+      console.log(li, typeof(li)); //타입 오브젝트
+
+      //내림차순 예
+      var numArray = [0, 5, 4, 3, 7, 2, 1]
+      document.write(numArray.sort()+"<br>") //정렬 후
+      document.write(numArray.reverse()) //역순
+
+      li = li.join('-'); // " - " 넣기, type을 string으로 변환
+      console.log(li, typeof(li)); //타입 문자로 됨
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

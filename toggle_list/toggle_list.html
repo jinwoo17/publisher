@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>링크 리스트2</title>
+<link rel="stylesheet" href="common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="common/js/libs/jquery-3.3.1.min.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+<style>
+/*-------------------------------------------------------------------
+	## Toggle
+-------------------------------------------------------------------*/
+.toggle {position:relative;}
+.toggle .btn-toggle {width:400px; min-height:40px; padding:0 10px; border:1px solid #ccc; background:url('../../images/icons/ico_select.png') no-repeat right 10px center; font-size:14px; color:#222; text-align:left;}
+.toggle .toggle-list {display:none; position:absolute; top:40px; left:0; width:400px; height:auto; border-right:1px solid #ccc; border-left:1px solid #ccc; z-index:10;}
+.toggle .toggle-list > li {border-bottom:1px solid #ccc; background-color:#eee;}
+.toggle .toggle-list > li a {display:block; height:40px; padding:0 10px; color:#222; line-height:40px; text-align:left;}
+
+
+</style>
+</head>
+<body>
+
+<!-- s: toggle select -->
+<section>
+    <p class="tit">Toggle</p>
+    <div class="toggle">
+        <button type="button" class="btn btn-toggle"><span>Toggle select</span></button>
+        <ul class="toggle-list">
+            <li><a href="javascript:;">Toggle list1</a></li>
+            <li><a href="javascript:;">Toggle list2</a></li>
+            <li><a href="javascript:;">Toggle list3</a></li>
+        </ul>
+    </div>
+</section>
+<!-- e: toggle select -->
+<script>
+
+/*-------------------------------------------------------------------
+    ## Toggle
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+    ## Toggle
+-------------------------------------------------------------------*/
+// Dashboard menu toggle
+$(document).on('click', '.btn-toggle', function(e){
+    var $ele = $(this).parent();
+    toggleSelect($ele);
+});
+
+function toggleSelect($ele){
+    $ele.toggleClass('is-active');
+    $ele.find('.toggle-list').stop().slideToggle(300);
+    $('.toggle.is-active').not($ele).each(function(){
+        $(this).removeClass('is-active');
+        $(this).find('.toggle-list').stop().slideUp(300);
+    });
+}
+
+</script>
+</body>
+</html>

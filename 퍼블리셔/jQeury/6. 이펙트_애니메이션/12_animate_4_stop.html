@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animate_stop() </title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<style type="text/css">
+
+div {margin-bottom:50px;}
+a{text-decoration:none;}
+#box1 {
+	background: #F00;
+	height: 50px;
+	width: 50px;
+	position: relative;
+}
+#box2 {
+	background: #FF0;
+	height: 50px;
+	width: 50px;
+	position: relative;
+}
+#box3 {
+	background: #F0F;
+	height: 50px;
+	width: 50px;
+	position: relative;
+}
+#box4 {
+	background: #0FF;
+	height: 50px;
+	width: 50px;
+	position: relative;
+}
+</style>
+</head>
+
+<body>
+효과 순서<br />
+.animate({opacity: "0.1", left: "500"}, 1000)<br />
+.animate({opacity: "0.4", top: "0",  left: 0, height: "100", width: "100"}, 1000)<br />
+.slideUp(1000)<br />
+.slideDown(1000)<br />
+.animate({left: "0"}, 1000)<br />
+<br />
+<br />
+
+<a href="#" id="startbtn1">효과시작</a> &nbsp; <a href="#" id="stopbtn1">stop(true,true)</a>
+<div id="box1"></div>
+<a href="#" id="startbtn2">효과시작</a> &nbsp; <a href="#" id="stopbtn2">stop(true,false)</a>
+<div id="box2"></div>
+<a href="#" id="startbtn3">효과시작</a> &nbsp; <a href="#" id="stopbtn3">stop(false,true)</a>
+<div id="box3"></div>
+<a href="#" id="startbtn4">효과시작</a> &nbsp; <a href="#" id="stopbtn4">stop(false,false)</a>
+<div id="box4"></div>
+
+
+<script type="text/javascript">
+
+$("#stopbtn1").click(function(){
+
+	 $("#box1").stop(true,true)
+})
+
+$("#startbtn1").click(function(){
+
+		$("#box1").animate({opacity: "0.1", left: "500"}, 1000)
+		.animate({opacity: "0.4", top: "0",  left:100, height: "100", width: "100"}, 1000)
+		.slideUp(1000)
+		.slideDown(1000)
+		.animate({left: "0"}, 1000)
+		return false;
+
+});
+//----------------------------------------
+$("#stopbtn2").click(function(){
+
+	 $("#box2").stop(true,false)
+})
+
+$("#startbtn2").click(function(){
+
+		$("#box2").animate({opacity: "0.1", left: "500"}, 1000)
+		.animate({opacity: "0.4", top: "0",  left: 100, height: "100", width: "100"}, 1000)
+		.slideUp(1000)
+		.slideDown(1000)
+		.animate({left: "0"}, 1000)
+		return false;
+
+});
+//-------------------------------------------
+$("#stopbtn3").click(function(){
+
+	 $("#box3").stop(false,true)
+})
+
+$("#startbtn3").click(function(){
+
+		$("#box3").animate({opacity: "0.1", left: "500"}, 1000)
+		.animate({opacity: "0.4", top: "0",  left: 100, height: "100", width: "100"}, 1000)
+		.slideUp(1000)
+		.slideDown(1000)
+		.animate({left: "0"}, 1000)
+		return false;
+
+});
+//----------------------------------------------
+$("#stopbtn4").click(function(){
+
+	 $("#box4").stop(false,false)   //stop(생략시) false,false가 기본값
+})
+
+$("#startbtn4").click(function(){
+
+		$("#box4").animate({opacity: "0.1", left: "500"}, 1000)
+		.animate({opacity: "0.4", top: "0",  left: 100, height: "100", width: "100"}, 1000)
+		.slideUp(1000)
+		.slideDown(1000)
+		.animate({left: "0"}, 1000)
+		return false;
+
+});
+
+
+</script>
+</body>
+</html>

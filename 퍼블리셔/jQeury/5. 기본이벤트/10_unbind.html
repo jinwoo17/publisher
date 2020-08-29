@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>unbind()</title>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<button>취소</button>
+
+	<ul>
+		<li><a href="flower.jpg">꽃</a></li>
+		<li><a href="sea.jpg">바다</a></li>
+		<li><a href="Jellyfish.jpg">해파리</a></li>
+		<li><a href="Building.jpg">건물</a></li>
+	</ul>
+
+	<p><img src="flower.jpg" alt="꽃" /></p>
+
+
+
+	<script type="text/javascript">
+
+		// unbind()는 설정되어 있는 이벤트를 취소
+
+		// 리스트(a태그) 클릭시 이미지 바뀌도록
+		// 버튼을 클릭하면 a 태그에 설정된 이벤트 취소
+		$('ul li a').on('click', function(e){
+			var imgPath = $(this).attr('href')
+			var altText = $(this).text()
+			$('p img').attr({src: imgPath, alt: altText})
+			e.preventDefault();
+		})
+		$('button').on('click',function(){
+			$('ul li a').unbind();   //이벤트 취소, off()도 가능
+		})
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

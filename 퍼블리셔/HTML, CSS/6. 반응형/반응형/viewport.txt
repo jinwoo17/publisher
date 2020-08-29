@@ -1,0 +1,19 @@
+﻿<meta name="viewport" content="width=device-width, 
+												user-scalable=yes,
+												initial-scale=1.0,
+												maximum-scale=1.0" />
+
+
+/* 주요 속성 */
+width : 화면의 넓이 ex) width=320
+height :  화면의 높이 
+initial-scale : 화면의 초기 확대비율 
+user-scalable : 확대여부 지정  /* 키워드 yes, no */
+minimum-scale : 최대축소율
+maximum-scale : 최대확대율
+
+device-width, device-height: 
+브라우저는 해당 기기의 width, height 값을 읽어
+자동으로 웹페이지를 그 사이즈에 맞춰 콘텐츠를 보여줌
+
+http://viewportsizes.com/

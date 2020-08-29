@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> after( )  </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+
+<div id="container">형제를 만들어주세요</div>
+
+<!---------- jQuery code Start ---------->
+<script>
+
+	// after()는 선택된 요소 뒤에 새로운 노드(형제태그) 추가
+	$('#container').after("<div>새로이 추가된 형제</div>")
+	// 아이디 container 요소 뒤에 "<div>새로이 추가된 형제입니다</div> 추가
+  $('#container').after("<div id='container2'>새로이 추가된 형제입니다</div>")
+
+  $('#container2').after($('#container'))
+
+
+
+
+
+ </script>
+
+</body>
+</html>

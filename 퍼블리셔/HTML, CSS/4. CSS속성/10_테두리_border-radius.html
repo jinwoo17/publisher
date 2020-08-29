@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>테두리속성</title>
+    <style>
+        /* div 태그에 CSS3에서 새로이 추가된 둥근 테두리 속성을 적용합니다 */
+        div { width: 500px; height: 500px;
+              border: 1px solid #000;
+            /* border-top-left-radius: 100px; */
+            /* border-radius: 50px 100px 150px 250px; */
+            /* border-radius: 0px 100px; */
+            border-radius: 50px;
+           }
+         div h1 { width: 500px; height: 500px; margin: 0;
+                 background: rgba(91, 188, 194, 0.5);
+                 border-radius: 50%; /* 250px */
+                 }
+        h2 { width: 100px; height: 200px;
+            background: #88750d;
+            border-radius: 100px 0 0 100px; }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Lorem ipsum dolor amet</h1>
+    </div>
+    <h2>반달</h2>
+</body>
+</html>

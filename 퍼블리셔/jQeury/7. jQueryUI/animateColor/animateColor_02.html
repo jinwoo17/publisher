@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> animateColor </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+<script src="jquery-ui-1.8.23.custom.min.js"></script>
+<style>
+ul { min-width:800px; }
+li {list-style:none; float:left;width:200px; height:60px;}
+li a{
+    background:#9AB92E;
+	width:200px;
+	height:60px;
+	display:block;
+	text-align:center;
+	color:black;
+	padding:40px 0px 10px;
+	font:bold 25px Verdana, Geneva, sans-serif;
+	text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+<ul>
+    <li><a href="#" data-bg="#EF4018">Home</a></li>
+    <li><a href="#" data-bg="#00C8C3">About</a></li>
+    <li><a href="#" data-bg="#AA184D">portfolio</a></li>
+    <li><a href="#" data-bg="#05184D">Contact</a></li>
+</ul>
+<!---------- jQuery code Start ---------->
+<script>
+
+	// 각 메뉴(li)에 롤오버시 data-bg의 값에 설정된 색상으로 변하는 애니메이션
+    	$('ul li').hover(function(){
+        //var bg = $(this).children('a').data('bg');
+        var bg = $(this).children('a').attr('data-bg');
+        $(this).children('a').stop().animate({ backgroundColor: bg,
+                                        color: '#fff'});
+      }, function(){
+        $(this).children('a').stop().animate({ backgroundColor: '#9AB92E',
+                                        color: '#000'})
+      })
+
+
+</script>
+</body>
+</html>

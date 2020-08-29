@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Event Flow</title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+<style>
+
+	div { width:60px; height:60px; background:#999;padding:20px 20px 20px 20px;}
+	a { display:block; width:60px; height:60px; background:#0F0; border:#000 thin solid;}
+
+</style>
+</head>
+<body>
+
+	<div>
+	   <a href="#"> </a>
+	</div>
+
+
+	<!-- jQuery code Start-->
+	<script>
+
+		$("div").click(function(e) {
+
+			$(this).css("background","yellow");
+
+		});
+
+		$("a").click(function(e) {
+
+			 $(this).css("background","yellow");
+
+			 //이벤트 흐름을 정지하여 더이상 부모요소에 영향을 미치지 않도록
+
+			 e.stopPropagation();  //적용 전에는 클릭시 div와 a 둘다 같이 바뀜
+
+		});
+
+	</script>
+
+</body>
+</html>

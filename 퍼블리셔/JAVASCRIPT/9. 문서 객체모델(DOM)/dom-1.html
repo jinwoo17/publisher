@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DOM 객체1</title>
+  </head>
+  <body>
+    <div>
+      <h1>선호하는 음식</h1>
+      <div id="food_1">
+        <h2 id="title">한식</h2>
+        <ol>
+          <li><a href="#">김치</a></li>
+          <li>불고기</li>
+          <li>비빔밥</li>
+        </ol>
+      </div>
+      <div id="food_2">
+        <h2>양식</h2>
+        <ol id="list">
+          <li>돈까스</li>
+          <li id="pizza">피자</li>
+          <li>파스타</li>
+        </ol>
+      </div>
+    </div>
+
+    <script>
+    //document.getElementsByTagName('h1')[0].style.color="green";
+      var h1 = document.getElementsByTagName('h1')[0];
+      h1.style.color="green";
+
+      var h2 = document.querySelector("#title");
+      h2.style.color="red";
+
+    //var li = document.getElementById('food_1').getElementsByTagName('li');
+    //li.style.background="red";
+      var ol = document.getElementsByTagName('ol')[0];
+      var li = ol.getElementsByTagName('li')[1];
+      li.style.background="red";
+
+    //parentNode, parentElement->부모선택
+      var f2 = document.getElementById("list").parentElement;
+      f2.style.background="yellow";
+
+      var pasta = document.getElementById('food_2');
+      //pasta.children[1].style.color="#c65ff0";
+      pasta.childNodes[3].style.color="#c65ff0";//노드로 접근할때는 자식텍스트3
+
+    </script>
+  </body>
+</html>

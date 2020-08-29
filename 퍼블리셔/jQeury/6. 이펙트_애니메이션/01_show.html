@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> hide() / show()  </title>
+<style type="text/css">
+	div { width: 200px;
+		   height: 200px;
+		   background: red;
+		   display: none;
+		  }
+</style>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<button>표시</button>
+	<div></div>
+
+
+
+	<!---------- jQuery code Start ---------->
+	<script type="text/javascript">
+
+		// show() : display:none 상태의 노드를 보이도록 하는 명령어
+
+		// 버튼을 클릭시 div가 보이도록
+		$('button').on('click',function(){
+			//$('div').css({ display: 'block'})
+			// 서서히 나타나도록 속도를 입히자
+			// $("selector").show(속도);
+				$('div').show(1000, function() {
+				// show()가 발생한 후 일어날 함수를 지정하자
+				// $("selector").show(속도, 콜백함수)
+				$(this).css({ background: "#0082e2"})
+			});
+		})
+
+
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

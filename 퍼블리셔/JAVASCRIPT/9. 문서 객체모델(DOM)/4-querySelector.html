@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>querySelector</title>
+  </head>
+  <body>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>javaScript</li>
+    </ul>
+    <ol>
+      <li>HTML5</li>
+      <li class="active">CSS</li>
+      <li>javaScript</li>
+    </ol>
+    <script>
+      var lis = document.querySelector("li");//li 중 첫번째
+      console.log(lis);
+      var lis2 = document.querySelectorAll("li")[2];//모든 li 중 2번째 인덱스
+      console.log(lis2);
+      var lis3 = document.querySelector("ol").querySelector("li");
+      console.log(lis3);
+    </script>
+  </body>
+</html>

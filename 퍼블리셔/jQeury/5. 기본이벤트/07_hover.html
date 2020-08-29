@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>hover()</title>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<img src="building.jpg" alt="빌딩" />
+
+	<!---------- jQuery code Start ---------->
+	<script type="text/javascript">
+
+		// mouseenter와 mouseleave 이벤트들을 한번에 bind ,토글과 같은 요소
+
+		// $("선택자").hover( function( ) {    }, function {     } );
+
+		// 이미지 롤오버시 바다와 빌딩이미지를 로드하시오
+		$('img').hover(function() {   //function() 2개만 들어갈 수 있음
+			$(this).attr("src", "sea.jpg").attr("alt", "바다")
+		}, function() {
+			$(this).attr({src: 'Building.jpg', alt: '건물'})
+		})
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

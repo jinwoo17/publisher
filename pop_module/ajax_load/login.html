@@ -1,0 +1,23 @@
+<div id="login_pop" class="pop-wrapper" tabindex="0" data-width="600">
+    <div class="pop-header">
+        <h2>로그인</h2>
+    </div>
+    <div class="pop-container">
+        <div class="pop-content">
+            <form name="LoginFrm" id="LoginFrm" method="POST">
+            <fieldset class="login-wrap">
+                <legend>Login</legend>
+                <div class="login-container">
+                    <ul class="login-input">
+                        <li><input type="text" name="sId" id="sId" maxlength="14" class="input-login"></li>
+                        <li><input type="password" name="sPwd" id="sPwd" maxlength="14" class="input-login"></li>
+                    </ul>
+                    <button type="submit" class="btn_login"><span>Login</span></button>
+                </div>
+            </fieldset>
+            </form>
+        </div>
+    </div>
+    <button type="button" onclick="javascript:popModal.close(this);" class="btn-pop-close"><span>팝업창 닫기</span></button>
+    <div class="pop-footer" tabindex="0"></div>
+</div>

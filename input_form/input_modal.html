@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../common/css/libs/swiper.min.css">
+<link rel="stylesheet" href="../common/css/base.css">
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/ui.css">
+<link rel="stylesheet" href="../common/css/content.css">
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="../common/js/libs/swiper.min.js"></script>
+<script src="../common/js/libs/jquery-ui.min.js"></script>
+<script src="../common/js/ui.js"></script>
+<title>input+modal디자인</title>
+</head>
+<body>
+<!-- wrapper  -->
+<div class="wrapper">
+    <div class="header">
+        <button type="button" class="gnb-button">
+            <span></span>
+        </button>
+    </div>
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <section class="content">
+            <div class="inner">
+
+                    <ul class="inp-wrap">
+                        <li class="inp-row">
+                            <div class="radio">
+                                <input type="radio" id="r1" name="radio1">
+                                <label for="r1"><i></i>라디오1</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" id="r2" name="radio1">
+                                <label for="r2">라디오2</label>
+                            </div>
+                        </li>
+                        <li class="inp-row">
+                            <div class="filebox">
+                                <p class="txt">파일첨부</p>
+                                <input class="upload-name">
+                                <label for="ex_file">파일찾기</label>
+                                <input type="file" id="ex_file" class="upload-hidden">
+                                <ul class="fileAddList">
+                                    <!-- <li> <span>text</span> <button type="button" name="" id="" class="fileDel">삭제</button></li> -->
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="inp-row select-box select-script">
+                            <label for="select" class="inp01">선택해주세요</label>
+                            <select id="select" class="inp01">
+                                <option selected="selected">선택해주세요</option>
+                                <option>선택1</option>
+                                <option>선택2</option>
+                                <option>선택3</option>
+                                <option>선택4</option>
+                            </select>
+                        </li>
+                        <div class="agree-box">
+                            <div class="cbox">
+                                <button><span>이메일보내기</span></button>
+                            </div>
+                            <!-- <label for="a01" class="agree01">
+                                <input type="checkbox"><span><i></i><a href="" id="a01" class="link">개인정보처리방침</a>에 동의합니다</span>
+                            </label>
+                            <label for="a02" class="agree02">
+                                <input type="checkbox"><span><i></i><a href="" id="a02" class="link">개인정보처리방침</a>에 동의합니다</span>
+                            </label> -->
+                        </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- //content -->
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>메일보내기</h2>
+                <div class="form">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" class="email" placeholder="Your e-amil">
+                    <label for=""></label>
+                    <textarea name="" class="txtArea" placeholder="Test Message"></textarea>
+                    <div class="btn-wrap">
+                        <button type="button" class="cancle">취소</button>
+                        <input type="submit" class="submit" value="보내기">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //container -->
+</div>
+<!-- //wrapper -->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>2단 네비게이션</title>
+    <style>
+      /*초기화*/
+      body, ul { margin: 0; padding: 0;}
+      li { list-style: none; }
+      a { text-decoration: none; }
+      /*리스트*/
+      #gnb { width: 606px; margin: 20px 0 0 20px; }
+      #gnb::after { content: ""; display: block; clear: both;}
+      #gnb > li { position: relative;
+                  width: 200px; height: 50px;
+                  float: left;
+                  border: 1px solid #000;}
+      #gnb > li > a { display: block; height: 50px;
+                      text-align: center; line-height: 50px; color: #000;}
+      .snb { position: absolute; top: 50px; left: -1px;
+             width: 250px; padding: 10px;
+             border: 1px solid #f00;
+             background: #fff; }
+      .snb li { line-height: 30px; }
+      .snb li a { color: #f00; }
+    </style>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.snb').hide();
+        $('#gnb > li').hover(
+          function(){
+            $(this).children('.snb').fadeIn(200);
+        },
+          function(){
+            $(this).children('.snb').stop().fadeOut(200);
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <ul id="gnb">
+      <li><a href="#">메뉴1</a>
+        <ul class="snb">
+          <li><a href="#">menu1-1</a></li>
+          <li><a href="#">menu1-2</a></li>
+          <li><a href="#">menu1-3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">메뉴2</a>
+        <ul class="snb">
+          <li><a href="#">menu2-1</a></li>
+          <li><a href="#">menu2-2</a></li>
+          <li><a href="#">menu2-3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">메뉴3</a>
+        <ul class="snb">
+          <li><a href="#">menu3-1</a></li>
+          <li><a href="#">menu3-2</a></li>
+          <li><a href="#">menu3-3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

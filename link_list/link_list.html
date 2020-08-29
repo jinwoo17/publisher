@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>링크리스트1</title>
+<link rel="stylesheet" href="../common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+<style>
+.footer {display:block; position:relative; margin:200px 0 0 0; padding:16px 0 27px 0; background-color:#444;}
+.footer .siteMenu {display:flex; position:relative; margin:0; padding:0 0 14px 0; flex-direction:row; border-bottom:solid #656565 1px;}
+.siteMenu .siteGroup {display:flex; position:relative; width:68%; margin:0; padding:0}
+.siteGroup .logo {display:block; position:relative; width:220px; height:25px; margin:0 58px 0 0; padding:0; background:url(/images/common/footerLogo.png) no-repeat left top; background-size:cover; font-size:1px; color:transparent; text-indent:-9999px;}
+.siteGroup .insite {display:flex; position:relative; margin:2px 0; padding:0;}
+.siteGroup .insite li {display:inline-block; position:relative; margin:0; padding:0;}
+.siteGroup .insite li + li {margin-left:24px;}
+.siteGroup .insite li a {display:inline-block; position:relative; margin:0; padding:0; font-size:13px; color:#7b7b7b;}
+.siteMenu .familyGroup {display:flex; position:relative; width:32%; margin:0; padding:0; flex-direction:row; justify-content:flex-end;}
+.familyGroup .linkList {width:155px;}
+.familyGroup .linkList + .linkList {margin-left:30px;}
+
+.footer .address {display:block; position:relative; margin:0; padding:30px 0 0 0;}
+.address .jnLink {display:flex; position:relative; margin:0 0 30px 0; padding:0; flex-direction:row; flex-wrap:wrap;}
+.address .jnLink li {display:inline-block; position:relative; margin:0; padding:0;}
+.address .jnLink li + li {margin-left:45px;}
+.address .copyright {display:block; position:relative; margin:0; padding:0; font-size:13px; color:#7b7b7b;}
+.address .copyright p + p {margin-top:6px;}
+.footer .btnTop {display:block; position:absolute; top:-76px; right:0; z-index:99; width:60px; height:60px; background:#9a9a9a;}
+.footer .btnTop span {display:block; position:relative; text-indent:-9999px;}
+.footer .btnTop span::before {display:inline-block; position:absolute; top:calc(50% - 5px); left:calc(50% - 15px); width:30px; height:30px; border-left:4px solid #fff; border-bottom:4px solid #fff; transform:rotate(135deg); content:"";}
+
+/*** 링크리스트 ***/
+.linkList {display:inline-block; position:relative; margin:0; padding:0;}
+.linkList .toggleBtn {display:block; position:relative; width:100%; height:30px; margin:0; padding:0 24px 0 5px; vertical-align:middle; text-align:left; color:#9e9e9e; border:none; background-color:#656565;}
+.linkList .toggleBtn::after {content:''; display:block; position:absolute; right:10px; top:calc(50% - 10px); width:10px; height:10px; border:6px solid transparent; border-left:6px solid #9e9e9e; transform:rotate(90deg);}
+.linkList .toggleBtn.arrow::after {content:''; display:block; position:absolute; right:12px; top:calc(50% - 2px); width:8px; height:1px; background-color:#000; transform:rotate(45deg); transition:all 0.2s;}
+.linkList .toggleBtn.arrow::before {content:''; display:block; position:absolute; right:10px; top:calc(50% - 6px); width:1px; height:9px; background-color:#000; transform:rotate(45deg); transition:all 0.2s;}
+.linkList .list {display:none; position:absolute; left:0; top:30px; width:100%; max-height:158px; overflow:hidden; margin:0; padding:0; border:solid #333 1px; background-color:#FFF;}
+.linkList .list li {display:block; position:relative; width:100%; margin:0; padding:0; white-space:nowrap; word-break:break-all; text-overflow:ellipsis;}
+.linkList .list li a {display:block; position:relative; height:30px; line-height:30px; margin:0; padding:0 10px; font-size:13px; color:#333;}
+.linkList .list li + li {border-top:solid #ccc 1px;}
+.linkList.opened .toggleBtn::after {transform:rotate(-90deg);}
+.linkList.opened .toggleBtn.arrow::after,
+.linkList.opened .toggleBtn.arrow::before {transform:rotate(-45deg); transition:all 0.2s;}
+/* 링크리스트가 하단에 있을 경우 slideUp  */
+.linkList.slideUp.opened .toggleBtn {background-color:#333;}
+.linkList.slideUp .toggleBtn::after {transform:rotate(-90deg);}
+.linkList.slideUp.opened .toggleBtn::after {transform:rotate(90deg); top:calc(50% - 3px)}
+.linkList.slideUp .toggleBtn.arrow::after,
+.linkList.slideUp .toggleBtn.arrow::before {transform:rotate(-45deg); transition:all 0.2s;}
+.linkList.slideUp.opened .toggleBtn.arrow::after,
+.linkList.slideUp.opened .toggleBtn.arrow::before {transform:rotate(45deg); transition:all 0.2s;}
+.linkList.slideUp .list {z-index:100; top:initial; bottom:30px;}
+
+</style>
+</head>
+<body>
+    <div class="footer">
+
+        <div class="innerFixWrap">
+            <div class="siteMenu">
+                <div class="siteGroup">
+                    <p class="logo">사단법인 전남남북교류평화센터</p>
+                    <ul class="insite">
+                        <li><a href="/jncenter/introduce.asp" role="link">센터소개</a></li>
+                        <li><a href="/jncenter/location.asp" role="link">찾아오시는 길</a></li>
+                        <li><a href="/sitePolicy/terms.asp" role="link">이용약관</a></li>
+                        <li><a href="/sitePolicy/privacyPolicy.asp" role="link">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="familyGroup">
+                    <div class="linkList slideUp">
+                        <button type="button" name="" id="" aria-expanded="false" class="toggleBtn">전남 시&middot;군청 바로가기</button>
+                        <ul class="list">
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">강진군</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">고흥군</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">곡성군</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">광양시</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">구례군</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">나주시</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">담양군</a></li>
+                            <li><a href="#noner" title="새창열림" target="_blank" role="link">목포시</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">무안군</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">보성군</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="linkList slideUp">
+                        <button type="button" name="" id="" aria-expanded="false" class="toggleBtn">전남 시의회 바로가기</button>
+                        <ul class="list">
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">목포시의회</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">여수시의회</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">순천시의회</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">나주시의회</a></li>
+                            <li><a href="#none" title="새창열림" target="_blank" role="link">광양시의회</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="address">
+                <div class="jnLink">
+                    <ul>
+                        <li><a href="#none" title="새창열림" target="_blank" role="link"><img src="/images/common/jnLink01.png" alt="전라남도청"></a></li>
+                        <li><a href="#none" title="새창열림" target="_blank" role="link"><img src="/images/common/jnLink02.png" alt="전라남도도의회"></a></li>
+                        <li><a href="#none" title="새창열림" target="_blank" role="link"><img src="/images/common/jnLink03.png" alt="전라남도교육청"></a></li>
+                        <li><a href="#none" title="새창열림" target="_blank" role="link"><img src="/images/common/jnLink04.png" alt="통일부"></a></li>
+                        <li><a href="#none" title="새창열림" target="_blank" role="link"><img src="/images/common/jnLink05.png" alt="남북교류협력시스템"></a></li>
+                        <li><a href="#none" title="새창열림" target="_blank" role="link"><img src="/images/common/jnLink06.png" alt="통일부 통일교육원"></a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <p>광주광역시 서구 화정로 312 5층<span> &#47; </span>Tel : (062)361-8061 Fax : (062)361-8062 <span></span>E-mail : unjin@naver.com</p>
+                    <p>Copyrightⓒ 1995-2020 전남남북교류평화센터 All Rights reserved.</p>
+                </div>
+            </div>
+            <!-- top버튼 -->
+            <button type="button" class="btnTop"><span>TOP</span></button>
+        </div>
+    </div>
+    <!-- //footer -->
+<script>
+//링크리스트
+$(document).on('click', '.linkList>.toggleBtn', function(){
+    var $linkList = $(this).parent('.linkList');
+    var $linkBox = $(this).next('.list');
+    if($(this).attr('aria-expanded') == 'false'){
+        $(".linkList .list").slideUp('fast');
+        $(".linkList").removeClass("opened");
+        $(".linkList .toggleBtn").attr('aria-expanded', 'false');
+        $linkBox.stop().slideDown('fast');
+        $(this).attr('aria-expanded', 'true');
+        $linkList.addClass('opened');
+    }else{
+        $linkBox.stop().slideUp('fast');
+        $(this).attr('aria-expanded', 'false');
+        $linkList.removeClass('opened');
+    }
+});
+$(document).on('click', '.linkList .list a', function(){
+    if($(".linkList .list").hasClass("mCustomScrollbar") == true){
+        //mCustomScroll이 적용 된케이스
+        var $linkList = $(this).parent().parent().parent().parent().parent('.linkList');
+        var $linkBox = $(this).parent().parent().parent().parent('.list');
+        var $toggleBtn = $(this).parent().parent().parent().parent().siblings('.toggleBtn');
+        $linkBox.stop().slideUp('fast');
+        $linkList.removeClass('opened');
+        $toggleBtn.attr('aria-expanded', 'false');
+    }else{
+        var $linkList = $(this).parent().parent().parent('.linkList');
+        var $linkBox = $(this).parent().parent('.list');
+        var $toggleBtn = $(this).parent().parent().siblings('.toggleBtn');
+        $linkBox.stop().slideUp('fast');
+        $linkList.removeClass('opened');
+        $toggleBtn.attr('aria-expanded', 'false');
+    }
+
+    if($(this).prop('target') == '_blank'){
+
+    }else{
+        $toggleBtn.text($(this).text());
+    }
+
+});
+// 링크리스트 창 닫기
+$("body").click(function(){
+    if($(".linkList").hasClass("opened") == true){
+        $(".linkList .list").stop().slideUp('fast');
+        $(".linkList").removeClass("opened");
+    }
+});
+
+
+// mCustomScrollbar 적용
+(function($){
+    $(window).on("load",function(){
+        $(".linkList .list").mCustomScrollbar({
+            theme:"minimal-dark"
+        });
+        $(".linkList .list").css('overflow', 'hidden');
+    });
+})(jQuery);
+</script>
+</body>
+</html>

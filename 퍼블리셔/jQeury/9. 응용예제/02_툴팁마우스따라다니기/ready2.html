@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>마우스따라다니기2</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <style>
+      #area div { width: 300px; height: 200px;
+                  float: left; margin-right: 20px;}
+      #area1 { background: #b6ff00;}
+      #area2 { background: #55b8fa;}
+      #area3 { background: #ffa86a;}
+      #tip { position: absolute; background: #000; color: #fff;}
+    </style>
+    <script>
+      $(document).ready(function(){
+        $('#area div').hover(function(){
+          $('#tip').text($(this).data('title'));
+          $('#tip').show();
+        }, function(){
+          $('#tip').hide();
+        })
+        $('#area div').on('mousemove',function(e){
+          $('#tip').css({left: e.pageX+5, top: e.pageY+5})
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div id="area">
+      <div id="area1" data-title="말풍선1"></div>
+      <div id="area2" data-title="말풍선2"></div>
+      <div id="area3" data-title="말풍선3"></div>
+    </div>
+    <div id="tip"></div>
+  </body>
+</html>

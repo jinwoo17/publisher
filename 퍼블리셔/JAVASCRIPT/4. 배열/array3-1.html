@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배열객체</title>
+    <script>
+      var arr_1 = ["사당", "교대", "방배", "강남"];
+      var arr_2 = ["신사", "압구정", "옥수"];
+
+      var result = arr_1.join("-");
+      result = arr_1.concat(arr_2);
+      result = arr_1.slice(1, 3);
+
+      var test = prompt("result 값을 입력하시오");
+      if ( test == result) {
+        alert('정답입니다')
+      }
+      else {
+        alert('틀렸습니다')
+      }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

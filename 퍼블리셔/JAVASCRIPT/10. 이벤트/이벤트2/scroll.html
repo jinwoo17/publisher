@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>scroll</title>
+        <style>
+            body { width: 3000px; height: 2000px; }
+            h1 { position: fixed; left: 0; top: 0; font-size: 50px; }
+        </style>
+    </head>
+    <body>
+        <h1>1</h1>
+        <script>
+            var i = 1;
+            var heading = document.getElementsByTagName('h1');
+
+            window.onscroll = function () {
+                heading[0].innerText = i++;
+            }
+
+            window.scrollBy(100, 200); // 현재스크롤 위치
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>click()</title>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<a href="sea.jpg">화면을 변경</a>
+	<p><img src="flower.jpg" alt="꽃" /></p>
+
+
+	<!---------- jQuery code Start ---------->
+	<script type="text/javascript">
+
+		// a 태그를 클릭시 꽃 이미지를 바다 이미지로 변경하시오
+		$('a').on('click', function(e) {
+			$('p img').attr({src:'sea.jpg', alt:'바다'});
+			// return false;
+			e.preventDefault(); //객체의 기본 기능을 막겠다.( href의 기능x )
+		})
+
+
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

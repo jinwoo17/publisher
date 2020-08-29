@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>가위 바위 보 따라해보기 </title>
+        <script>
+
+          var com = Math.ceil(Math.random()*3);
+
+          var user = prompt("가위,바위,보 중에 하나를 내세요","보");
+
+          var userNum;
+
+          switch (user) {
+            case "가위":
+              userNum=1;
+              break;
+            case "바위":
+              userNum=2;
+              break;
+            case "보":
+              userNum=3;
+              break;
+            default:
+              alert("잘못 입력하셨습니다");
+          }
+
+          document.write("<img src='images/math_img_"+com+".jpg' alt='가위,바위,보' />");
+
+
+          if(userNum == com) {
+            alert("정답입니다");
+          }
+          else {
+            alert("틀렸습니다");
+          }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>선택된 라디오버튼 알아내기</title>
+  </head>
+  <body>
+    <h3>버튼을 클릭하면 선택된 라디오 버튼의 value를 출력합니다.</h3>
+    <hr>
+    <input type="radio" name="city" value="seoul">서울 <br>
+    <input type="radio" name="city" value="busan">부산 <br>
+    <input type="radio" name="city" value="chunchen">춘천 <br>
+    <!--name을 같이 하는이유= 한 그룹임을 나타내기위해(하나 체크하면 하나 체크안됨) !-->
+    <input type="button" value="체크하세요">
+    <script>
+    //선택된 도시이름 city, 출력될 도시이름 cityName
+    function findChecked() {
+      var cityName = null;
+      var city = document.getElementsByName('city');
+      //체크된 요소의 값을 cityName의 값으로
+      for(var i=0; i<city.length; i++){
+        if (city[i].checked==true) {
+          cityName=city[i].value;  
+          console.log(i); //체크된 인덱스 확인
+        }
+      }
+      console.log(cityName); //cityName 확인
+      //체크된 요소가 있을 경우에 cityName 값을 alert로 출력
+      if (cityName!=null) {
+        alert(cityName+"입니다");
+      }
+      //체크된 요소가 없을 경우에는 체크된 값이 없다는 메시지를 alert로
+      else {
+        alert("체크된 값이 없습니다.");
+      }
+    }
+    var btn = document.querySelector('input[type="button"]');
+    console.log(btn);
+    btn.onclick = findChecked;
+    </script>
+
+  </body>
+</html>

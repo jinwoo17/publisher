@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>말풍선 마우스 따라다니기</title>
+<meta charset="utf-8">
+<style>
+
+	body {font-family:dotum;}
+
+	/* CSS 적용 */
+	#area { width: 800px; height: 500px; margin: 50px auto 0; background: #c5e89b; }
+	#tip { position: absolute;   /* 마우스를 따라다니기 위해서 position 속성 적용 */
+				 padding: 10px 20px;
+				 border: 1px solid #000;
+			 	 background: #fff; }
+
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<div id="area" data-title="말풍선 마우스 따라다니기"></div>
+	<div id="tip"></div>
+	<script>
+		// Tip1. #area의 data-title의 속성이 툴팁으로 나타나도록 한다
+		//#area에 진입시 #tip에 data-title 값이 텍스트로 적용되도록 한다
+			$('#tip').hide();
+			$('#area').hover(function(){
+				var txt = $(this).data('title');
+				$('#tip').text(txt).show();
+			}, function(){
+				$('#tip').hide();
+			})
+			$('#area').on('mousemove',function(e){
+				$('#tip').css({ left: e.pageX+5, top: e.pageY+5})  //+5하는 이유: 깜빡거림 방지
+			})
+
+
+		// #area 영역안에서 마우스가 움직일 때 같이 움직일 #tip의 위치값 산출
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

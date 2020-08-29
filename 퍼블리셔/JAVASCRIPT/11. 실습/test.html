@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>폼이벤트 종류</title>
+  </head>
+  <body>
+    <input type="text" id="idName" name="myName"><br>
+    <select id="list">
+      <option value="w3school">w3school</option>
+      <option value="유효성검사">유효성검사</option>
+      <option value="하코사">하코사</option>
+    </select>
+    <br>
+    <input type="text" id="listName">
+
+    <script>
+      var naming = document.getElementById('idName');
+      //var naming = document.getElementsByName('myName');
+      console.log(naming);
+      naming.onfocus = function() {
+        this.style.backgroundColor="#f6dd9f";
+      }
+      naming.onblur = function() {
+        this.style.backgroundColor="#9ff6cc";
+      }
+
+      //select에서 선택한 값을 text에 출력
+      var list = document.getElementById('list');
+      var text = document.getElementById('listName');
+      list.onchange = function() { //input내용변경
+        var index = list.selectedIndex; //선택된 옵션 인덱스
+        console.log(index);
+        text.value = list.options[index].value;  //text에 option 선택값 적용
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>switch문</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      var heading = document.getElementsByTagName("h1")[0];
+      var fruit = prompt("좋아하는 과일을 입력하세요");
+      switch (fruit) {
+        case "사과":
+            heading.innerText = fruit + "가 제일 맛있어요";
+            break;
+        case "망고":
+            heading.innerText = fruit + "가 제일 맛있어요";
+            break;
+        case "딸기":
+            heading.innerText = fruit + "가 제일 맛있어요";
+            break;
+        case "포도":
+            heading.innerText = fruit + "가 제일 맛있어요";
+            break;
+        case "수박":
+            heading.innerText = fruit + "이 제일 맛있어요";
+            break;
+        default :
+            heading.innerText = "입력하신 과일이 없습니다";
+      }
+    </script>
+  </body>
+</html>

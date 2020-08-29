@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> easing 처리 </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+<!-- script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script -->
+<script src="jquery-ui-1.8.23.custom.min.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+
+<div>
+	<img src="ease.jpg" alt="" width="450"/>
+</div>
+
+
+<button data-ease ="easeOutQuart">easeOutQuart</button>
+<button data-ease ="easeInOutElastic">easeInOutElastic</button>
+<button data-ease ="easeOutBack">easeOutBack</button>
+<button data-ease ="easeOutBounce">easeOutBounce</button>
+<!---------- jQuery code Start ---------->
+<script>
+
+	// 각 버튼을 클릭시 움직이는 속도를 data-ease속성의 값으로 움직이게 하시오
+	$('button').on('click', function(){
+		var n = $(this).attr('data-ease');
+		$('div').slideUp(1000, n, function(){
+			$(this).slideToggle(1000, easing)
+		})
+	})
+
+
+</script>
+
+</body>
+</html>

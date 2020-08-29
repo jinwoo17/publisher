@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>숫자객체 </title>
+        <script>
+        document.write("표현 가능한 가장 큰 수: "+Number.MAX_VALUE, "<br>");//뒤에 0이 308개 있다
+        document.write("표현 가능한 가장 작은 수: "+Number.MIN_VALUE, "<br>");
+        document.write("숫자가 아닌경우의 표기: "+Number.NaN, "<br>");
+        document.write("무한대 수 표기: "+Number.POSITIVE_INFINITY, "<br>");
+        document.write("음의 무한대 수 표기: "+Number.NEGATIVE_INFINITY, "<br>");
+
+        var num1=700000;
+        var num2=3.456789;
+        var num3="30.5px";
+        var num4=40;
+
+        //지수표기법으로 소수점 n자리만큼 문자형 데이터로 반환
+        document.write(num1.toExponential(1), "<br>");
+
+        //소수점 n자리만큼 반올림하여 문자형 데이터로 반환
+        document.write(num2.toFixed(2), "<br>");
+
+        //유효숫자 n의 개수만큼 반올림하여 문자형 데이터로 반환
+        document.write(num2.toPrecision(2), "<br>");
+
+        //숫자형 데이터를 문자형 데이터로 반환
+        num2=num2.toString();
+        document.write(typeof(num2), "<br>");
+
+        //데이터를 정수로 변환하여 반환
+        document.write(parseInt(num3)+num4, "<br>");
+
+        //데이터를 실수로 변환하여 반환
+        document.write(parseFloat(num3)+num4, "<br>");
+        
+        //객체의 원래 값을 반환
+        document.write(num4.valueOf(), "<br>");
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

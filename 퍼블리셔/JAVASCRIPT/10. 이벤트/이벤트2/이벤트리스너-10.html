@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>마우스 관련 리스너</title>
+		<style>
+				div { height: 200px; border: 2px solid #000;
+							background: #fff; font-size: 30px; }
+		</style>
+
+	</head>
+	<body >
+		<h3>마우스 관련 이벤트 리스너</h3>
+		<hr>
+		<div>색상바꾸기</div>
+		<script>
+			var div = document.getElementsByTagName("div")[0];
+			var color1 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f' ]
+			var color2 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f' ]
+			var color3 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f' ]
+			var colorLength = color1.length;
+
+			// 0 - 15까지 랜덤값을 출력
+			function wheel(e) { // e는 이벤트 객체
+				var n = color1[Math.floor(Math.random() * colorLength )]
+				var i = color2[Math.floor(Math.random() * colorLength )]
+				var j = color3[Math.floor(Math.random() * colorLength )]
+				console.log(n,i,j)
+				if ( e.wheelDelta < 0 ) { // 휠을 아래로 굴릴 때
+					div.style.backgroundColor = "#" + n + i + j;
+				}
+				else { // 휠을 위로 굴릴 때
+					div.style.color = "#" + j + i + n;
+				}
+			}
+			div.onwheel = wheel;
+		</script>
+	</body>
+</html>

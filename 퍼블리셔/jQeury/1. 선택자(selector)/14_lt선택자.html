@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>  lt 선택자 </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+
+		<ul class="nav1">
+			<li> 0 </li>
+			<li> 1 </li>
+			<li> 2 </li>
+			<li> 3 </li>
+		</ul>
+
+		<ul class="nav2">
+			<li> 0 </li>
+			<li> 1 </li>
+			<li> 2 </li>
+			<li> 3 </li>
+			<li> 4 </li>
+		</ul>
+
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// 선택된 요소의 인덱스보다 작은 인덱스 요소들을 선택
+		$('ul li:lt(3)').css('background', '#ff0').css('border', '1px solid #000');;  //인덱스 3번 보다 작은 요소들 선택
+
+	</script>
+
+
+
+
+
+</body>
+</html>

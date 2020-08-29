@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>객체타입</title>
+    <script>
+      var tv = new Object(); //object선언
+      tv.color = "white";
+      tv.price = "300000"; //var tv = { color: "white", price: "300000" }
+
+      tv.info = function() {
+        document.write("티비의 색상은 " + tv.color + "<br>");
+        document.write("티비의 가격은 " + tv.price + "<br>");
+      }
+      tv.info();
+
+      var car = { color: "black",
+                  price: 1000000,
+                  info: function() {
+                    document.write(" car 색상: " + this.color +"<br>"); //this도 가능
+                    document.write(" car 가격: " + car.price +"<br>");
+                  }
+                }
+      car.info();
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

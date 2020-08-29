@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>3단 네비게이션</title>
+    <style>
+        /* 초기화 */
+        body, ul { margin: 0; padding: 0; }
+        li { list-style: none; }
+        a { text-decoration: none; }
+        /* 리스트 */
+        #gnb { width: 537px; margin: 50px 0 0 50px; }
+        /* 리스트 공통 */
+        #gnb li { width: 179px; }
+        #gnb li a { display: block; height: 48px;
+                    text-indent: 23px; line-height: 48px;
+                    text-transform: capitalize;
+                    background: url(images/btn.png) no-repeat;
+                    color: #fff; }
+        /*리스트 개별*/
+        #gnb > li { float: left; }
+        /*서브메뉴 snb*/
+        .snb { }
+        .snb > li { position: relative; }
+        .snb > li > .snb { position: absolute; top: 0; left: 179px; }
+    </style>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.snb').hide();
+        $('#gnb li').hover(function(){
+          $(this).children('.snb').slideDown(100);
+        },function(){
+          $(this).children('.snb').slideUp(100);
+        })
+      })
+    </script>
+  </head>
+  <body>
+      <ul id="gnb">
+        <li><a href="#">menuA</a>
+          <ul class="snb">
+            <li><a href="#">서브메뉴A</a></li>
+            <li><a href="#">서브메뉴A</a></li>
+            <li><a href="#">서브메뉴A</a>
+              <ul class="snb">
+                <li><a href="#">서브메뉴A-2</a></li>
+                <li><a href="#">서브메뉴A-2</a></li>
+                <li><a href="#">서브메뉴A-2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">menuB</a>
+          <ul class="snb">
+            <li><a href="#">서브메뉴B</a></li>
+            <li><a href="#">서브메뉴B</a>
+              <ul class="snb">
+                <li><a href="#">서브메뉴B-2</a></li>
+                <li><a href="#">서브메뉴B-2</a></li>
+                <li><a href="#">서브메뉴B-2</a>
+                  <ul class="snb">
+                    <li><a href="#">서브메뉴B-3</a></li>
+                    <li><a href="#">서브메뉴B-3</a></li>
+                    <li><a href="#">서브메뉴B-3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">서브메뉴B</a></li>
+          </ul>
+        </li>
+        <li><a href="#">menuC</a>
+          <ul class="snb">
+            <li><a href="#">서브메뉴C</a>
+              <ul class="snb">
+                <li><a href="#">서브메뉴C-2</a></li>
+                <li><a href="#">서브메뉴C-2</a></li>
+                <li><a href="#">서브메뉴C-2</a></li>
+              </ul>
+            </li>
+            <li><a href="#">서브메뉴C</a></li>
+            <li><a href="#">서브메뉴C</a></li>
+          </ul>
+        </li>
+      </ul>
+  </body>
+</html>

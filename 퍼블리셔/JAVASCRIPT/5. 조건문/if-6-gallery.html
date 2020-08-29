@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {margin: 0; padding: 0;}
+      #galleryZone {text-align: center;}
+      button { margin-top: 80px;}
+    </style>
+  </head>
+  <body>
+    <div id="galleryZone">
+      <figure>
+        <img src="images/pic_1.jpg" id="photo" alt="" width="200">
+      </figure>
+      <div>
+        <button id="prev">이전</button>
+        <button id="next">다음</button>
+      </div>
+    </div>
+
+    <script>
+      var num = 1;
+      function gallery() {
+        num++;
+        console.log(num);
+
+        var imgPath = document.getElementById("photo");
+        imgPath.setAttribute("src","images/pic_" + num + ".jpg");
+      }
+      var nextBtn = document.getElementById("next");
+      nextBtn.addEventListener("click", gallery);
+
+
+    </script>
+  </body>
+</html>

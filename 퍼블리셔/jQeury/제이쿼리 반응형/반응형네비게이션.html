@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>반응형 네비게이션</title>
+    <meta name="viewport" content="width=device-width">
+    <script src="jquery-3.4.1.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; }
+        li { list-style: none; }
+        h1 { padding: 20px 0; text-align: center; font-size: 20px; }
+
+        @media all and ( min-width: 700px ) {
+            #gnb > ul{ height: 50px; background: #97c5e6; }
+            #gnb > ul > li { position: relative; width: 25%; height: 50px;
+                                float: left; text-align: center; line-height: 50px; }
+            .snb { position: absolute; top: 50px; width: 100%; }
+            .snb li { text-align: center; line-height: 40px; }
+        }
+        @media all and ( max-width: 699px ) {
+            #gnb > ul { height: auto; background: #97c5e6; }
+            #gnb > ul > li { position: relative; height: 50px; line-height: 50px; }
+
+            .snb { position: absolute;  top: 0; left: 50px;  width: 100%; }
+            .snb li { float: left; }
+        }
+    </style>
+</head>
+<body>
+<h1>해상도에 따른 제이쿼리 효과</h1>
+    <nav id="gnb">
+        <ul>
+            <li>
+                <a href="#">메뉴1</a>
+                <ul class="snb">
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메뉴2</a>
+                <ul class="snb">
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메뉴3</a>
+                <ul class="snb">
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메뉴4</a>
+                <ul class="snb">
+                    <li><a href="#">메뉴1</a></li>
+                    <li><a href="#">메뉴2</a></li>
+                    <li><a href="#">메뉴3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <script>
+        $(".snb").hide();
+        function resizing() {
+            if (  $(window).width() >= 700 ) {
+                $("#gnb .nav2 > li").off();
+                $("#gnb > ul").removeClass().addClass("nav1");
+                $("#gnb > ul > li").on("mouseenter", function() {
+                    $(this).children(".snb").slideDown(200);
+                }).on("mouseleave", function() {
+                    $(this).children(".snb").stop().slideUp(200);
+                });
+            } else {
+                $("#gnb .nav1 > li").off();
+                $("#gnb > ul").removeClass().addClass("nav2");
+                $("#gnb > ul > li").on("mouseenter", function() {
+                    $(this).children(".snb").show();
+                }).on("mouseleave", function() {
+                    $(this).children(".snb").hide();
+                });
+            }
+        }
+        resizing();
+
+        $(window).resize(function() {
+            resizing();
+        });
+
+
+
+    </script>
+</body>
+</html>

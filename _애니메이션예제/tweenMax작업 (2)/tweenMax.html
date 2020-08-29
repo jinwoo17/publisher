@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TweenMax Test</title>
+	<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<script src="js/vendor/TweenMax.min.js"></script>
+	<style>
+	body {width:100%; margin:0; padding:0;}
+	.box {margin:400px 0 0 500px;}
+	.box .phone {transform: rotate(180deg); width:380px; height:380px; border-radius: 50%; overflow: hidden; position: relative; background-color:grey;}
+	.box .phone .bg-phone {display:block; margin:0 auto; padding-top:400px;}
+	.box .phone .bg-phoneView {position:absolute; top:100px; left:80px; opacity:0}
+	.banner {position: absolute; top:45px; width:100%; height:500px; z-index: 1;}
+	.banner.black {padding-top:40px; background-color: black;  text-align:center;}
+	.circle-move {position:fixed; top:20px; right:100px; color:#000; text-decoration: none; font-size:24px;}
+
+	/* SLIDE */
+	#nav{ position: absolute; top:50%; width:100%; margin-top:-50px; z-index:5000;  }
+	#prevtBtn,#nextBtn{position:absolute; top:50%; color: white; font-size: 80px;margin: 15px;cursor: pointer;}
+	#prevtBtn{left:0;}
+	#nextBtn{right:0;}
+	#Dots{position: absolute; z-index:5000; bottom:40px; left:50%; transform:translate(-50%,0%);}
+	.Dot{width:8px; height: 8px; border-radius: 50%;position: relative;float: left; background-color: #fff; opacity:1; margin:5px; margin-bottom:0px; cursor: pointer; border:2px solid rgba(255,255,255,0.7);}
+	.box2 {width: 100%;height: 100%;position: absolute;text-align: center;font-size: 40px;color: white;top:0px;left:0px;}
+	.slide span{display:block;position:absolute;transform:translate(-50%,-50%);left:50%; top:50%;}
+	.box2:nth-child(1) {background-color: #ff002f;}
+	.box2:nth-child(2) {background-color: #00718b;}
+	.box2:nth-child(3) {background-color: #4a5619;}
+	.box2:nth-child(4) {background-color: #ff002f;}
+	.box2:nth-child(5) {background-color: #444;}
+	#DiacoDesignLink,#pens{color: #fff;}
+	</style>
+	<script>
+	$(document).ready(function(){
+		var timeLine = new TimelineMax();
+    		timeLine.to($(".box"), 1, { left : "90%", rotation:180, transformOrigin: "left top" })
+            		.to($(".bg-phone"), 1, { x:0, y:-300 })
+            		.to($(".bg-phoneView"), 1, { opacity:1 });
+
+
+		$(".circle-move").on("click",function(){
+		//TweenMax.to(".box", 2, { ease: Bounce.easeOut, x:300, rotation:370 });
+		//TweenMax.to(".phone img", 2, { left : "10%", rotation:90, transformOrigin: "350px 200px" });
+			TweenMax.to(document.getElementById("boxId"), 3, { //대상은 id 값으로 받아야함
+			    bezier:{
+			        type:"soft",  // 커브를 돌때 부드럽게 움직임 curviness와 따로 쓰면 될듯
+			        values:[
+			            {x:0, y:0},
+			            {x:300, y:250},
+			            {x:600, y:0}
+			        ], 
+			    }, ease:Power1.easeInOut, repeat: -1, yoyo: true
+			});  
+		});
+
+		//슬라이드
+		TweenLite.set('body',{perspective:700});
+		var slides=document.querySelectorAll('.slide'),tl=new TimelineLite({paused:true});
+		for(var i=0;i<slides.length;i++){
+		    var D=document.createElement('div'); D.className='Dot'; D.id='Dot'+i;
+		    D.addEventListener('click',function(){ tl.seek(this.id).pause() });
+		    document.getElementById('Dots').appendChild(D);
+		    if(i!=0){tl.addPause('Dot'+i)};
+		    if(i!=slides.length-1){
+		      tl.to(slides[i],0.5,{ease:Back.easeOut})
+	          .to(slides[i],0.7,{xPercent:-100},'L'+i) 
+	          .from(slides[i+1],0.7,{xPercent:100},'L'+i)
+	          .to('#Dot'+i,0.7,{backgroundColor:'rgba(255,255,255,0.2)'},'L'+i)
+	          .from(slides[i+1],0.5,{ease:Back.easeIn})
+		      // tl.to(slides[i],0.5,{scale:.8,ease:Back.easeOut})   줄어들었다가 펴지게 하는 슬라이드
+		      //   .to(slides[i],0.7,{xPercent:-100,rotationY:80},'L'+i) 
+		      //   .from(slides[i+1],0.7,{xPercent:100,rotationY:-80},'L'+i)
+		      //   .to('#Dot'+i,0.7,{backgroundColor:'rgba(255,255,255,0.2)'},'L'+i)
+		      //   .from(slides[i+1],0.5,{scale:.8,ease:Back.easeIn})
+		    };
+		};
+		function GO(e){
+		  var SD=isNaN(e)?e.wheelDelta||-e.detail:e;
+		  if(SD<0){tl.play()}else{tl.reverse()};
+		};
+		document.addEventListener("mousewheel",GO);
+		document.addEventListener("DOMMouseScroll",GO);
+		document.getElementById('nextBtn').addEventListener("click",function(){GO(-1)});
+		document.getElementById('prevtBtn').addEventListener("click",function(){GO(1)});
+	});	
+	</script>
+</head>
+<body>
+	<div class="box" id="boxId">
+		<div class="phone">
+			<img class="bg-phone" src="img/img_phone.png" alt="phone">
+			<img class="bg-phoneView" src="img/img_phoneView.png" alt="phone view">
+		</div>
+	</div>
+	<a href="#" class="circle-move">click!!</a>
+	<div class="banner black">
+		<div class="box2 slide"><span>slide1</span></div>
+		<div class="box2 slide"><span>slide2</span></div>
+		<div class="box2 slide"><span>slide3</span></div>
+		<div class="box2 slide"><span>slide4</span></div>
+		<div class="box2 slide"><span>slide5</span></div>
+		<div id="nav">
+		  <div id="prevtBtn"><</div>
+		  <div id="nextBtn">></div>
+		</div>
+		<div id="Dots"></div>
+	</div>
+
+
+
+</body>
+</html>
+
+
+
+
+<!--  참고
+ 
+1. to() 사용
+TweenMax.to([Selector], [Duration], {Properties:end values}) //무엇을?, 몇초동안?, 처리할일 순으로 작성
+															 //보통 background-color 같은 -는  backgroundColor 같이 표기
+															 //px 같은 단위를 사용안하고 숫자로 표기
+
+
+2. from() 사용 
+from은 애니메이션 시작 부분을 지정할때 쓰입니다. to 위치에 적용
+TweenMax.from(".box", 3, {scaleX:0.5, scaleY:0.5, backgroundColor:"#00ff00", delay:2}); //처음 시작 크기가 절반으로 시작
+																						//delay를 넣으면 그 시간 이후 동작
+
+
+3. fromTo() 사용
+fromTo는 애니메이션의 시작지점과 종료지점을 지정할 수 있습니다.
+TweenMax.fromTo(".box", 1.5, {x:0, y:0}, {x:200, y:200}); // x와  y가 0값에서 200위치로 이동됨
+
+
+4. 변수 사용하기
+Tween을 변수로 만들어 사용할 수 있습니다.
+var myTween = new TweenMax(".box", 1.5, {width:100, height:200});
+
+
+5. 변수를 사용하여 제어하기
+var myTween = new TweenMax.to('.box', 7, {width:100, height:100, paused:true}); // paused:true 옵션은 현재 애니메이션 중지
+$('.btn_start').on('click',function(){ myTween.resume(); }) // resume 은 시작
+$('.btn_pause').on('click',function(){ myTween.pause(); }) // pause 는 멈춤
+$('.btn_reverse').on('click',function(){ myTween.reverse(); }) // reverse 는 반전
+$('.btn_restart').on('click',function(){ myTween.restart(); }) // restart 는 처음부터 다시시작
+
+
+6. onComplete 기능 
+TweenMax.to('.box', 1.5, {width:100, delay:0.5, onComplete:myFunction});
+function myFunction() {
+    console.log("tween finished");
+}
+
+
+7. 애니메이션 에이징(움직임 스타일) 기능
+https://greensock.com/docs/Easing 에서 적용할 타입 찾기
+TweenMax.to(".box", 2, { ease: Bounce.easeOut, x:300 }); //처리할일 앞부분에 써주기
+
+
+8. 애니메이션 반복기능
+TweenMax.to(".box", 2, {width:100,height:100,repeat:1}); // 애니메이션 한번더 반복, 3번 반복 원하면 2라고 씀.
+TweenMax.to(".box", 2, {width:100,height:100,repeat:-1}); // 애니메이션 무한 반복
+TweenMax.to(".box", 2, {width:100,height:100,repeat:1,repeatDelay:1}) // 1초가 지난 후 다시 반복
+TweenMax.to(".box", 2, {width:100,height:100,repeat:-1,yoyo:true}) // 무한 반복시 yoyo
+
+
+9. bezier 기능
+선을 따라 움직이는 물체 만들때
+TweenMax.to(document.getElementById("boxId"), 3, { //대상은 id 값으로 받아야함
+    bezier:{
+        curviness:1.25, //역동적 커브 움직임
+        type:"soft",  // 커브를 돌때 부드럽게 움직임 curviness와 따로 쓰면 될듯
+        values:[
+            {x:100, y:250},
+            {x:200, y:0},
+            {x:300, y:100}
+        ], autoRotate: true //선을 따라 각도 변하게 하기
+    }, ease:Power1.easeInOut, repeat: -1, yoyo: true
+});  
+
+-->

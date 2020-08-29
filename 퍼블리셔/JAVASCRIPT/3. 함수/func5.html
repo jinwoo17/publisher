@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>함수의 우선순위</title>
+    <script>
+      //무명함수, 익명함수
+      var printMsg = function(msg) {
+        document.write("무명 함수 : " + msg + "<br>");
+      } //이름이 같을 경우, 기본 함수보다 우선순위가 높다
+
+      //기본 함수 선언, 선언적 함수
+      function printMsg(msg){
+        document.write("기본 함수 : " + msg + "<br>");
+      } //우선순위를 안따지고하면 원래 밑에 있는게 출력
+
+      printMsg("호출되었습니다!");
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

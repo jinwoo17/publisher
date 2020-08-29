@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>테이블에 선 적용하기</title>
+    <style>
+        table { border-collapse: collapse;
+                /* border-spacing: 100px; */
+                border-top: 5px solid #f00;
+                border-bottom: 3px solid #f00;
+              }
+        td { border-bottom: 1px solid #000; }
+        td.style { border-right: 1px solid #000; }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="style">1행1열</td>
+            <td>1행2열</td>
+        </tr>
+        <tr>
+            <td class="style">2행1열</td>
+            <td>2행2열</td>
+        </tr>
+    </table>
+</body>
+</html>

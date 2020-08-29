@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<style>
+    * {margin: 0; padding: 0;}
+    body {font-size: 20px; font-family: dotum; color: #666;}
+    li {list-style: none;}
+    .tab_menu {position: relative; margin: 100px; width: 700px;}
+    .tab_menu ul {overflow: hidden; height: 29px; border-bottom: 1px solid #f00;}
+    .tab_menu li {width: 90px; height: 29px; margin-right: 5px; float: left;}
+    .tab_menu li span {position: absolute; display: block; width: 90px; height: 28px; border: 1px solid #000; border-bottom: 0; background-color: #fff;}
+    .tab_menu li.on span {border: 1px solid #f00; border-bottom: 0; padding-bottom: 1px;}
+    .tab_menu div {position: absolute; top: 30px; left: 0px; width: 700px; height: 50px; display: none; border: 1px solid #f00; border-top: 0px; background-color: #fff;}
+    #tab1 {display: block;}
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <div class="tab_menu">
+        <ul>
+            <li class="on">
+                <span tabindex="0">탭1</span>
+                <div id="tab1">tab1</div>
+            </li>
+            <li>
+                <span tabindex="1">탭2</span>
+                <div>tab2</div>
+            </li>
+            <li>
+                <span tabindex="2">탭3</span>
+                <div>tab3</div>
+            </li>
+            <li>
+                <span>탭4</span>
+                <div>tab4</div>
+            </li>
+            <li>
+                <span>탭5</span>
+                <div>tab5</div>
+            </li>
+            <li>
+                <span>탭6</span>
+                <div>tab6</div>
+            </li>
+            <li>
+                <span>탭7</span>
+                <div>tab7</div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+    $('.tab_menu li span').attr('tabindex', '0')  //tapindex 구현
+      $('.tab_menu li span').on('click focus',function(){  //click focus는 tap시에 변경가능하게 해줌
+        $('.tab_menu li div').hide();
+        $(this).next().show();
+        $('.tab_menu li').removeClass('on');
+        $(this).parent().addClass('on');
+      })
+
+
+    </script>
+
+
+
+
+</body>
+</html>

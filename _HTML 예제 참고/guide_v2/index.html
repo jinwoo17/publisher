@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no"/><!-- ios 전화번호 링크 막기 -->
+<title>guide</title>
+<link rel="stylesheet" href="./common/css/basic.css">
+<link rel="stylesheet" href="./common/css/common.css">
+<link rel="stylesheet" href="./common/css/ui.css">
+<link rel="stylesheet" href="./common/css/style.css">
+<link rel="stylesheet" href="./common/css/libs/animate.css">
+<link rel="stylesheet" href="./common/css/libs/swiper.min.css">
+<link rel="stylesheet" href="./common/css/libs/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="./common/css/libs/iziModal.min.css">
+<link rel="stylesheet" href="./common/css/libs/picker.classic.css">
+<link rel="stylesheet" href="./common/css/libs/picker.classic.date.css">
+<link rel="stylesheet" href="./common/css/libs/picker.classic.time.css">
+<link href="./images/common/favicon.ico" rel="shortcut icon" type="image/x-icon"><!-- favicon -->
+<link href="./images/common/favicon.ico" rel="icon" type="image/x-icon">
+<script src="./common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="./common/js/libs/jquery-ui.min.js"></script>
+<script src="./common/js/libs/picker.js"></script>
+<script src="./common/js/libs/picker.date.js"></script>
+<script src="./common/js/libs/picker.time.js"></script>
+<script src="./common/js/libs/legacy.js"></script>
+<script src="./common/js/libs/swiper.min.js"></script>
+<script src="./common/js/libs/TweenMax.min.js"></script>
+<script src="./common/js/libs/iziModal.min.js"></script>
+<script src="./common/js/libs/jquery.mCustomScrollbar.min.js"></script>
+<script src="./common/js/ui.js"></script>
+<script type="text/javascript">
+    function windowopenPopup() {
+        window.open('windowopen.html', 'window팝업', 'width=500, height=500, left=100; top=100, menubar=no, status=no, toolbar=no');
+    }
+	/*function rangeValue(n) {
+		$('.range-slider-value').css({'display':'inline-block','position':'absolute','left':n+'%', 'bottom':'-28px'});
+    }*/
+</script>
+</head>
+<body>
+<div class="wrapper page-main">
+    <!-- s: 본문바로가기 -->
+    <div class="skipNav">
+        <a href="#content" title="본문바로가기">본문 바로가기</a>
+    </div>
+    <!-- e: 본문바로가기 -->
+
+    <!-- s: header -->
+    <header class="header">
+        <h1 class="logo-header">
+            <a href="#"><span>로고</span></a>
+        </h1>
+        <nav class="gnb">
+            <ul>
+                <li class="node1"><a href="#input">INPUT</a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="#">INPUT</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1"><a href="#tab">TAB</a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="#">TAB</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1"><a href="#box-hover">BOX HOVER</a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="#">BOX HOVER</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1"><a href="#nav-hover">NAV</a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="#">NAV</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1"><a href="#parallax">PARALLAX</a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="#">PARALLAX</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- gnb bg -->
+        <div class="gnb-bg"></div>
+    </header>
+    <!-- e: header -->
+
+    <hr>
+
+    <!-- s: aside -->
+    <div class="aside-open">
+        <button type="button" class="btn-asideOpen"><span>OPEN</span></button>
+        <!-- <a href="javascript:;" class="btn-asideOpen"><span>OPEN</span></a> -->
+    </div>
+    <aside class="aside">
+        <div class="m-gnb">
+            <ul>
+                <li class="m-node1">
+                    <a href="">DEPTH-1</a>
+                    <div class="m-depth2">
+                        <ul>
+                            <li class="m-node2">
+                                <a href="#">DEPTH-1</a>
+                                <div class="m-depth3">
+                                    <ul>
+                                        <li class="m-node3"><a href="#">DEPTH-1-1</a></li>
+                                        <li class="m-node3"><a href="#">DEPTH-1-1</a></li>
+                                        <li class="m-node3"><a href="#">DEPTH-1-1</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="m-node1">
+                    <a href="">DEPTH-2</a>
+                    <div class="m-depth2">
+                        <ul>
+                            <li class="m-node2">
+                                <a href="#">DEPTH-2</a>
+                                <div class="m-depth3">
+                                    <ul>
+                                        <li class="m-node3"><a href="#">DEPTH-2-2</a></li>
+                                        <li class="m-node3"><a href="#">DEPTH-2-2</a></li>
+                                        <li class="m-node3"><a href="#">DEPTH-2-2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="m-node1">
+                    <a href="">DEPTH-3</a>
+                    <div class="m-depth2">
+                        <ul>
+                            <li class="m-node2">
+                                <a href="#">DEPTH-3</a>
+                                <div class="m-depth3">
+                                    <ul>
+                                        <li class="m-node3"><a href="#">DEPTH-3-3</a></li>
+                                        <li class="m-node3"><a href="#">DEPTH-3-3</a></li>
+                                        <li class="m-node3"><a href="#">DEPTH-3-3</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="m-node1">
+                    <a href="">DEPTH-4</a>
+                    <div class="m-depth2">
+                        <ul>
+                            <li class="m-node2">
+                                <a href="#">DEPTH-4</a>
+                                <div class="m-depth3">
+                                    <ul>
+                                        <li class="m-node3"><a href="#">DEPTH-4-4</a></li>
+                                        <li class="m-node3"><a href="#">DEPTH-4-4</a></li>
+                                        <li class="m-node3"><a href="#">DEPTH-4-4</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="aside-close">
+            <button type="button" class="btn-asideClose"><span>CLOSE</span></button>
+            <!-- <a href="javascript:;" class="btn-asideClose"><span>CLOSE</span></a> -->
+        </div>
+    </aside>
+    <!-- e: aside -->
+
+    <hr>
+
+    <!-- s: container -->
+    <div class="container">
+
+        <!-- lnb stiky -->
+        <section>
+            <p class="tit">STIKY LNB</p>
+            <div class="lnb-wrap">
+                <ul class="lnb">
+                    <li class="home">
+                        <a href="javascript:;">HOME</a>
+                    </li>
+                    <li class="node1">
+                        <a href="javascript:;">LNB DEPTH-1</a>
+                        <div class="lnb-sub">
+                            <ul>
+                                <li><a href="javascript:;">LNB DEPTH-1-1</a></li>
+                                <li><a href="javascript:;">LNB DEPTH-1-1</a></li>
+                                <li><a href="javascript:;">LNB DEPTH-1-1</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="node1">
+                        <a href="javascript:;">LNB DEPTH-2</a>
+                        <div class="lnb-sub">
+                            <ul>
+                                <li><a href="javascript:;">LNB DEPTH-2-2</a></li>
+                                <li><a href="javascript:;">LNB DEPTH-2-2</a></li>
+                                <li><a href="javascript:;">LNB DEPTH-2-2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- input : text -->
+        <section id="input">
+            <p class="tit">INPUT: TEXT</p>
+            <div class="input-wrap one-up w-280">
+                <input type="text">
+            </div>
+            <div class="input-wrap two-up w-280">
+                <input type="text">
+                <span class="dash">-</span>
+                <input type="text">
+            </div>
+            <div class="input-wrap three-up w-280">
+                <input type="text">
+                <span class="dash">-</span>
+                <input type="text">
+                <span class="dash">-</span>
+                <input type="text">
+            </div>
+        </section>
+
+        <!-- input : range, progress bar -->
+        <section>
+            <p class="tit">INPUT: RANGE BAR</p>
+            <div class="range-wrap">
+                <div class="form-range">
+                    <input class="range-slider" type="range" id="" name="" value="0" min="0" max="100" step="1" onchange="rangeValue(this.value)">
+                    <span class="range-value">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- input : radio, checkbox, switch -->
+        <section>
+            <p class="tit">INPUT: RADIO, CHECKBOX, SWITCH</p>
+            <div class="radio-wrap">
+                <label for="r1">
+                    <input type="radio" name="radioType1" id="r1"><span>RadioType1</span>
+                </label>
+                <label for="r2">
+                    <input type="radio" name="radioType1" id="r2"><span>RadioType1</span>
+                </label>
+            </div>
+            <div class="radio-wrap02 mar-l20">
+                <label for="r3">
+                    <input type="radio" name="radioType2" id="r3"><span>RadioType2</span>
+                </label>
+                <label for="r4">
+                    <input type="radio" name="radioType2" id="r4"><span>RadioType2</span>
+                </label>
+            </div>
+
+            <div class="check-wrap mar-l20">
+                <label for="c1">
+                    <input type="checkbox" name="checkType1" id="c1"><span>checkboxType1</span>
+                </label>
+            </div>
+            <div class="check-wrap2 mar-l20">
+                <label for="c2">
+                    <input type="checkbox" name="checkType2" id="c2"><span>checkboxType2</span>
+                </label>
+            </div>
+
+            <div class="switch-wrap mar-l20">
+                <span class="form-label">SMS</span>
+                <label class="switch">
+                    <input type="checkbox" name="sSwitch" id="sSwitch1" value="">
+                    <label for="sSwitch1" class="switch-slide"></label>
+                </label>
+            </div>
+            <div class="switch-group mar-l20">
+                <span class="form-label">SMS</span>
+                <span class="form-switch">
+                    <input type="checkbox" name="sSwitch" id="sSwitch21" value="">
+                    <label for="sSwitch21"></label>
+                </span>
+            </div>
+        </section>
+
+        <!-- input : select, search, datepicker, file -->
+        <section>
+            <p class="tit">INPUT: SELECT, DATEPICKER, SEARCH, FILE</p>
+            <div class="select-wrap">
+                <select name="" id="" title="" class="select-box">
+                    <option value="" selected>직접선택</option>
+                    <option value="">01</option>
+                    <option value="">02</option>
+                    <option value="">03</option>
+                </select>
+            </div>
+
+            <div class="board-search">
+                <div class="search-wrap">
+                    <select name="search" id="search" class="select-control" title="검색 타입">
+                        <option value="" selected="">전체</option>
+                        <option value="">제목</option>
+                        <option value="">내용</option>
+                    </select>
+                    <div class="search-control">
+                        <input type="text" class="input-search" placeholder="검색어를 입력하세요.">
+                        <button type="button" class="btn-search">검색</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="datepicker-wrap" id="sDate1_picker">
+                <input class="datepicker form-date" type="text" name="date" readonly="" id="sDate1">
+            </div>
+
+            <p class="sub-tit mar-t50">File - input 버튼 추가</p>
+            <div class="file-wrap2">
+                <div class="filebox2">
+                    <input class="upload-name" value="파일찾기" disabled="disabled">
+                    <label for="ex-filename">파일찾기</label>
+                    <input type="file" id="ex-filename" class="upload-hidden" onchange="fileChange(this)">
+                    <!-- <input type="file" id="ex-filename" class="upload-hidden" onchange="fileChange(this)"> ajax 호출시 비동기로 -->
+                    <button type="button" class="btn-file file-plus">추가</button>
+                </div>
+            </div>
+
+            <p class="sub-tit mar-t50">File - input 감추고 파일명 리스트로 추가</p>
+            <div class="form-list">
+                <div class="file-wrap">
+                    <div class="filebox">
+                        <input class="upload-name" value="파일찾기" disabled="disabled">
+                        <label for="filename">파일찾기</label>
+                        <input type="file" id="filename" class="upload-hidden" onchange="fileAttach(this)">
+                    </div>
+                    <div class="fileListWrap"></div><!-- 파일추가 리스트형 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- table -->
+        <section class="ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+            <p class="tit">TABLE</p>
+            <div class="tbl-wrap">
+                <table class="tbl-list to-animate" data-duration="dur-03" data-animate="fadeInUp">
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:auto">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">01</th>
+                            <th scope="col">02</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11111</td>
+                            <td>22222</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tbl-wrap">
+                <table class="tbl-list">
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">01</th>
+                            <td>11111</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">02</th>
+                            <td>22222</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- pagination -->
+        <section>
+            <p class="tit">PAGINATION</p>
+            <div class="pagination-wrap">
+                <div class="pagination">
+                    <a href="#none" class="board-nav first">처음</a>
+                    <a href="#none" class="board-nav prev">이전</a>
+                    <ul>
+                        <li class="on"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                    </ul>
+                    <a href="#none" class="board-nav next">다음</a>
+                    <a href="#none" class="board-nav last">마지막</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- tab -->
+        <section id="tab" class="ui-animate-sec to-animate-sec" data-animate="fadeInUp">
+            <p class="tit">TAB</p>
+            <div class="tab to-animate" data-duration="dur-03" data-animate="fadeInUp">
+                <ul class="tab-nav">
+                    <li class="on"><a href="javascript:;" title="현재탭">Tab01</a></li>
+                    <li><a href="javascript:;">Tab02</a></li>
+                    <li><a href="javascript:;">Tab03</a></li>
+                    <li><a href="javascript:;">Tab04</a></li>
+                </ul>
+                <div class="tab-body">
+                    <div class="tab-cont on">탭 내용1</div>
+                    <div class="tab-cont">탭 내용2</div>
+                    <div class="tab-cont">탭 내용3</div>
+                    <div class="tab-cont">탭 내용4</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- slide tab -->
+        <section>
+            <p class="tit">SLIDE TAB</p>
+            <div class="tabs">
+                <input type="radio" name="tabs" id="tabone" checked="checked" class="tabInput" value="1">
+                <label for="tabone">Tab One</label>
+                <div class="tab">
+                    <!-- Swiper -->
+                    <div class="swiper-container swiper-container-initialized swiper-container-horizontal" id="swiper1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">Slide 1</div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                            <div class="swiper-slide swiper-slide-prev">Slide 4</div>
+                            <div class="swiper-slide swiper-slide-active">Slide 5</div>
+                            <div class="swiper-slide swiper-slide-next" style="width: 575px;">Slide 6</div>
+                            <div class="swiper-slide">Slide 7</div>
+                            <div class="swiper-slide">Slide 8</div>
+                            <div class="swiper-slide">Slide 9</div>
+                            <div class="swiper-slide">Slide 10</div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+                        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false"></div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                </div>
+                    <input type="radio" name="tabs" id="tabtwo" class="tabInput" value="2">
+                    <label for="tabtwo">Tab Two</label>
+                    <div class="tab">
+                        <!-- Swiper -->
+                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal" id="swiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide swiper-slide-active">Slide 1</div>
+                                <div class="swiper-slide swiper-slide-next">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
+                                <div class="swiper-slide">Slide 10</div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+                            <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <!-- tab in tab -->
+        <section>
+            <p class="tit">TAB in TAB</p>
+            <!-- multiple tab -->
+            <div class="tab_wrap tab_area">
+                <!-- 1depth list -->
+                <ul class="btn_area clearfix">
+                    <li class="btn btn_tab act" data-depth="0" data-idx="0">First</li>
+                    <li class="btn btn_tab" data-depth="0" data-idx="1">Second</li>
+                    <li class="btn btn_tab" data-depth="0" data-idx="2">Third</li>
+                    <li class="btn btn_tab" data-depth="0" data-idx="3">Fourth</li>
+                </ul>
+                <!-- 1 -->
+                <div class="content_area act" data-depth="0" data-idx="0">
+                    <p>First tab content</p><!-- 1depth content -->
+                    <div class="tab_area">
+                        <!-- 2depth list -->
+                        <ul class="btn_area clearfix">
+                            <li class="btn btn_tab act" data-depth="1" data-idx="0">First</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="1">Second</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="2">Third</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="3">Fourth</li>
+                        </ul>
+                            <!-- 2depth content -->
+                            <div class="content_area act" data-depth="1" data-idx="0">2Depth First tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="1">2Depth Second tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="2">2Depth Third tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="3">2Depth Fourth tab content</div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="content_area" data-depth="0" data-idx="1">
+                    <p>Second tab content</p><!-- 1depth tab content -->
+                    <div class="tab_area">
+                        <!-- 2depth list -->
+                        <ul class="btn_area clearfix">
+                            <li class="btn btn_tab act" data-depth="1" data-idx="0">First</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="1">Second</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="2">Third</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="3">Fourth</li>
+                        </ul>
+                            <!-- 2depth content -->
+                            <div class="content_area act" data-depth="1" data-idx="0">2Depth First tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="1">2Depth Second tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="2">2Depth Third tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="3">2Depth Fourth tab content</div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="content_area" data-depth="0" data-idx="2">
+                    <p>Third tab content</p><!-- 1depth content -->
+                    <div class="tab_area">
+                        <!-- 2depth list -->
+                        <ul class="btn_area clearfix">
+                            <li class="btn btn_tab act" data-depth="1" data-idx="0">First</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="1">Second</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="2">Third</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="3">Fourth</li>
+                        </ul>
+                            <!-- 2depth content -->
+                            <div class="content_area act" data-depth="1" data-idx="0">2Depth First tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="1">2Depth Second tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="2">2Depth Third tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="3">2Depth Fourth tab content</div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="content_area" data-depth="0" data-idx="3">
+                    <p>Fourth tab content</p><!-- 1depth content -->
+                    <div class="tab_area">
+                        <!-- 2depth list -->
+                        <ul class="btn_area clearfix">
+                            <li class="btn btn_tab act" data-depth="1" data-idx="0">First</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="1">Second</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="2">Third</li>
+                            <li class="btn btn_tab" data-depth="1" data-idx="3">Fourth</li>
+                        </ul>
+                            <!-- 2depth content -->
+                            <div class="content_area act" data-depth="1" data-idx="0">2Depth First tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="1">2Depth Second tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="2">2Depth Third tab content</div>
+                            <div class="content_area" data-depth="1" data-idx="3">2Depth Fourth tab content</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- accodion -->
+        <section class="to-animate-sec" data-animate="fadeInLeft">
+            <p class="tit">ACCODION1</p>
+                <div class="accordionWrap">
+                    <div class="accItem expanded">
+                        <div class="accHeader">
+                            <button type="button" name="" id="" class="accBtn" aria-expanded="true"><span>아코디언 타이틀</span></button>
+                        </div>
+                        <div class="accCont current">
+                            <p style="height:100px;">컨텐츠 내용</p>
+                        </div>
+                    </div>
+                    <!-- //accItem -->
+                    <div class="accItem">
+                        <div class="accHeader">
+                            <button type="button" name="" id="" class="accBtn" aria-expanded="false"><span>아코디언 타이틀</span></button>
+                        </div>
+                        <div class="accCont">
+                            <p style="height:100px;">컨텐츠 내용2</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- accordion2 -->
+        <section class="to-animate-sec" data-animate="fadeInLeft">
+            <p class="tit">ACCODION2</p>
+            <div class="accodion-wrap">
+                <ul class="acco-list to-animate" data-duration="dur-03" data-animate="fadeInLeft">
+                    <li>
+                        <dl>
+                            <dt><a href="#">타이틀타이틀01</a></dt>
+                            <dd>내용내용내용내용<br>내용내용내용내용내용내용내용내용1</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt><a href="#">타이틀타이틀02</a></dt>
+                            <dd>내용내용내용내용<br>내용내용내용내용내용내용내용내용2</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt><a href="#">타이틀타이틀03</a></dt>
+                            <dd>내용내용내용내용<br>내용내용내용내용내용내용내용내용3</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- box hover -->
+        <section id="box-hover">
+            <p class="tit">BOX HOVER</p>
+            <div class="box-hover">
+                <div class="box">
+                    <p>box hover</p>
+                </div>
+                <div class="box-overay">
+                    <div class="overay-inner">
+                        <p>box hover overay</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-hover">
+                <div class="box">
+                    <p>box hover</p>
+                </div>
+                <div class="box-underlay">
+                    <div class="underlay-inner">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- grid -->
+        <section id="grid">
+            <p class="tit">GRID</p>
+            <div class="row-wrap">
+                <div class="row">
+                    <div class="col">
+                        <p>col-1</p>
+                        <div class="dim">
+                            <p>DIM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-2">
+                    <div class="col">
+                        <p>col-2</p>
+                    </div>
+                    <div class="col">
+                        <p>col-2</p>
+                    </div>
+                </div>
+                <div class="row col-3">
+                    <div class="col">
+                        <p>col-3</p>
+                    </div>
+                    <div class="col">
+                        <p>col-3</p>
+                    </div>
+                    <div class="col">
+                        <p>col-3</p>
+                    </div>
+                </div>
+                <div class="row col-4">
+                    <div class="col">
+                        <p>col-4</p>
+                    </div>
+                    <div class="col">
+                        <p>col-4</p>
+                    </div>
+                    <div class="col">
+                        <p>col-4</p>
+                    </div>
+                    <div class="col">
+                        <p>col-4</p>
+                    </div>
+                </div>
+                <div class="row col-5">
+                    <div class="col fadeInUp delay-1 animated">
+                        <p>col-5</p>
+                    </div>
+                    <div class="col fadeInDown delay-2 animated">
+                        <p>col-5</p>
+                    </div>
+                    <div class="col fadeInRight delay-3 animated">
+                        <p>col-5</p>
+                    </div>
+                    <div class="col">
+                        <p>col-5</p>
+                    </div>
+                    <div class="col">
+                        <p>col-5</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <p class="sub-tit">width: %, margin: -값, padding: +값</p>
+            <div class="box-wrap">
+                <ul>
+                    <li>
+                        <a href="">111</a>
+                    </li>
+                    <li>
+                        <a href="">222</a>
+                    </li>
+                    <li>
+                        <a href="">333</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <p class="sub-tit">width - calc(100% / 5)</p>
+            <div class="grid-wrap">
+                <div class="grid-box">
+                    <div class="col">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- nav1 -->
+        <section id="nav-hover">
+            <p class="tit">NAV</p>
+            <ul id="gnb">
+              <li><a href="#">메뉴1</a>
+                <ul class="snb">
+                  <li><a href="#">menu1-1</a></li>
+                  <li><a href="#">menu1-2</a></li>
+                  <li><a href="#">menu1-3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">메뉴2</a>
+                <ul class="snb">
+                  <li><a href="#">menu2-1</a></li>
+                  <li><a href="#">menu2-2</a></li>
+                  <li><a href="#">menu2-3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">메뉴3</a>
+                <ul class="snb">
+                  <li><a href="#">menu3-1</a></li>
+                  <li><a href="#">menu3-2</a></li>
+                  <li><a href="#">menu3-3</a></li>
+                </ul>
+              </li>
+            </ul>
+        </section>
+
+        <!-- button toggle type -->
+        <section>
+            <p class="tit">BUTTON TOGGLE MENU</p>
+            <div class="btn-toggle">
+                <button type="button" class="btn-menu"><span>전체메뉴타이틀</span></button>
+                <ul class="menu-list">
+                    <li><a href="javascript:;">메뉴리스트1</a></li>
+                    <li><a href="javascript:;">메뉴리스트2</a></li>
+                    <li><a href="javascript:;">메뉴리스트3</a></li>
+                    <li><a href="javascript:;">메뉴리스트4</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- mCustomscroll -->
+        <section>
+            <p class="tit">mCustom scroll</p>
+            <div class="mScroll-wrap">
+            	<div class="custom-scroll mScroll">
+					<div class="scroll-cont">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+				</div>
+            </div>
+        </section>
+
+        <!-- parallax-->
+        <section id="parallax">
+            <p class="tit">PARALLAX IMAGE</p>
+            <div class="img-sec img01">
+                <div class="parallax-wrap"></div>
+                <div class="tit-wrap">
+                    <p class="tit">Projects and Partners</p>
+                    <p class="txt">In order to create more value, we work with a host of partners to achieve optimum results in everything we do</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TweenMax-->
+        <section>
+            <p class="tit">TweenMax</p>
+            <div class="tween-wrap">
+                <a href="javascript:;" class="btn-movebox">Move!Move!</a>
+                <h4>TimelineLite</h4>
+                <div class="tween-box tween-box1"></div>
+            </div>
+        </section>
+
+
+        <!-- layer popup, modal popup (layerpopup:dim 없음 / modalpopup:dim 있음)-->
+        <section>
+            <p class="tit">LAYER/MODAL POPUP</p>
+            <button type="button" class="btn-popup" onclick="popup('popupBasic', this, 'open');">딤처리 레이어팝업 버튼</button>
+            <div class="modalPopup-wrap">
+                <div id="modalPopup" class="modalPopup">
+                    <div class="popup-header">
+                        <p>DIM LAYER POPUP</p>
+                    </div>
+                    <div class="popup-body">
+                        <p>레이어팝업 상세 문구<br>
+                        레이어팝업 상세 문구</p>
+                    </div>
+                    <div class="popup-footer">
+                        <div class="popup-close">
+                            <button type="button" class="btn btn-popupClose"><span>닫기</span></button>
+                            <button type="button" class="btn btn-close" onclick="popup('popupBasic', this, 'close')"><span>닫기</span></button>
+                        </div>
+                        <div class="popup-close">
+                            <button type="button" class="btn btn-popupClose popupClose"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- window popup -->
+        <section>
+            <p class="tit">WINDOW POPUP</p>
+            <a href="new_page.html" onclick="windowopenPopup(this.href); return false;" target="_blank" title="새창">WINDOW POPUP</a>
+            <br><br>
+            <a href="#" class="win-popup">A태그 class방식 WINDOW POPUP</a>
+            <br><br>
+            <button type="button" class="win-popup">BUTTON태그 class방식 WINDOW POPUP</button>
+        </section>
+
+        <!-- typed js -->
+        <!-- <section>
+            <p class="tit">TYPED JS</p>
+            <div class="typed-wrap">
+                <p class="typed-txt">TYPED JS는 <span id="typed1"></span></p>
+                <div id="typed-group">
+                    <p class="typed-txt">TYPED JS는</p>
+                    <p class="typed-txt">자바스크립트</p>
+                    <p class="typed-txt">제이쿼리</p>
+                </div>
+                <span id="typed2" style="white-space:pre;"></span>
+            </div>
+        </section> -->
+
+    </div>
+    <!-- e: container -->
+
+    <hr>
+
+    <!-- scroll top -->
+    <a href="#Top" class="btn btn-scrollTop">페이지 상단으로 이동</a>
+
+    <!-- dim -->
+    <div class="dim-mask"></div>
+
+</div>
+<script>
+// typed js
+var typed1 = new Typed('#typed1', {
+    strings: ['원하는 글씨를', '순서대로', '출력해 줍니다.'],
+    typeSpeed: 100,
+    startDelay: 1200,
+    backSpeed: 100,
+    backDelay: 500,
+    fadeOut: false,
+    smartBackspace: true,
+    cursorChar: "|",
+    loop: true
+});
+var typed2 = new Typed('#typed2', {
+    stringsElement: '#typed-group', // ID명 또는 null
+    typeSpeed: 100,
+    startDelay: 1000,
+    backSpeed: 100,
+    backDelay: 500,
+    fadeOut: false,
+    smartBackspace: true,
+    cursorChar: "|",
+    loop: true
+});
+</script>
+</body>
+
+</html>

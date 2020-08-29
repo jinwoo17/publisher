@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #box { position: relative; }
+      span { text-align: center; font-size: 30px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script>
+      var box = document.getElementById('box');
+      var span = document.getElementsByTagName('span');
+      var cons = "Hello! JavaScript!".toUpperCase();
+      var m;
+      //cons를 배열로 바꿔주는 명령어
+      var text = cons.split(''); //문자열을 배열로
+      console.log(text);
+      var array = text.join(''); //다시 배열을 문자열로 변환
+      console.log(array);
+      //for문을 이용하여 각 원소를 span의 텍스트로
+      for(var i=0; i<text.length; i++) {
+        box.innerHTML +="<span>" + text[i] + "</span>";
+      }
+      var n = 0;    //글자 하나씩 출력해보기 (opacity이용)
+      setInterval(function(){
+        span[n].style.opacity=1;
+        n++;
+      }, 100)
+
+    </script>
+  </body>
+</html>

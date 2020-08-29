@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>객체, object</title>
+    <script>
+      /*객체란 복잡한 자료를 표현할 때 쓰는 자료형*/
+      var people = {name: "홍길동", age: 20, height: 180 };
+      console.log(typeof(people));
+      console.log(people.name);
+      console.log(people.age);
+      console.log(people.height);
+      console.log(people["height"]);
+      people.name = "이순신" //name바꾸기
+      console.log(people.name);
+      people["age"] = "50"; //age바꾸기
+      console.log(people.age);
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

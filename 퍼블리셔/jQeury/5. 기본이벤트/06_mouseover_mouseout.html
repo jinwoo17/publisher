@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mouseover()</title>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<img src="flower.jpg" alt="꽃" />
+
+	<!---------- jQuery code Start ---------->
+	<script type="text/javascript">
+
+		// mouseover( )는 특정 요소 위에 마우스가 겹쳐졌을 때를 감지하여 실행
+		// mouseout( )은 특정 요소위에서 마우스 포인트가 벗어났을 때를 감지하여 실행
+
+		// 마우스 오버시 바다이미지, 마우스 아웃시 꽃이미지를 로드하시오
+
+		/*
+		$('img').on('mouseover', function(){
+			$(this).attr({src: 'sea.jpg', alt: '바다'});
+		}).on('mouseout', function(){
+			$(this).attr({src: 'flower.jpg', alt: '꽃'});
+		})
+		*/
+
+		$('img').on('mouseenter', function(){
+			$(this).attr({src: 'sea.jpg', alt: '바다'});
+		}).on('mouseleave', function(){
+			$(this).attr({src: 'flower.jpg', alt: '꽃'});
+		})
+
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

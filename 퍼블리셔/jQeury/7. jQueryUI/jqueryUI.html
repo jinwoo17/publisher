@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>jquery UI</title>
+    <style>
+      div { width: 200px; height: 200px;
+            border: 1px solid #000; }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $(document).ready( function() {
+        $( "#drag" ).draggable();
+      })
+    </script>
+  </head>
+  <body>
+    <div id="drag">
+      <p>드래그하세요</p>
+    </div>
+  </body>
+</html>

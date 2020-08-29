@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>컨텐츠최소높이</title>
+<link rel="stylesheet" href="./common/css/libs/swiper.min.css">
+<link rel="stylesheet" href="./common/css/base.css">
+<link rel="stylesheet" href="./common/css/common.css">
+<link rel="stylesheet" href="./common/css/ui.css">
+<link rel="stylesheet" href="./common/css/layout.css">
+<link rel="stylesheet" href="./common/css/content.css">
+<script src="./common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="./common/js/libs/swiper.min.js"></script>
+<script src="./common/js/libs/jquery-ui.min.js"></script>
+<script src="./common/js/ui.js"></script>
+<script>
+    $(document).ready(function(){
+        minHeight();
+    });
+
+    function minHeight() {
+        var windowHeight = $(window).height();  //header가 fixed일 경우 헤더높이만큼 +해주기
+        var commonHeight = $('.header').outerHeight() + $('.footer').outerHeight();
+        var minHeight = windowHeight - commonHeight;
+        $(".container").css('min-height', minHeight);
+    }
+</script>
+<style>
+.header {display:block; position:relative; width:100%; height:120px; margin:0; padding:0; background-color:#d4d4d4;}
+.container {display:block; position:relative; width:100%; margin:0; padding:0;}
+.inner {display:block; position:relative; width:1050px; margin:0 auto;}
+.content {display:block; position:relative; width:100%; margin:0; padding:0;}
+.footer {display:block; position:relative; width:100%; height:100px; margin:0; padding:0; background-color:#676767;}
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header"></header>
+    <div class="container">
+        <div class="inner">
+            <section class="content">
+                <h1>컨텐츠최소높이</h1>
+                <p>화면 전체 높이-(헤더 높이 + 푸터 높이)</p>
+            </section>
+        </div>
+    </div>
+    <footer class="footer"></footer>
+</div>
+</body>
+</html>

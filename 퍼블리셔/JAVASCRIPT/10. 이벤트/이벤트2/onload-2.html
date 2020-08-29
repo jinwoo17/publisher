@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>new Image()로 이미지 로딩</title>
+		<script>
+			// 미리 로딩해둘 이미지 이름 배열
+			var files = [ "images/penguins.png",
+										"images/lighthouse.png",
+										"images/Chrysanthemum.png",
+										"images/Desert.png",
+										"images/Hydrangeas.png",
+										"images/Jellyfish.png",
+										"images/Koala.png",
+										"images/Tulips.png" ];
+
+			var imgs = new Array();
+			for ( var i=0; i<files.length; i++) {
+					imgs[i] = new Image(); // 이미지 객체 생성
+					console.log( imgs[i] );
+					imgs[i].src = files[i];
+					console.log(imgs[i].src)
+
+			}
+			// 이미지 미리 로딩
+			var next = 1;
+			window.onload = function() {
+					var img = document.getElementsByTagName('img')[0];
+					img.onclick = function() {
+						img.src = imgs[next].src;
+						next++;
+						// if ( next == files.length ) {
+						// 	next = 0;
+						// }
+						next %= files.length
+					}
+			}
+
+		</script>
+	</head>
+	<body>
+		<h3>new Image()로 이미지 로딩</h3>
+		<hr>
+		<p>이미지를 클릭하면 다음 이미지를 보여줍니다.</p>
+		<img src="images/penguins.png" alt=" " width="200">
+	</body>
+</html>

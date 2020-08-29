@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>mouseover / mouseenter</title>
+    <style>
+      #box1, #box2 {
+              width: 100px; height: 100px;
+              padding: 50px;
+              border: 1px solid #000;
+      }
+      #child1, #child2 {
+              width: 100px; height: 100px;
+              background: #968400;
+      }
+    </style>
+    <script src="jquery-3.4.1.js"></script>
+  </head>
+        <!--mouseover와 mouseenter의 차이-->
+  <body>
+    <div id="box1">
+      <div id="child1">카운팅1 합니다</div>
+    </div>
+    <div id="box2">
+      <div id="child2">카운팅2 합니다</div>
+    </div>
+    <script>
+    var i = 0;
+    var j = 0;
+      $('#box1').on('mouseover', function(){
+        console.log(++i)
+      })
+      $('#child1').on('mouseover', function(){
+        console.log("i: " + ++i)
+      })
+      $('#box2').on('mouseenter', function(){
+        console.log(++j)
+      })
+      $('#child2').on('mouseover', function(){
+        console.log("j: " + ++j)
+      })
+    </script>
+  </body>
+</html>

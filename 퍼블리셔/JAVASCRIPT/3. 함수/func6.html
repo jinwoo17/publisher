@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>리턴</title>
+    <script>
+      function sum1() {
+        var a = 10;
+        var b = 20;
+        var c = a + d;
+        return c;
+        var d = 50; //수행 못함, return 뒤에 오는건 무시
+      }
+      console.log(sum1());
+
+      function sum2(a, b) {
+        var c= a + b;
+        return c;
+      }
+      console.log(sum2(30, 50));
+
+      function sum3(x, y) {
+        return x + y;
+      }
+      var calSum = sum3; //함수를 변수에 할당
+      var addUp = sum3; //함수를 변수에 할당
+
+      document.write("결과 값 : " + calSum(5, 10) + "<br>");
+      document.write("결과 값 : " + addUp(3, 20) + "<br>");
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

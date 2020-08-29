@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>크기를 나타내는 단위</title>
+    <style>
+
+        /* 크기를 나타내는 단위에는 px, pt, %, em 등이 있습니다
+           기본폰트크기를 지정한 후 각각의 요소에 font-size 속성을 적용합니다 */
+          body { font-size: 20px; }
+          div { font-size: 30px; }
+          h1 { font-size: 32px;  }
+          p { font-size: 16px; }
+          p:nth-of-type(2) { font-size: 20px; }
+          p:nth-of-type(3) { font-size: 100%; }
+          p:nth-of-type(4) { font-size: 1em; }
+          p:nth-of-type(5) { font-size: 1rem; }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+</body>
+</html>

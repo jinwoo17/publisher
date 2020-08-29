@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>배경쪼개기</title>
+		<style>
+			* { margin: 0; padding: 0; }
+	    #sliceWrap { position: relative; width: 126px; height: 126px; margin: 20px auto;
+                   background: url(bg.gif) no-repeat;
+                   color: white; font-weight: bold;
+                   text-align: center; line-height: 126px;
+                   overflow: hidden; }
+		 	#sliceWrap a { color: #fff; }
+			#sliceWrap > div { position: absolute;
+												width: 63px; height: 63px;
+												background: url(1.gif); }
+			#sliceWrap > div.slice1 { top: 0; left: 0; background-position: 0 0; }
+			#sliceWrap > div.slice2 { top: 0; right: 0; background-position: right 0; }
+			#sliceWrap > div.slice3 { bottom: 0; left: 0; background-position: 0 bottom; }
+			#sliceWrap > div.slice4 { bottom: 0; right: 0; background-position: right bottom; }
+		</style>
+		<script src="jquery-3.4.1.min.js"></script>
+		<script>
+				$(document).ready(function() {
+						$("#sliceWrap").append("<div class='slice1'>")
+													 .append("<div class='slice2'>")
+													 .append("<div class='slice3'>")
+ 													 .append("<div class='slice4'>")
+						$("#sliceWrap").hover(function() {
+							$(".slice1").animate({ top: -63, left: -63 }, 600)
+							$(".slice2").animate({ top: -63, right: -63 }, 600)
+							$(".slice3").animate({ bottom: -63, left: -63 }, 600)
+							$(".slice4").animate({ bottom: -63, right: -63 }, 600)
+						}, function() {
+							$(".slice1").animate({ top: 0, left: 0 }, 600)
+							$(".slice2").animate({ top: 0, right: 0 }, 600)
+							$(".slice3").animate({ bottom: 0, left: 0 }, 600)
+							$(".slice4").animate({ bottom: 0, right: 0 }, 600)
+						})
+				})
+		</script>
+	</head>
+	<body>
+		<div id="sliceWrap">
+		    <a href="#">Lorem Ipsum</a>
+		</div>
+	</body>
+</html>

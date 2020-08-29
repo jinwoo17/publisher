@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>플렉서블 아이템</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        #wrap {
+                display: flex;
+                /* align-items: center; */
+
+                width: 90%; height: 500px;
+                margin: 0 auto;
+                background: #F5FFB7;
+                border: 5px solid #000;
+               }
+        #wrap div { width: 100%; }
+        #wrap div:nth-child(1) { background: red; height: 300px;
+                                 align-self: flex-end; order: 1; }
+        #wrap div:nth-child(2) { background: green; height: 350px;
+                                 align-self: center; order: 0;}
+        #wrap div:nth-child(3) { background: blue; height: 250px;
+                                 align-self: flex-start; }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

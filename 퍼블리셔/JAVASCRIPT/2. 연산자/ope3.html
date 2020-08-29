@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>비교연산자 or 관계연산자</title>
+    <script>
+      var a=1, b=2;
+
+      console.log(a < b);
+      console.log(a > b);
+      console.log(a == b);
+      console.log(a != b);
+      console.log(a <= b);
+      console.log(a >= b);
+      console.log(a == a);
+      console.log(b != b);
+
+      var aa = 1, bb = "1";
+      console.log(aa == bb); //숫자만 비교
+      console.log(aa != bb);
+      console.log(aa === bb); //숫자,데이터타입 비교
+      console.log(aa !== bb);
+
+      var s1 = "a", t1 = "b";
+      console.log(s1 > t1); //a~z순으로 뒤로 갈수록 커진다고 보면 됨
+
+      var s2 = "abcd", t2 = "bc";
+      console.log(s2 > t2); //앞의 문자 기준으로 비교
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

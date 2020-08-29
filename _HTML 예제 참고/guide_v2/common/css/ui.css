@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/* input - Default */
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {font-size:16px; color:#ddd;}/* IE 10 + */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {font-size:16px; color:#ddd;}/* Webkit Browser */
+input:-moz-placeholder, textarea:-moz-placeholder {font-size:16px; color:#ddd;}/* Mozilla Firefox 4 to 18 */
+input::-moz-placeholder, textarea::-moz-placeholder {font-size:16px; color:#ddd;}/* Mozilla Firefox 19+ */
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color:transparent;}/* IE 10 + */
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {color:transparent;}/* Webkit Browser */
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {color:transparent;}/* Mozilla Firefox 4 to 18 */
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {color:transparent;}/* Mozilla Firefox 19+ */
+input {box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; vertical-align:middle; padding:0 30px; border:none; color:#666;}
+textarea {width:100%; height:100%; border:1px solid #e8e8e8; vertical-align:middle; resize:none;}
+
+/* input: range */
+input[type=range] {
+	-webkit-appearance:none; /* 기본슬라이드 숨기기*/
+	width:100%; /* Firefox에서는 특정한 넓이가 필요*/
+	background:transparent; /* Chrome에서 투명하게 출력 */
+}
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance:none; 
+}
+input[type=range]:focus {
+	outline:none; /* input range에 포커스 되었을 경우 기본 블러처리 제거 */
+}
+input[type=range]::-ms-track {
+	width:100%;
+	cursor:pointer;
+	/* IE에서 기본슬라이드 숨기기  */
+	background:transparent; 
+	border-color:transparent;
+	color:transparent;
+}
+
+/* select - Default */
+select {appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none;}
+select::-ms-expand {display:none;}
+/* :root select {padding:0px 30px 0px 5px;}
+.ie9 select {padding:5px 35px 4px 5px;background:none;}
+.ie9 :root select {padding:0; font-size:0;} */
+
+/* button - Default */
+button {overflow:visible; padding:0px; border:0px; font-weight:normal; cursor:pointer; background-color:transparent;}
+button::-moz-focus-inner {border:0px; padding:0px;}
+button>span {position:relative; height:100%;}

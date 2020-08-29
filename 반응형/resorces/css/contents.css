@@ -1,0 +1,60 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------------------------------------------------
+	File : Content.css
+	Company : TWS
+	Author : TWS 2019-02-28
+	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+	CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+-------------------------------------------------------------------------------------------------------------*/
+
+.menu {display:none;}
+.menu .menu-btn {display:none;}
+.menu .menu-btn::before {display:none;}
+.menu .menu-btn span {display:none;}
+.menu .menu-btn span::before {display:none;}
+.menu .menu-btn span::after {display:none;}
+
+.lnb-wrap {display:block; position:relative; z-index:9999; width:1080px; height:70px; margin:0 auto; background-color:#fff;}
+.lnb-wrap.on {right:0;} /*menu눌렀을 때 addClass*/
+.lnb-wrap .close {display:none;}
+.lnb-wrap .close span {display:none;}
+.lnb-wrap .close span::before {display:none;}
+.lnb-wrap .close span::after {display:none;}
+
+.sub-lnb {display:none;}
+.sub-lnb.on {display:block;}
+
+.lnb-wrap .lnb {display:flex; position:relative; margin:0; padding:0;}
+.lnb-wrap .lnb > li {display:block; position:relative; width:calc(100% / 4); text-align:center;}
+.lnb-wrap .lnb > li > a {display:block; position:relative; background-color:#ff7f50; line-height:70px; color:#000;}
+.lnb-wrap .lnb > li > a.on {background-color:#7fff00;}
+/* .lnb-wrap .lnb .sub_lnb {display:none;} */
+.lnb-wrap .lnb > li > ul > li > a {display:block; position:relative; width:100%; height:50px; background-color:#d89c86; line-height:50px; color:#000; text-align:center;}
+
+.bg-fix.on {display:none;}
+
+
+@media screen and (max-width:768px){
+    .menu {display:block; position:absolute; top:10%; right:5%; transform:translateY(-50%);}
+    .menu .menu-btn {display:block; width:100%; height:100%; background:}
+    .menu .menu-btn::before {display:block; position:relative; left:4px; top:8px; width:20px; height:3px; background:#333; content:"";}
+    .menu .menu-btn span {display:block; position:relative; width:30px; height:30px; text-indent:-9999px; color:transparent;}
+    .menu .menu-btn span::before {display:block; position:relative; left:4px; top:14px; width:20px; height:3px; background:#333; content:"";}
+    .menu .menu-btn span::after {display:block; position:relative; left:4px; top:2px; width:20px; height:3px; background:#333; content:"";}
+
+    .lnb-wrap {position:fixed; top:0; right:-200px; z-index:9999; width:200px; height:100%; padding-top:50px; background-color:#ffc0cb; transition:all 0.3s;}
+    .lnb-wrap.on {right:0;} /*menu눌렀을 때 addClass*/
+    .lnb-wrap .close {display:block; position:absolute; top:0; right:0; width:50px; height:50px; color:#000; line-height:50px; text-align:center;}
+    .lnb-wrap .close span {display:block; position:relative; text-indent:-9999px;}
+    .lnb-wrap .close span::before {display:block; position:absolute; top:50%; left:calc(50% - 7px); width:15px; height:2px; transform:rotate(45deg); background:#333; content:"";}
+    .lnb-wrap .close span::after {display:block; position:absolute; top:50%; left:calc(50% - 7px); width:15px; height:2px; transform:rotate(-45deg); background:#333; content:"";}
+    .lnb-wrap .lnb {display:block;}
+    .lnb-wrap .lnb > li {width:100%;}
+    .lnb-wrap .lnb > li > a {display:block; position:relative; width:100%; height:50px; background-color:#ff7f50; text-align:center; line-height:50px; color:#000;}
+    .lnb-wrap .lnb > li > a.on {background-color:#7fff00;}
+    .lnb-wrap .lnb > li > ul {display:none;}
+    .lnb-wrap .lnb > li > ul > li > a {display:block; position:relative; width:100%; height:50px; background-color:#d89c86; line-height:50px; color:#000; text-align:center;}
+
+    .bg-fix.on {display:block; position:fixed; top:0; left:0; right:0; width:100%; height:100%; bottom:0; background:rgba(0,0,0,0.3);}
+}

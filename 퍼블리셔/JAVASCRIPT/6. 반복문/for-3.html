@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>prompt() 입력값의 총합</title>
+    <script>
+      var x;
+      var y;
+      var sum = 0;
+      for( y=1; y<=5; y++ ) {
+        x = Number(prompt("숫자를 입력하세요"));
+        //prompt는 string이기때문에 숫자로 바꿔줘야함
+        sum += x;
+        //sum += Number(x);
+      }
+      alert(sum);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

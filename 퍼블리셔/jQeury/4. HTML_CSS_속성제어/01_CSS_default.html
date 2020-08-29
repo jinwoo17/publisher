@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+<style>
+	body { font-size: 30px; font-family: "맑은 고딕", Arial, sans-serif; }
+	div { padding: 10px; margin-bottom: 20px; }
+	p { margin:0; }
+	pre { background-color: #777; padding: 20px; }
+	code { font-family: Arial; color:#fff;  }
+</style>
+</head>
+<body>
+	<div>
+		<p>CSS가 하나인 경우</p>
+		<pre><code>$("div").css( "backgroundColor", "#ddd" );</code></pre>
+	</div>
+	<div>
+		<p>CSS가 여러 개인 경우</p>
+		<pre><code>$("div").css( { "backgroundColor" : "#ddd",	
+		
+		"color" : "#f00",
+		
+		"width" : "200px",
+		
+		"height" : "200px",	
+		
+		"fontSize" : "30px"	
+		
+		} )</code></pre>
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+		
+		// $( "selector" ).css( "properties", "value" );
+		// $("div").css( "backgroundColor", "#ddd" );
+		
+		// css를 여러개 적용시
+		// $( "selector" ).css( { "properties" : "value" , "properties" : "value" , "properties" : "value" } );
+
+		// $("div").css( { 'backgroundColor' : '#ddd',
+		//					  'color' : '#f00',
+		//					  'width' : '200px',
+		//					  'height' : '200px',
+		//					  'fontSize' : '30px'
+		//					  } );
+			
+	</script>
+	
+	
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> addClass_removeClasss </title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<style>
+
+  img { padding:5px; background:#666;}
+
+  img.type1 { padding:5px; background: orange; }
+  img.type2 { padding:5px; background: blue; }
+  img.type3 { padding:5px; background: pink; }
+
+</style>
+</head>
+
+<body>
+
+	<img src="th1.jpg" alt=" " class="type1" />
+	<img src="th2.jpg" alt=" " class="type2" />
+	<img src="th3.jpg" alt=" " class="type3" />
+
+	<!---------- jQuery code Start ---------->
+
+	<script>
+
+		// 선택한 태그의 모든 클래스 삭제
+		// 클래스 지정해서 삭제
+		$('img').on('click',function(){
+      //$('img').removeClass();  //모두 삭제
+      //$('img').removeClass('type2');  //type2만 삭제
+      $(this).removeClass();  //클릭이 실행된 이미지만 삭제
+    })
+
+	</script>
+
+
+
+
+
+</body>
+</html>

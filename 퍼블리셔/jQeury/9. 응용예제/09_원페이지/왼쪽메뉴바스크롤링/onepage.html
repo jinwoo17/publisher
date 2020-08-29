@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>원페이지</title>
+    <style>
+        html, body { height: 100%; }
+        * { margin: 0; padding: 0; }
+        li { list-style: none; }
+
+        /* 헤더 */
+        #header { position: fixed; top: 0; left: 0; width: 200px; height: 100%; padding: 50px 50px 0; background: rgba(0, 0, 0, 0.7); text-align: center; }
+        #header h1 { color: #fff; }
+        /* GNB */
+        #gnb { margin-top: 60px; }
+        #gnb li a { display: block; height: 50px; line-height: 50px; text-decoration: none; color: #fff; }
+        #gnb li a:hover, #gnb li a.on { background: #ff0; color: #11084f; font-weight: bold; font-size: 20px; }
+
+        /* 섹션공통 */
+        section { height: 100%; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+        section > div { margin-left: 350px; }
+        /* 각 섹션 */
+        #cat1 { background-image: url(cat1.jpg); }
+        #cat2 { background-image: url(cat2.jpg); }
+        #cat3 { background-image: url(cat3.jpg); }
+    </style>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.mousewheel.min.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1>냥이네</h1>
+        <nav id="gnb">
+            <ul>
+                <li><a href="#cat1" class="on">도도한냥이</a></li>
+                <li><a href="#cat2">아련한냥이</a></li>
+                <li><a href="#cat3">귀찮은냥이</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="cat1">
+        <div>
+            <h2>도도냥</h2>
+            <p>뭘보냐옹</p>
+        </div>
+    </section>
+    <section id="cat2">
+        <div>
+            <h2>아련냥</h2>
+            <p>날보내주어냥</p>
+        </div>
+    </section>
+    <section id="cat3">
+        <div>
+            <h2>귀찮냥</h2>
+            <p>모든게 귀찮다옹</p>
+        </div>
+    </section>
+    <script>
+        $("#gnb li a").on("click", function () {
+            var pos = $($(this).attr("href")).position().top;
+            $("html, body").stop().animate({ scrollTop: pos }, 1400, "easeOutExpo")
+            $("#gnb li a").removeClass('on');
+            $(this).addClass('on');
+            return false;
+        })
+        $("section").on("mousewheel", function (event, delta) {
+            //마우스 휠을 올렸을때
+            if (delta > 0) {
+                var prev = $(this).prev().offset().top;
+                $("html,body").not(":animated").animate({ "scrollTop": prev }, 500);
+
+                var prevIndex = $(this).prev().index() - 1;
+                if (prevIndex < 0) {
+                    prevIndex = 0;
+                    $("#gnb li a:eq(0)").addClass("on");
+                } else {
+                    $("#gnb li a").removeClass('on');
+                    $("#gnb li a:eq(" + prevIndex + ")").addClass("on");
+                }
+                console.log(prevIndex)
+                return false;
+
+            } else if (delta < 0) {
+
+                var next = $(this).next().offset().top;
+                $("html,body").not(":animated").animate({ "scrollTop": next }, 500);
+
+                var nextIndex = $(this).index();
+                if (nextIndex > 2) {
+                    nextIndex = 2;
+                    $("#gnb li a:eq(2)").addClass("on");
+                } else {
+                    $("#gnb li a").removeClass('on');
+                    $("#gnb li a:eq(" + nextIndex + ")").addClass("on");
+                }
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

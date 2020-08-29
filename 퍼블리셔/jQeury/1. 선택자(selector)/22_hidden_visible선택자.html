@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> hidden, visible 선택자 </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+		<ul class="nav1">
+			<li style="display:none"> apple </li>
+			<li> banana </li>
+			<li> grape </li>
+		</ul>
+		<ul class="nav2">
+			<li> lion </li>
+			<li style="display:none"> tiger </li>
+			<li> fox </li>
+		</ul>
+	</div>
+
+	<script>
+
+		// CSS의 display 속성을 바꾼다
+
+		//$('ul li:hidden').show(1000);  //서서히 등장
+		$('ul li:visible').hide(1000);  //서서히 숨김
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

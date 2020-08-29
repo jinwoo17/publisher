@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* 초기화 */
+body, h1, h2, h3, h4, p, ul, figure { margin: 0; padding: 0; }
+li { list-style: none; }
+a { text-decoration: none; color: #fff; }
+address { font-style: normal; }
+small { font-size: 1em; }
+/* hidden */
+.hidden { position: absolute; left: -9999px; }
+/* 웹폰트 - nbGothic */
+@font-face { font-family: nbGothic;
+  src: url(../webfont/NanumBarunGothic.ttf),
+       url(../webfont/NanumBarunGothic.eot),
+       url(../webfont/NanumBarunGothic.woff)
+}
+/* 전체영역 및 공통 */
+body {  min-width: 1000px;
+        font-family: nbGothic; background: #b8dbf6;  }
+/* 헤더 */
+#header { position: relative;/*방법2 사용시 포지션 설정*/
+          height: 500px;
+          background: url(../images/jeju.jpg) no-repeat center center / cover/*100%같은 개념*/; }
+/* 방법1 #header hgroup { float: right; margin-top: 150px; color: #fff; } */
+/* 방법2*/#header hgroup { padding-top: 200px; text-align: center; color: #fff;  }
+#header hgroup h1{ margin-bottom: 50px;
+                   text-shadow: 2px 2px 1px #000;}
+#header hgroup h2{ font-weight: normal; font-size: 18px;
+                   text-shadow: 2px 2px 1px #000; }
+/* gnb */
+#gnb ul { overflow: hidden; width: 1000px; margin: 0 auto;
+          position: relative; top: -50px; }
+#gnb ul li { float: left; width: 25%; height: 60px; background: #003366; }
+#gnb ul li a { display: block; /* li와 a의 영역을 동일하게 */
+               width: 100%; height: 100px;
+               line-height: 60px; text-align: center; }
+#gnb ul li a:hover { font-weight: bold; background: #fff; color: #003366; }
+/* 메인컨텐츠 */
+#content { width:976px; margin: -50px auto; background: #fff; padding: 25px 12px 60px;
+           overflow: scroll; }
+#content article h3 { margin: 20px 0 13px; }
+#content article figure { margin-left: 40px; }
+#content article figcaption { margin: 5px 0 12px; }
+/* footer */
+#footer { padding: 23px 0; font-size: 14px;
+          background: #003300; color: #fff;
+          text-align: center;  }
+#footer p { margin-bottom: 17px; }
+#footer address {  }
+#footer small {  }

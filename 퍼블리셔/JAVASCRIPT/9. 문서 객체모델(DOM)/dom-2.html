@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DOM 객체2</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <p>내용1</p>
+      <p>내용2</p>
+      <p>내용3</p>
+      <p>내용4</p>
+    </div>
+
+    <script>
+      //주석도 노드로 처리됨
+      document.getElementById("wrap").firstChild.nextSibling.style.color="#f00";
+
+      //세번째 p태그
+      var p=document.getElementsByTagName('p')[1].nextSibling.nextSibling.style.color="blue";
+    </script>
+  </body>
+</html>

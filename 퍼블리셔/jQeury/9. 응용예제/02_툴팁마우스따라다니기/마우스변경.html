@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>마우스변경</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <style>
+      *{ cursor: none;}
+      a {position: relative; z-index: 10000;}
+      #mouse { position: absolute; top: 0; left: 0;
+               z-index: 9999;
+               width: 174px; height: 256px;
+               background: url('cursor.png');}
+    </style>
+    <script>
+      $(document).ready(function(){
+        $('html, body').mousemove(function(e){
+          $('#mouse').css({left: e.pageX, top: e.pageY});
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <a href="http://jquery.com">제이쿼리</a>
+    <div id="mouse"></div>
+  </body>
+</html>

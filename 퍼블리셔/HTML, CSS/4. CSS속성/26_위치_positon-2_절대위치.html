@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>절대위치</title>
+    <style>
+      div { width: 100px; height: 100px;
+            color: #fff; font-size: 24px; }
+      div:nth-child(1) {background-color: red;
+                        position: absolute;
+                        left: 108px;
+            /* absolute 는 본인의 영역이 사라져 다음요소가 그 자리를 차지한다.
+            일단 부모(html)를 기준으로 위치 속성을 가진다.  */
+        }
+      div:nth-child(2) {background-color: blue;
+                        position: absolute;
+                        top: 0; left: 0;
+        }
+      div:nth-child(3) {background-color: green;
+                        position: absolute;
+                        right: 0; bottom: 0;
+                        /* absolute 는  */
+        }
+    </style>
+  </head>
+  <body>
+    <div>박스1</div>
+    <div>박스2</div>
+    <div>박스3</div>
+  </body>
+</html>

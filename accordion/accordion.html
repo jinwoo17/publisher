@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../common/css/base.css">
+<link rel="stylesheet" href="../common/css/common.css">
+<!-- <link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="../common/js/libs/swiper.min.js"></script>
+<script src="../common/js/libs/jquery-ui.min.js"></script>
+<script src="../common/js/ui.js"></script>
+<title>아코디언</title>
+<script>
+// 아코디언 메뉴
+$('.accordion .body').hide();
+var $index = $('.accordion .head').on('click',function(e){
+    var idx = $index.index(this);  //클릭한 요소의 인덱스값 가져오기
+    $(this).next('.body:not(:animated)').slideToggle(400, function(){
+        $('.accordion .head > a').eq(idx).toggleClass('on');
+        $('.accordion .head > .arrow').eq(idx).toggleClass('on');
+    });
+    e.preventDefault();
+});
+
+//board list accordion - 하나씩만 열리는 아코디언
+// $(function(){
+//     var
+//     $boardList = $(".board-list"),
+//     $boardTitle = $boardList.find(".title");
+//
+//     $boardTitle.click(function(e){
+//         var
+//         $this = $(this),
+//         $titleWrap = $this.parent(".title-wrap"),
+//         $parentSilblings = $titleWrap.parent("li").siblings();
+//
+//         e.preventDefault();
+//
+//         $this.toggleClass("is-active");
+//         $titleWrap.next(".substance-wrap").stop().slideToggle("fast");
+//         $parentSilblings.children(".substance-wrap").slideUp("fast");
+//         $parentSilblings.find("a").removeClass("is-active");
+//     });
+// });
+
+</script>
+<style>
+/* 공통 */
+.wrapper {position:relative; height:100%;}
+.inner {width:1200px; margin:0 auto;}
+.section-content {position:relative; margin-top:50px;}
+/* 아코디언 메뉴 */
+/* title */
+.title-wrap {position:relative; padding-top:50px;}
+.title-wrap h2 {display:block; padding-top:30px; margin-left:-5px; font-size:30px; font-weight:bold;}
+.title-wrap span::after {content:""; display:block; position:absolute; width:70px; height: 2px; left:50px; top:57px; background-color:#000;}
+/* manager */
+.manager p {float:left; margin-top:80px; padding-left:10px; padding-right:30px; background:url('../images/bullet.png') no-repeat left center;}
+.manager::after {content:""; display:block; clear:both;}
+.accordion-box {position:relative; height:auto; margin:50px 0; border-top:2px solid #000; border-bottom:2px solid #000;}
+/* 아코디언 question */
+.accordion .head {position:relative; overflow:hidden; border-bottom:1px solid #b6b6b6; background:url('../images/q.png') no-repeat 10px 15px; color:#7d7d7d;}
+.accordion .head:last-child {border:none;}
+.accordion .head:hover {color:#000;}
+.accordion .head a {display:block; height:74px; padding-left:80px; line-height:74px;}
+/* 아코디언 answer */
+.accordion .body {position:relative; height:200px; padding:20px 0; background-color:#eee; border-bottom:1px solid #b6b6b6;}
+.accordion .body:last-child {border:none;}
+.accordion .body .answer img {margin-left:15px; vertical-align: top;}
+.accordion .body .answer-txt {display:inline-block; width:90%; padding-top:5px; padding-left:20px; line-height:24px;}
+/* arrow */
+.accordion .head .arrow {display:block; position:absolute; top:30px; right:20px;}
+/* addClass */
+.accordion .head a.on {color:#000;}
+.accordion .head .arrow.on {position:absolute; top:-20px; right:20px;}
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <!-- section -->
+            <section class="hire-section">
+                <!-- inner -->
+                <div class="inner">
+                    <!-- hire-wrap -->
+                    <div class="hire-wrap">
+                        <div class="title-wrap">
+                            <span>04</span>
+                            <h2>채용문의</h2>
+                        </div>
+                        <div class="manager">
+                            <p>채용담당자: 정진이 과장</p>
+                            <p>이메일: jineejung@hanwha.com</p>
+                        </div>
+                        <div class="accordion-box">
+                            <div class="accordion">
+                                <div class="head">
+                                    <a href="#none">
+                                        신입사원 정기공채의 경우 회사별로 복수지원이 가능한지요?
+                                    </a>
+                                    <span class="arrow">
+                                        <img src="../images/arrow.png" alt="열림닫힘 화살표">
+                                    </span>
+                                </div>
+                                <div class="body">
+                                        <span class="answer">
+                                            <img src="../images/a.png" alt="answer">
+                                        </span>
+                                        <span class="answer-txt">
+                                            계열사별 복수지원이 가능합니다.
+                                        </span>
+                                </div>
+                            </div>
+                            <div class="accordion">
+                                <div class="head">
+                                    <a href="#none">
+                                        신입사원 채용자격기준은 무엇인가요?
+                                    </a>
+                                    <span class="arrow">
+                                        <img src="../images/arrow.png" alt="열림닫힘 화살표">
+                                    </span>
+                                </div>
+                                <div class="body">
+                                        <span class="answer">
+                                            <img src="../images/a.png" alt="answer">
+                                        </span>
+                                        <span class="answer-txt">
+                                            신입사원은 군필 또는 군면제자로 해외여행에 결격사유가 없어야 하며, 연령 및 성별, 학력에 대한 제한은 없습니다. 경력사원은 당사 홈페이지에 게시되는 모집요강 상의 자격조건을 참조하시기 바랍니다.
+                                        </span>
+                                </div>
+                            </div>
+                            <div class="accordion">
+                                <div class="head">
+                                    <a href="#none">
+                                        입사지원서 접수시기와 접수처는 어떻게 됩니까?
+                                    </a>
+                                    <span class="arrow">
+                                        <img src="../images/arrow.png" alt="열림닫힘 화살표">
+                                    </span>
+                                </div>
+                                <div class="body">
+                                        <span class="answer">
+                                            <img src="../images/a.png" alt="answer">
+                                        </span>
+                                        <span class="answer-txt">
+                                            신입사원 공채는 매년 상반기 및 하반기에 한화인(www.hanwhain.com)으로 입사지원서를 접수 받고 있으며, 그 외의 경우에는 넷크루트(www.netcruit.co.kr) 상의 채용정보를 확인해 보시면 접수기간 및 접수처를 확인하실 수 있습니다.
+                                        </span>
+                                </div>
+                            </div>
+                            <div class="accordion">
+                                <div class="head">
+                                    <a href="#none">
+                                        서류전형에서의 고려사항은 무엇입니까?
+                                    </a>
+                                    <span class="arrow">
+                                        <img src="../images/arrow.png" alt="열림닫힘 화살표">
+                                    </span>
+                                </div>
+                                <div class="body">
+                                    <span class="answer">
+                                        <img src="../images/a.png" alt="answer">
+                                    </span>
+                                    <span class="answer-txt">
+                                        서류전형 시에는 모집분야에 적합한 후보자인지 전공, 어학, 사회경험과 같은 업무 유관 소양을 점검하고, 자기소개서 상에 나타난 포부, 가치관 등을 종합적으로 고려합니다. 자세한 사항은 입사지원서 작성요령을 참조하시기 바랍니다.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="accordion">
+                                <div class="head">
+                                    <a href="#none">
+                                        어떤 것에 가산점이 부여되나요?
+                                    </a>
+                                    <span class="arrow">
+                                        <img src="../images/arrow.png" alt="열림닫힘 화살표">
+                                    </span>
+                                </div>
+                                <div class="body">
+                                        <span class="answer">
+                                            <img src="../images/a.png" alt="answer">
+                                        </span>
+                                        <span class="answer-txt">
+                                            가산점 부여와 관련하여 공통된 원칙은 없습니다. 다만, 국가보훈대상자 및 신체장애자는 관련법규에 의해 우대하고 있으며, 특별히 우대하는 자격증이나 어학능력 및 소정의 경력을 보유한 지원자에게는 서류전형 및 면접전형 시 일정한 가산점이 부여됩니다.
+                                        </span>
+                                </div>
+                            </div>
+                            <div class="accordion">
+                                <div class="head">
+                                    <a href="#none">
+                                        사원연수나 교육프로그램은 어떤 것이 있나요?
+                                    </a>
+                                    <span class="arrow">
+                                        <img src="../images/arrow.png" alt="열림닫힘 화살표">
+                                    </span>
+                                </div>
+                                <div class="body">
+                                        <span class="answer">
+                                            <img src="../images/a.png" alt="answer">
+                                        </span>
+                                        <span class="answer-txt">
+                                            신입사원 연수 및 신입사원 Follow-up과정, 각 직급별 승격자과정과 학점이수과정 등은 한화인재경영원에서 시행하는 그룹공통과정 교육프로그램이며, 한화에너지에서는 자체적으로 신입사원을 대상으로 현장 OJT와 해외 연수 과정 등을 운영하고 있습니다. 이밖에도 엔지니어 대상 직무 전문가 과정을 운영하여 전문가로 성장할 수 있는 기회를 제공하고 있으며, 필요할 경우 자유롭게 외부기관 위탁연수 과정을 수강할 수 있도록 지원하고 있습니다.
+                                        </span>
+                                </div>
+                            </div>
+                            <div class="accordion">
+                                <div class="head">
+                                    <a href="#none">
+                                        환화에너지의 근무지는 어디인가요?
+                                    </a>
+                                    <span class="arrow">
+                                        <img src="../images/arrow.png" alt="열림닫힘 화살표">
+                                    </span>
+                                </div>
+                                <div class="body">
+                                    <span class="answer">
+                                        <img src="../images/a.png" alt="answer">
+                                    </span>
+                                    <span class="answer-txt">
+                                        경영지원은 본사(세종시), 생산관리 및 기술직은 여수, 군산입니다.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // accordion-wrap -->
+                </div>
+                <!-- // inner -->
+            </section>
+            <!-- // section -->
+        </div>
+        <!-- // content -->
+    </div>
+    <!-- // container -->
+</div>
+</body>
+</html>

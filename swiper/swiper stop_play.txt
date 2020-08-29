@@ -1,0 +1,47 @@
+swiper에 재생정지 버튼 추가
+
+***html
+<p class="stop_play on">
+	<a class="stop">Stop</a>
+	<a class="play">play</a>
+</p>
+
+
+
+***js
+/* 메인롤링배너 start */
+var mySwiper = new Swiper('.swiper-container', {
+    speed:400,
+	loop:true,
+	centeredSlides:true,
+	updateOnWindowResize:true,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	 },
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'bullets',
+	},
+	autoplay: {
+		delay:4000,
+	 }
+});
+
+$(document).on(
+	"click", ".stop_play .stop",
+	function(){
+		mySwiper.autoplay.stop();
+		$(".stop_play").addClass('on');
+		return false;
+	}
+);
+
+$(document).on(
+	"click", ".stop_play .play",
+	function(){
+		mySwiper.autoplay.start();
+		$(".stop_play").removeClass('on');
+		return false;
+	}
+);

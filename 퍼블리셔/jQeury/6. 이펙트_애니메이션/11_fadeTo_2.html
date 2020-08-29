@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> fadeTo()  </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<img src="sample3.jpg" alt=" " width="200"  />
+	<br />
+	<button title="0">0</button>
+	<button title="0.3">0.3</button>
+	<button title="0.6">0.6</button>
+	<button title="1">1</button>
+
+
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// 버튼 클릭시 각 버튼의 title 값이 투명도에 반영되도록
+		$("body").append("<p></p>");
+		$("button").click( function() {
+		    // var opacity  변수 생성
+				var opacity = $(this).attr('title');
+				//var opacity = $(this).text();
+				$('img').fadeTo(500, opacity, function(){
+					$('p').html('display:' + $(this).css('display') + '<br>' + 'opacity:' + $(this).css('opacity'))
+				});
+		});
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

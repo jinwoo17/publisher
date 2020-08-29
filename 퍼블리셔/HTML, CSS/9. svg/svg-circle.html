@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>원</title>
+    <style>
+      svg { width: 300px; height: 300px;
+            border: 1px solid #000;
+            transform: rotate(-90deg); }
+      circle { stroke: #fc0;
+               stroke-width: 100;
+               fill: #fff;
+               stroke-dasharray: 314;
+               stroke-dashoffset: 314;
+
+               /* animation-name: circleAni; */
+               animation: linear 2s circleAni forwards;
+              }
+       @keyframes circleAni {
+          to {
+               stroke-dashoffset: 78.5;
+             }
+       }
+    </style>
+  </head>
+  <body>
+    <svg>
+      <circle cx="150" cy="150" r="50"  />
+    </svg>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> animate()를 활용한 가로슬라이딩  </title>
+    <style>
+        div { overflow: hidden; width: 300px; display: inline; }
+    </style>
+    <!-- jQuery library -->
+    <script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+    <div>
+        <img src="sample1.jpg" alt=" " width="300" />
+    </div>
+
+    <button id="hide">감추기</button>
+    <button id="show">보이기</button>
+
+
+    <!---------- jQuery code Start ---------->
+    <script>
+
+        // 좌우 접었다 펼치는 애니메이션을 만들어보자
+        // width 속성을 사용
+        // div에 width 적용하여 사진 감추기
+        $('#hide').on('click', function(){
+          $('div').animate({ width: 0 }, 500, 'linear')
+        })
+        $('#show').on('click', function(){
+          $('div').animate({ width: 300 }, 500, 'linear')
+        })
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

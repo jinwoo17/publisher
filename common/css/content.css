@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* .header {display:block; position:fixed; top:0; left:0; width:100%;} */
+.header {display:block; position:relative; top:0; left:0; width:100%;}
+.gnb-button {display:block; position:absolute; top:130px; left:80px; width:30px; height:30px; transition:.3s; outline:none;}
+.gnb-button span {display:block; position:absolute; top:3px; left:0; width:100%; height:4px; background:#000; transition:.3s;}
+.gnb-button span::before {display:block; position:absolute; top:10px; left:0; width:100%; height:4px; background:#000; content:""; transition:.3s;}
+.gnb-button span::after {display:block; position:absolute; top:20px; left:0; width:100%; height:4px; background:#000; content:""; transition:.3s;}
+/* 버튼 클릭시 close클래스 추가(X모양) */
+.gnb-button.close span {display:block; position:absolute; top:0; left:0; width:0; height:0; background:#000; transition:.3s;}
+.gnb-button.close span::before {top:13px; left:-3px; width:38px; height:-4px; transform:rotate(315deg); transition:.3s;}
+.gnb-button.close span::after {top:13px; left:-3px; width:38px; height:-4px; transform:rotate(-315deg); transition:.3s;}
+
+
+/*-------------------------------------------------------------------
+    Table
+-------------------------------------------------------------------*/
+/* Design - List */
+.tbl-list {border-top:2px solid #444; border-bottom:1px solid #444;}
+.tbl-list th, .tbl-list td {padding:5px 10px; text-align:left; line-height:18px; text-align:center;}
+.tbl-list th {height:40px; border-bottom:1px solid #444; font-family:'NSB';}
+.tbl-list td {height:50px; border-top:1px solid #ddd;}
+.tbl-list thead + tbody tr:first-child td {border-top:0;}
+.tbl-list td .link-subject {color:#666;}
+.tbl-list td .link-subject:active,
+.tbl-list td .link-subject:focus,
+.tbl-list td .link-subject:hover {color:#333; text-decoration:underline;}
+.tbl-list .fixed-data td {background-color:#fafafa;}
+
+/*-------------------------------------------------------------------
+    Pagination
+-------------------------------------------------------------------*/
+/* Default */
+.pagination-wrap {position:relative;}
+.pagination {position:relative; text-align:center;}
+.pagination .inner {display:inline-block; position:relative; z-index:2;}
+.pagination .btn-page, .pagination .btn-num {text-align:center; transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out 0s; -moz-transition:all 0.3s ease-out 0s; -o-transition:all 0.3s ease-out 0s;}
+
+/* Design */
+.pagination {margin-top:30px;}
+.pagination .btn-page, .pagination .btn-num {width:30px; height:30px; border:1px solid #ddd; border-radius:3px; background-color:#fff; line-height:28px;}
+.pagination .btn-page:hover, .pagination .btn-page:focus,
+.pagination .btn-num:hover, .pagination .btn-num:focus {background-color:#f0f0f0;}
+.pagination + .btn-wrap {position:absolute; right:0; z-index:1; margin-top:-35px; text-align:right;}

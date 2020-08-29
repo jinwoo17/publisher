@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>선택된 물품 계산하기</title>
+	</head>
+	<body>
+		<h3>물품을 선택하면 금액이 자동 계산됩니다</h3>
+		<hr>
+		<form>
+			<label><input type="checkbox" value="10000">모자 1만원</label>
+			<label><input type="checkbox" value="30000">구두 3만원</label>
+			<label><input type="checkbox" value="80000">명품가방 8만원</label>
+			<br>
+			<label>지불하실 금액 <input type="text" id="sumtext" value="0" ></label>
+		</form>
+
+		<script>
+			var total = document.getElementById('sumtext');
+			var chk = document.querySelectorAll('input[type=checkbox]');
+			var sum=0;
+			for ( var i=0; i<chk.length; i++ ) {
+					chk[i].onclick = function() {
+						console.log(this)   //click된 대상이 있을 때 this사용
+							if ( this.checked ) { // sum에 값을 더하도록
+									sum += parseInt(this.value); //문자열을 숫자로 바꾼 후 계산
+							}
+							else { // sum에 값을 빼도록
+									sum -= parseInt(this.value);
+							}
+							total.value = sum;
+					}
+			}
+		</script>
+	</body>
+</html>

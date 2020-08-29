@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>카운트다운</title>
+<link rel="stylesheet" href="../common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="../common/js/libs/moment.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Sep 7, 2020 23:59:59").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        //document.getElementById("countDday").innerHTML = days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초 ";
+
+        days = days < 10 ? "0" + days : days;
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        $('.days').html(days);
+        $('.hours').html(hours);
+        $('.minutes').html(minutes);
+        $('.seconds').html(seconds);
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+        clearInterval(x);
+        $('.days').text('00');
+        $('.hours').text('00');
+        $('.minutes').text('00');
+        $('.seconds').text('00');
+        //document.getElementById("countDday").innerHTML = "<span>00</span>일 <span>00</span>시간 <span>00</span>분 <span>00</span>초";
+        $('.countdownWrap').addClass("end");
+        }
+    }, 0);
+
+
+    $(document).ready(function(){
+        //F12 방지
+        $(document).bind('keydown',function(e){
+            if ( e.keyCode == 123 /* F12 */) {
+                e.preventDefault();
+                e.returnValue = false;
+            }
+        });
+
+        //마우스 우클릭 방지
+        $('body').attr('oncontextmenu', 'return false');
+    });
+    </script>
+<style>
+/* header */
+.header {display:block; position:relative; width:100%; height:240px; margin:0; padding:0;}
+.header .headerTop {display:block; position:relative; width:100%; height:80px; margin:0; padding:0 75px; background:#1f1f1f;}
+.header .headerTop::after {content:""; display:block; clear:both;}
+.header .headerTitle {display:block; position:relative; float:left; width:280px; padding-left:65px; margin-top:20px;}
+.header .headerTitle h1 {display:block; position:relative; font-size:24px; font-weight:700; color:#fff;}
+.header .headerTitle h1 strong {display:block; position:absolute; top:0; left:-62px; font-size:40px;}
+.header .headerTitle p {display:block; position:relative; padding-top:5px; font-size:14px; color:#7e7e7e;}
+.gnbWrap {display:block; position:relative; float:right; margin-top:33px; padding:0;}
+.gnbWrap .gnb {display:block; position:relative; margin:0; padding:0;}
+.gnbWrap .gnb::after {content:""; display:block; clear:both;}
+.gnbWrap .gnb li {display:block; position:relative; float:left; }
+.gnbWrap .gnb li + li {margin-left:50px;}
+.gnbWrap .gnb li a {font-size:18px; color:#7e7e7e;}
+/* header - count */
+.innerCount {display:block; position:relative; width:640px; margin:0 auto;}
+.countdownWrap {display:block; position:relative; width:100%; margin:0; padding:30px 0;}
+.countdownWrap .timer {display:inline-block; position:relative; margin:35px 30px 0 0; padding:0; font-size:18px; font-weight:700; text-align:center; color:#8c8c8c;}
+.countdownWrap .countDday {display:inline-block; position:relative; margin:0; padding:0;}
+.countdownWrap .countDday .countBox {display:inline-block; position:relative; width:100px; height:100px; margin:0; padding:0; background:url("../images/bg_count.png") no-repeat center center; background-size:100%; border-radius:5px; box-shadow: 1px 4px 9px #8f8f8f; text-align:center; vertical-align:middle;}
+.countdownWrap .countDday .countBox + .countBox {margin-left:40px;}
+.countdownWrap .countDday .countBox .count {display:block; min-width:60px; padding-top:20px; color:#000; font-size:50px; font-weight:700; text-align:center;}
+.countdownWrap .countDday .countBox .info {display:block; padding-top:5px; font-size:14px;}
+</style>
+</head>
+<body>
+    <div id="wrapper" class="">
+    	<!--#Include Virtual="/includes/header.asp"-->
+    	<div class="contentsWrap" id="contentsWrap">
+            <div class="content">
+                <header class="header">
+                    <div class="headerTop">
+                        <a href="javascript:;" class="headerTitle">
+                            <h1><strong>6회</strong> 언어치료인의 날</h1>
+                            <p>2020년 9월 5일(토)~9월 7일(월)</p>
+                        </a>
+                        <nav class="gnbWrap">
+                            <ul class="gnb">
+                                <li>
+                                    <a href="#" aria-expanded="true" role="button">전문성 UP</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-expanded="false" role="button">소통 및 공감 UP</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-expanded="false" role="button">문제해결 UP</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-expanded="false" role="button">이용안내</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-expanded="false" role="button">공지사항</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="countdownWrap">
+                        <div class="innerCount">
+                            <p class="timer">남은시간</p>
+                            <div id="countDday" class="countDday">
+                                <p class="countBox"><span class="count days"></span><span class="info">DAYS</span></p>
+                                <p class="countBox"><span class="count hours"></span><span class="info">HOURS</span></p>
+                                <p class="countBox"><span class="count minutes"></span><span class="info">MINUTES</span></p>
+                                <p class="countBox"><span class="count seconds"></span><span class="info">SECONDS</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+    		</div>
+    	</div>
+    	<!-- //contentsWrap  -->
+    	<!--#Include Virtual="/includes/footer.asp"-->
+    </div>
+    <!--#wrapper -->
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>UI Guide</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="">
+<link rel="stylesheet" href="../common/css/base.css">
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/ui.css">
+<link rel="stylesheet" href="../common/css/layout.css">
+<link rel="stylesheet" href="../common/css/libs/animate.css">
+<link rel="stylesheet" href="../common/css/libs/swiper.min.css">
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="../common/js/libs/jquery-ui.min.js"></script>
+<script src="../common/js/libs/swiper.min.js"></script>
+<script src="../common/js/libs/TweenMax.min.js"></script>
+<script src="../common/js/slide.js"></script>
+<script src="../common/js/ui.js"></script>
+<!--[if lt IE 9]>
+<script src="../common/js/libs/html5shiv-printshiv.js"></script>
+<![endif]-->
+<!-- favicon -->
+<link href="../images/common/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="../images/common/favicon.ico" rel="icon" type="image/x-icon">
+<script>
+$(function(){
+    //snbSet(0, 0); // 메뉴활성화
+});
+</script>
+</head>
+<body>
+<div class="wrapper page-main">
+    
+    <!-- s: header -->
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html"><span>UI Guide</span></a>
+        </div>
+        <div class="side-menu">
+            <a href="javascript:;" class="allMenu">
+                <span class="ir">사이드메뉴접기</span>
+            </a>
+        </div>
+        <!-- s: gnb -->
+        <nav class="gnb">
+            <ul>
+                <li class="node1">
+                    <a href="javascript:;">메뉴구조1</a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="javascript:;">메뉴구조1-1</a></li>
+                            <li class="node2"><a href="javascript:;">메뉴구조1-2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1">
+                    <a href="javascript:;">메뉴구조2</a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="javascript:;">메뉴구조2-1</a></li>
+                            <li class="node2"><a href="javascript:;">메뉴구조2-2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1">
+                    <a href="javascript:;">메뉴구조3</a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="javascript:;">메뉴구조3-1</a></li>
+                            <li class="node2"><a href="javascript:;">메뉴구조3-2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1">
+                    <a href="javascript:;">메뉴구조4</a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="javascript:;">메뉴구조4-1</a></li>
+                            <li class="node2"><a href="javascript:;">메뉴구조4-2</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- e: gnb -->
+        <!-- s: gnb Bg -->
+        <div class="gnb-bg"></div>
+
+        <!-- s: utility -->
+        <div class="util">
+            <div class="lang">
+                <span><a href="javascript:;" class="is-active">KOR</a></span>
+                <span>/</span>
+                <span><a href="javascript:;">ENG</a></span>
+            </div>
+            <div class="popover">
+                <button type="button" class="btn btn-popover" onclick="popover('popover')"><span>open</span></button>
+                <div class="popover-content" id="popover">
+                    <div class="round-box">
+                        <!-- 내용 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- e: utility -->
+    </header>
+    <!-- e: header -->
+
+    <!-- s: aside -->
+    <aside class="sidebar">
+        <nav class="snb">
+            <ul>
+                <li class="node1">
+                    <a href="javascript:;" class="has-expand">
+                        <i class="ico ico-snb menu1"></i><span>메뉴구조1</span><i class="ico ico-snb-fold"></i>
+                    </a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="javascript:">메뉴구조1-1</a></li>
+                            <li class="node2"><a href="javascript:">메뉴구조1-2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1">
+                    <a href="javascript:;" class="has-expand">
+                        <i class="ico ico-snb menu2"></i><span>메뉴구조2</span><i class="ico ico-snb-fold"></i>
+                    </a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="javascript:">메뉴구조2-1</a></li>
+                            <li class="node2"><a href="javascript:">메뉴구조2-2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1">
+                    <a href="javascript:;" class="has-expand">
+                        <i class="ico ico-snb menu3"></i><span>메뉴구조3</span><i class="ico ico-snb-fold"></i>
+                    </a>
+                    <div class="depth2">
+                        <ul>
+                            <li class="node2"><a href="javascript:">메뉴구조3-1</a></li>
+                            <li class="node2"><a href="javascript:">메뉴구조3-2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="node1">
+                    <a href="javascript:;">
+                        <i class="ico ico-snb menu4"></i><span>메뉴구조4</span><i class="ico ico-snb-fold"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- e: aside -->
+
+    <!-- s: container -->
+    <div class="container">
+        <!-- s: content -->
+        <div id="content" class="content">
+            <section>
+                <div class="section-header">타이틀</div>
+                <div class="section-content"></div>
+            </section>
+        </div>
+        <!-- e: content -->
+    </div>
+    <!-- e: container -->
+
+    <!-- s: footer -->
+    <footer class="footer"></footer>
+    <!-- e: footer -->
+
+    <!-- s: popup -->
+	<div class="popup-wrap">
+		<div id="popupBasic" class="popup" hidden> <!--id로 불러오기 onclick="popup('popupBasic', this, 'open');" -->
+			<div class="popup-header">
+				<p>POPUP</p>
+			</div>
+			<div class="popup-container">
+				<div class="popup-content">
+					<p>팝업 상세 문구<br> 팝업 상세 문구</p>
+				</div>
+			</div>
+			<div class="popup-footer">
+				<div class="btn-wrap">
+					<button type="button" class="btn btn-popup white" onclick="popup('popupBasic', this, 'close')"><span>취소</span></button>
+					<button type="button" class="btn btn-popup"><span>확인</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- e: popup -->
+
+    <!-- s: loading -->
+	<div class="loading-wrap">
+		<div id="loading" class="loading">
+            <div class="loader"></div>
+		</div>
+	</div>
+	<!-- e: loading -->
+
+    <!-- s: dim mask -->
+    <div class="dim-mask"></div>
+</div>
+</body>
+
+</html>

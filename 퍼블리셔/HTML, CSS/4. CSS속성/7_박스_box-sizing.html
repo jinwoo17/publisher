@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>박스속성 - box-sizing</title>
+    <style>
+        /* div 태그에 padding 속성을 적용합니다 */
+        div { width: 100px; height: 100px;
+              margin:20px;
+              padding: 20px;
+              color: #fff;  }
+        div:first-child { background-color: red; }
+        div:last-child { background-color: blue;
+                        box-sizing: border-box; }
+    /* box-sizing 속성은 padding 적용시
+    넓이, 높이에 영향을 주는것을 방지하는 속성이다.
+    */
+
+    </style>
+</head>
+<body>
+    <div>aaaaaa</div>
+    <div>bbbbbb</div>
+</body>
+</html>

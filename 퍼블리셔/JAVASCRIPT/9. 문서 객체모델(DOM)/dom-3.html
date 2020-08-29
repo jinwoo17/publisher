@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>노드</title>
+    <!-- <script>
+      for (var name in Node) {
+        console.log(name, Node[name]);
+      }
+    </script> 타입확인하기 -->
+  </head>
+
+  <body>
+    <div id="wrap">
+      <p>내용1</p>
+      <p>내용2</p>
+      <p>내용3</p>
+      <p>내용4</p>
+      <a href="#" id="goLink">내용5</a>
+    </div>
+
+    <script>
+      var tagDiv=document.getElementById('wrap').nodeType; //1반환
+      var tagDivChild=document.getElementById('wrap').firstChild.nodeType; //3반환
+      var tagA=document.getElementById('goLink').getAttributeNode('href').nodeType; //2반환
+
+      console.log(tagDiv, tagDivChild, tagA);
+
+      var p=document.getElementsByTagName('p')[1];
+      var nextObj=p.nextSibling;
+      console.log(nextObj.nodeType);
+
+
+      while(nextObj.nodeType != 1)/*nextObj.nodeType==3 */{
+        nextObj=nextObj.nextSibling;
+      }
+      nextObj.style.backgroundColor="yellow";
+    </script>
+  </body>
+</html>

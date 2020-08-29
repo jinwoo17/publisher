@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>전역변수와 지역변수</title>
+    <script>
+      function getGrade() {
+        var kor = 95; //지역변수, 함수 안에서만 사용
+        //kor = 95; //전역변수, 밖에서도 사용 가능
+        document.write("국어점수 : " + kor + "입니다");
+      }
+      getGrade();
+
+      var d= 50; // 전역
+      function test2() {
+        var d = 30; //지역
+        console.log(d)
+      }
+      console.log(d)
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

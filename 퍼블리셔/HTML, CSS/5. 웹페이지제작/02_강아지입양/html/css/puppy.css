@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* 초기화 */
+body, h1, h2, h3, p, ul { margin: 0; padding: 0; }
+li { list-style: none; }
+a { text-decoration: none; }
+address { font-style: normal; }
+small { font-size: 1em;}
+.hidden { position: absolute; left: -9999px; }
+/* 웹폰트 */
+body { width: 800px; margin: 0 auto; font-family: 'Noto Sans KR', sans-serif; }
+/* 헤더 */
+#header{ overflow: hidden; margin-top: 8px; height: 150px; background: #f46075; color: #fff; }
+#header h1 { float: left; }
+/* gnb */
+#gnb { float: left; padding: 80px 0 0 110px; }
+#gnb li { float: left; color: #fff; margin-right: 30px; }
+#gnb li a { color: #fff; }
+/* content */
+#content { width: 564px; float: left; }
+#content h2 { height: 82px; margin-left: 6px; line-height: 82px; }
+#content article { width: 250px; height: 210px; float: left;
+                   border: 1px solid #ccc;
+                   margin: 0 0 10px 10px;
+                   padding: 30px 10px 0; }
+#content article a { color: #000; }
+#content article h3 { font-size: 15px; margin-bottom: 15px; }
+#content article a p { font-size: 13px; }
+/* hover */
+#content article:hover { transition: 0.2s; }
+#content .puppyHouse:hover { background: #e9e571; border-color: #e9e571; }
+#content .puppyFood:hover { background: #69e663; border-color: #69e663; }
+#content .puppyWater:hover { background: #e37f71; border-color: #e37f71; }
+#content .puppyName:hover { background: #508cb8; border-color: #508cb8; }
+/* puppyPhoto */
+#puppyPhoto { width: 200px; float: right; margin-top: 82px;
+              background: #ffffcc;
+              border: 1px solid #006400;
+              padding: 10px 0;
+              text-align: center; }
+/* footer */
+#footer { clear: both; background: #333;
+          text-align: center; line-height: 60px;
+          color: #fff;
+          width: 800px; height: 60px; }

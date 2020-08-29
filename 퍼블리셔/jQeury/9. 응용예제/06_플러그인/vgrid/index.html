@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>vgrid 플러그인</title>
+    <style>
+      * { margin: 0; padding: 0; list-style: none; }
+      li { width: 200px; height: 120px;
+          margin: 10px;
+          border: 1px solid #000;
+          background: #65b5bd; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="jquery.vgrid.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#list").vgrid({
+      		easing: "easeOutBounce",
+      		time: 500,
+      		delay: 50,
+      		wait: 500
+        })
+      })
+    </script>
+  </head>
+  <body>
+      <ul id="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+  </body>
+</html>

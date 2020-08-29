@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>어디서나 펼쳐지는 내비게이션</title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+
+<style>
+
+	*{	margin:0; padding:0;	}
+
+	div#container {
+		width:600px;
+		height:200px;
+		left:0px;
+		top:0px;
+		position:relative;
+	}
+
+	div#home {
+		width:50px;
+		height:200px;
+		background:#FF9999;
+		left:0px;
+		top:0px;
+		position:absolute;
+		z-index:2;
+	}
+
+	ul {
+		width:600px;
+		height:200px;
+		list-style:none;
+		left:-600px;
+		top:0px;
+		position:absolute;
+		z-index:1;
+	}
+
+	ul li {
+		width:200px;
+		height:200px;
+		float:left;
+		opacity:0.7;
+	}
+
+</style>
+
+</head>
+
+<body>
+
+	<div id="container">
+		<div id="home">HOME </div>
+
+		<ul id="menu">
+			<li><img src="th_bg1.jpg" /></li>
+			<li><img src="th_bg2.jpg" /></li>
+			<li><img src="th_bg3.jpg" /></li>
+		</ul>
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		/* 할 일 목록을 적어보세요
+			1. #home을 클릭시 #menu가 나왔다가 들어가도록
+			2. #menu의  각 li를 롤오버시 투명도 애니메이션 적용
+			3. #home 내에 마우스가 진입해서 위아래로 움직일때
+				박스도 같이 움직이도록
+		*/
+			 $('#home').toggle(
+				 function(){
+					$('#menu').stop().animate({left: 50}, 1000);
+				},
+				 function(){
+					 $('#menu').stop().animate({left: -600}, 1000);
+				 }).on('mousemove', function(e){
+					 if(e.pageY <= $('#container').height()/2){
+						 $('#container').css({top: 0});
+					 }
+					 else {
+						 $('#container').css({top: e.pageY - $('#container').height()/2});
+					 }
+				 })
+				$('#menu li').hover(function(){
+					$(this).stop().animate({opacity: 1});
+				}, function(){
+					$(this).stop().animate({opacity: 0.7});
+				})
+
+
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>

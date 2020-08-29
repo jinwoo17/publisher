@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>addclass()</title>
+<style>
+	div, p { font-size: 24px; }
+	.red { background: red; }
+	.yellow { background: yellow; }
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<h1>if 문을 활용한 클래스 변경</h1>
+	<div class="red">만약 class name이 red가 있다면 yellow으로 class를 변경하고 </div>
+	<div>아래의 텍스트 내용을 ClassName is yellow로 변경하라</div>
+	<p>ClassName is Red</p>
+
+	<script>
+
+	// hasClass를 이용하여 본문의 문장처럼 완성하시오
+	$('div').addClass(function() {
+		if($('div').hasClass('red') ) {
+	//if($('div').attr('class')=='red')
+			$(this).removeClass().addClass('yellow');
+			$('p').text("ClassName is Yellow");
+		}
+	})
+
+
+
+	</script>
+
+</body>
+</html>

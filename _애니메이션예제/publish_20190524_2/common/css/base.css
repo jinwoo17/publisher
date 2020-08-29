@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+	File : base.css(Front)
+	Company : The Webstyle co.,ltd
+ 	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+	CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, color/font, align, etc
+--------------------------------------------------------------------------------------------------------------------------------------------*/
+@charset "utf-8";
+/*-------------------------------------------------------------------------------------------------------------
+  File : Base.css
+  Company : The Webstyle co.,ltd
+  CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+  CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+  CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+-------------------------------------------------------------------------------------------------------------*/
+
+*, *:before, *:after {margin:0; padding:0; border:0; font-family:"NanumGothic", "Dotum", "Dotumche", "돋움", "돋움체", "Arial"; box-sizing:inherit; -webkit-box-sizing:inherit; -moz-box-sizing:inherit; -o-box-sizing:inherit;}
+html {height:100%; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box;}
+body {height:100%; font-size:16px; line-height:1;}
+address, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {display:block; margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6 {font-size:100%; font-weight:normal;}
+img {vertical-align:middle;}
+ol, ul, li, dl, dt, dd {list-style:none;}
+table {width:100%; border-spacing:0px; border-collapse:collapse;}
+th, td {word-break:break-all; font-weight:normal;}
+fieldset {width:100%;}
+em, address {font-style:normal;}
+button, select, input, label {vertical-align:middle; font-family:"NanumGothic";}
+hr {display:none;}
+legend {position:absolute; left:-9999em; top:-9999em;}
+caption {visibility:hidden; height:0; line-height:0; font-size:0;}
+strong {font-weight:normal; font-family:"NanumGothic";}
+i {font-style:normal;}
+
+@font-face {
+    font-family:"NanumGothic"; src:url('../fonts/NanumGothic.eot'),
+    url('../fonts/NanumGothic.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/NanumGothic.woff') format('woff');}
+@font-face {
+    font-family:"NanumGothic_B"; src:url('../fonts/NanumGothic-Bold.eot'),
+    url('../fonts/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/NanumGothic-Bold.woff') format('woff');}
+@font-face {
+    font-family:"NanumGothic_EB"; src:url('../fonts/NanumGothic-ExtraBold.eot'),
+    url('../fonts/NanumGothic-ExtraBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/NanumGothic-ExtraBold.woff') format('woff');}
+
+
+@font-face {
+    font-family:"NotoSans_R"; src:url('../fonts/NotoSans-Regular.eot'),
+    url('../fonts/NotoSans-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/NotoSans-Regular.woff') format('woff');}
+@font-face {
+    font-family:"NotoSans_M"; src:url('../fonts/NotoSans-Medium.eot'),
+    url('../fonts/NotoSans-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/NotoSans-Medium.woff') format('woff');}
+@font-face {
+    font-family:"NotoSans_L"; src:url('../fonts/NotoSans-Light.eot'),
+    url('../fonts/NotoSans-Light.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/NotoSans-Light.woff') format('woff');}
+/*@font-face {
+    font-family:"NotoSans_L"; src:url('../fonts/NotoSans-Light.eot'),
+    url('../fonts/NotoSans-Light.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/NotoSans-Light.woff') format('woff');}*/
+@font-face {
+    font-family:"NotoSans_T"; src:url('../fonts/NotoSans-Thin.eot'),
+    url('../fonts/NotoSans-Thin.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/NotoSans-Thin.woff') format('woff');}

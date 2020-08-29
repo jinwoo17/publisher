@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>날짜 정보 객체3</title>
+    <script>
+      //연말까지 남은 일수 계산하기
+
+      var t = new Date(); //오늘 날짜 개체 생성
+      var nowYear = t.getFullYear(); //오늘 날짜의 연도 정보를 가져옴
+
+      var theDate = new Date(nowYear, 11,31);//현재 년도에 12월 31 날짜 객체 생성
+
+      var diffDate = theDate - t;//연말까지 남은 기간 = 연말날짜 - 현재 날짜
+
+      var result=Math.ceil(diffDate / (60 * 1000 * 60 * 24)); //밀리초를 일로 계산
+
+      //남은 일수 출력
+      document.write("현재로부터 올해 말까지 "+result+"일 남았습니다.");
+
+      //Math.ceil((theDate - t) / 86400000);
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

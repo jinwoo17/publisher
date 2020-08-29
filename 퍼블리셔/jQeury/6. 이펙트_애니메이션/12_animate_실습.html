@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>animate()</title>
+    <style>
+      div { width: 100px; height: 100px;
+            background: #7cec80;}
+    </style>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="jquery-ui-1.8.23.custom.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('a').on('click', function(){
+          $('div').animate({ left: 1000,
+                             top: 100,
+                             width: 50,
+                             height: 150,
+                             opacity: 0.5
+                           }, 1000, 'linear')
+           })
+      })
+      // $(document).ready(function() {
+      //   $('a').on('click', function(){
+      //     $('div').animate({ marginLeft: 1000 }, 1000 , 'easeOutBounce', function() {
+      //       $(this).animate({ marginLeft: 8}, 1000, 'easeInBack')  //다시 원래자리로  callback
+      //     })
+      //   })
+      // })
+    </script>
+  </head>
+  <body>
+    <a href="#">Start</a>
+    <div></div>
+  </body>
+</html>

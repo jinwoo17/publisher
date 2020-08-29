@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Tab In Slide</title>
+<link rel="stylesheet" href="../common/css/libs/swiper.min.css">
+<link rel="stylesheet" href="../common/css/base.css">
+<link rel="stylesheet" href="../common/css/common.css">
+<link rel="stylesheet" href="../common/css/ui.css">
+<link rel="stylesheet" href="../common/css/layout.css">
+<link rel="stylesheet" href="../common/css/content.css">
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="../common/js/libs/swiper.min.js"></script>
+<script src="../common/js/libs/jquery-ui.min.js"></script>
+<script src="../common/js/ui.js"></script>
+<style>
+body{background:#f4f4f4}
+.btn{padding:0;background:transparent;border:0;outline:0}
+.clearfix::after{display:block;content:'';clear:both}
+
+.tab_wrap{width:800px;margin:50px auto}
+.tab_wrap .btn_tab{float:left;width:120px;height:30px;background:#fff;border-radius:10px 10px 0 0;text-align:center;line-height:30px}
+.tab_wrap .btn_tab.act{background:#9adce2;font-weight:bold}
+.tab_wrap .content_area{display:none;width:100%;min-height:200px;padding:10px;background:#fff;border-radius:0 0 10px 10px;box-sizing:border-box}
+.tab_wrap .content_area.act{display:block}
+.tab_wrap *[data-depth="1"]{background:#f4f4f4}
+</style>
+<script>
+$(document).ready(function(){
+    // 부모를 찾는 함수, 재귀함수
+    function findParent(el, className){
+      let check = el.parentNode.classList.contains(className);
+
+      if(check === true){
+         return el.parentNode;
+      }else{
+        return findParent(el.parentNode, className);
+      }
+    }
+
+    function bindingTabEvent(wrap){ //class명을 받아서 이벤트를 부여하는 역할
+        let wrapEl = document.querySelectorAll(wrap);
+
+        wrapEl.forEach(function(tabArea){ //forEach를 통해 각각의 탭 영역이 개별로 동작되도록
+        let btn = tabArea.querySelectorAll('.btn_tab'); //인자로 넘어오는 값인 wrap(class명)을 querySeleterAll을 통해 선택
+
+        btn.forEach(function(item){ //forEach를 통해 각각의 탭 영역이 개별로 동작되도록, 각각의 버튼을에 이벤틀을 부여해야 하므로
+            item.addEventListener('click', function(){
+                let parent = findParent(this, 'tab_area'); //현재 클릭한
+                let idx = this.dataset['idx']; //현재 버튼이 가지고 있는 idx 값
+                let depth = this.dataset['depth']; //현재 버튼이 가지고 있는 depth 값
+                let btnArr = parent.querySelectorAll('.btn_tab[data-depth="'+ depth +'"]'); //현재 버튼과 동일 선상에 있는 다른 버튼들
+                let contentArr = parent.querySelectorAll('.content_area[data-depth="'+ depth +'"]'); //현재 버튼에 해당하는 그룹단위 안의 컨텐츠 엘리먼트들
+
+                btnArr.forEach(function(btn){
+                    btn.classList.remove('act');
+                });
+                this.classList.add('act');
+                contentArr.forEach(function(content){
+                    content.classList.remove('act');
+                });
+                parent.querySelector('.content_area[data-idx="'+ idx +'"][data-depth="'+ depth +'"]').classList.add('act');
+            });
+        });
+      });
+    }
+    bindingTabEvent('.tab_wrap');
+});
+</script>
+</head>
+<body>
+    <!-- multiple tab -->
+    <div class="tab_wrap tab_area">
+        <!-- 1depth list -->
+        <ul class="btn_area clearfix">
+            <li class="btn btn_tab act" data-depth="0" data-idx="0">First</li>
+            <li class="btn btn_tab" data-depth="0" data-idx="1">Second</li>
+            <li class="btn btn_tab" data-depth="0" data-idx="2">Third</li>
+            <li class="btn btn_tab" data-depth="0" data-idx="3">Fourth</li>
+        </ul>
+
+        <!-- 1 -->
+        <div class="content_area act" data-depth="0" data-idx="0">
+            <p>First tab content</p><!-- 1depth content -->
+            <div class="tab_area">
+                <!-- 2depth list -->
+                <ul class="btn_area clearfix">
+                    <li class="btn btn_tab act" data-depth="1" data-idx="0">First</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="1">Second</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="2">Third</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="3">Fourth</li>
+                </ul>
+                    <!-- 2depth content -->
+                    <div class="content_area act" data-depth="1" data-idx="0">2Depth First tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="1">2Depth Second tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="2">2Depth Third tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="3">2Depth Fourth tab content</div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="content_area" data-depth="0" data-idx="1">
+            <p>Second tab content</p><!-- 1depth tab content -->
+            <div class="tab_area">
+                <!-- 2depth list -->
+                <ul class="btn_area clearfix">
+                    <li class="btn btn_tab act" data-depth="1" data-idx="0">First</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="1">Second</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="2">Third</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="3">Fourth</li>
+                </ul>
+                    <!-- 2depth content -->
+                    <div class="content_area act" data-depth="1" data-idx="0">2Depth First tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="1">2Depth Second tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="2">2Depth Third tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="3">2Depth Fourth tab content</div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="content_area" data-depth="0" data-idx="2">
+            <p>Third tab content</p><!-- 1depth content -->
+            <div class="tab_area">
+                <!-- 2depth list -->
+                <ul class="btn_area clearfix">
+                    <li class="btn btn_tab act" data-depth="1" data-idx="0">First</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="1">Second</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="2">Third</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="3">Fourth</li>
+                </ul>
+                    <!-- 2depth content -->
+                    <div class="content_area act" data-depth="1" data-idx="0">2Depth First tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="1">2Depth Second tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="2">2Depth Third tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="3">2Depth Fourth tab content</div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="content_area" data-depth="0" data-idx="3">
+            <p>Fourth tab content</p><!-- 1depth content -->
+            <div class="tab_area">
+                <!-- 2depth list -->
+                <ul class="btn_area clearfix">
+                    <li class="btn btn_tab act" data-depth="1" data-idx="0">First</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="1">Second</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="2">Third</li>
+                    <li class="btn btn_tab" data-depth="1" data-idx="3">Fourth</li>
+                </ul>
+                    <!-- 2depth content -->
+                    <div class="content_area act" data-depth="1" data-idx="0">2Depth First tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="1">2Depth Second tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="2">2Depth Third tab content</div>
+                    <div class="content_area" data-depth="1" data-idx="3">2Depth Fourth tab content</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- single tab -->
+    <div class="tab_wrap tab_area">
+        <!-- 1depth list -->
+        <ul class="btn_area clearfix">
+            <li class="btn btn_tab act" data-depth="0" data-idx="0">First</li>
+            <li class="btn btn_tab" data-depth="0" data-idx="1">Second</li>
+            <li class="btn btn_tab" data-depth="0" data-idx="2">Third</li>
+            <li class="btn btn_tab" data-depth="0" data-idx="3">Fourth</li>
+        </ul>
+        <!-- 1depth tab content -->
+        <div class="content_area act" data-depth="0" data-idx="0">First tab content</div>
+        <div class="content_area" data-depth="0" data-idx="1">Second tab content</div>
+        <div class="content_area" data-depth="0" data-idx="2">Third tab content</div>
+        <div class="content_area" data-depth="0" data-idx="3">Fourth tab content</div>
+    </div>
+</body>
+</html>

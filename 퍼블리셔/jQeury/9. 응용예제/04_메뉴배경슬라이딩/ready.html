@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+	body {font-family:dotum; font-size:12px; color:#666; line-height:17px;}
+	li {list-style:none;}
+	ul,li,h1,h2,h3,h4,h5,ol,dl,dt,dd,p {margin:0; padding:0;}
+	dt	{color:#333;}
+	img {border:0;}
+	a{outline:0; text-decoration:none;}
+	button	{outline:0;}
+	a:link,
+	a:visited,
+	a:hover,
+	a:active{color:#888;}
+	body{padding:0; margin:0;}
+	#menu_sl {width:211px; border:1px solid #d4d4d4; margin:10px; overflow:hidden; padding:10px; background:#f9f9f9;}
+	#menu_sl .list {position:relative; overflow:hidden;}
+	#menu_sl .list .arrow {position:absolute; z-index:1; left:0; top:0;}
+	#menu_sl ul {position:relative; z-index:2;}
+	#menu_sl ul li {height:42px; overflow:hidden;}
+	#menu_sl ul li a {display:block; padding:12px 15px 8px 12px;}
+	#menu_sl ul li.on a {font-size:14px; font-weight:bold; letter-spacing:-1px; color:#000;}
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<div id="menu_sl">
+		<div class="list">
+			<ul>
+				<li><a href="#">메뉴 배경 슬라이드</a></li>
+				<li><a href="#">메뉴 배경 이미지</a></li>
+				<li><a href="#">메뉴 배경 세트</a></li>
+				<li><a href="#">메뉴 배경</a></li>
+				<li><a href="#">메뉴 배경 슬라이드</a></li>
+				<li><a href="#">메뉴 배경 이미지</a></li>
+				<li><a href="#">메뉴 배경 세트</a></li>
+				<li><a href="#">메뉴 배경</a></li>
+			</ul>
+			<img class="arrow" src="menu_bg.gif" alt="">
+		</div>
+	</div>
+
+	<script>
+
+			$("#menu_sl li").mouseover(function(){
+				//방법1
+				//var posY = $(this).position().top;
+				var posY = $(this).index()*42; 
+				console.log(posY)
+				$('.arrow').stop().animate({ top: posY})
+
+
+
+
+
+				//  메뉴 배경이 이동할 위치값 구하기 position() 이용
+
+
+				// 이펙트 효과적용
+
+
+				// 마우스 hover 시 CSS를 적용하도록
+				// 현재요소에만 클래스네임 on 추가
+
+
+
+
+			});
+
+	</script>
+
+
+
+
+
+</body>
+</html>

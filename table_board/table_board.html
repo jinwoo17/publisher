@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="common/css/libs/swiper.min.css">
+<link rel="stylesheet" href="common/css/base.css">
+<link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css">
+<link rel="stylesheet" href="common/css/layout.css">
+<link rel="stylesheet" href="common/css/content.css">
+<script src="common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script>
+<title>테이블형게시판</title>
+<link rel="stylesheet" href="">
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- include - header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="inner">
+                <h1 class="hidden">전남남북교류평화센터</h1>
+                <div class="left-area">
+                    <div class="logo">
+                        <a href="" class="logo-wrap">
+                            <img src="images/header_logo.png" alt="전남남북교류평화센터">
+                        </a>
+                    </div>
+                </div>
+                <nav class="lnb-wrap">
+                    <ul class="lnb">
+                        <li><a href="#none">센터소개</a></li>
+                        <li><a href="#none">사업소개</a></li>
+                        <li><a href="#none">자료실</a></li>
+                        <li><a href="#none">게시판</a></li>
+                    </ul>
+                </nav>
+                <div class="right-area">
+                    <ul class="util-menu">
+                        <li><a href="#none">로그인</a></li>
+                        <li><a href="#none">회원가입</a></li>
+                        <li><a href="#none">회원전용게시판</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom dropdown bg-blue">
+            <div class="inner">
+                <a href="#none" class="home"></a>
+                <div class="dropdown-wrap">
+                    <button type="button" class="dropdown-shortcut line">게시판</button>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="#none"></a></li>
+                            <li><a href="#none"></a></li>
+                            <li><a href="#none"></a></li>
+                            <li><a href="#none"></a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="dropdown-shortcut line">자유게시판</button>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="#none"></a></li>
+                            <li><a href="#none"></a></li>
+                            <li><a href="#none"></a></li>
+                            <li><a href="#none"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <section class="board-wrap">
+                <div class="inner">
+                    <h2>자유게시판</h2>
+
+                        <!-- 게시판_목록 -->
+                        <div class="board-list">
+                            <!-- 게시판_목록_헤더 -->
+                            <div class="tbl-header">
+                                <div class="row">
+                                    <div class="float-l">
+                                        <p class="form-static">전체 <strong>000</strong> 건</p>
+                                    </div>
+                                    <div class="float-r">
+                                        <label for="select2"></label>
+                                        <input type="text" id="select2" placeholder="검색어를 입력하세요">
+
+                                        <input type="search" placeholder="검색">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //게시판_목록헤더 -->
+
+                            <!-- 게시판_목록 -->
+                            <div class="tbl tbl-list">
+                                <table>
+                                    <caption>공지사항 목록</caption>
+                                    <colgroup>
+                                        <col style="width:10%">
+                                        <col>
+                                        <col style="width:10%">
+                                        <col style="width:15%">
+                                        <col style="width:10%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">no</th>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">작성자</th>
+                                            <th scope="col">작성일</th>
+                                            <th scope="col">조회수</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- 고정목록 -->
+                                    <tbody class="fixed-data">
+                                        <tr>
+                                            <td>15</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">자유게시판 제목입니다 (4)</a>
+                                                <!-- <i class="ico ico-new">N</i> -->
+                                            </td>
+                                            <td>sm28****</td>
+                                            <td>2019-11-21</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="label label-part part1">14</span></td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">회원가입 후 글을 작성하실 수 있습니다.</a>
+                                            </td>
+                                            <td>ld34****</td>
+                                            <td>2019-11-06</td>
+                                            <td>38</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="label label-part part1">13</span></td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">비밀글없이 오픈형 게시판입니다.</a>
+                                            </td>
+                                            <td>able****</td>
+                                            <td>2019-10-01</td>
+                                            <td>37</td>
+                                        </tr>
+                                    </tbody>
+                                    <!-- //고정목록 -->
+
+                                    <!-- 일반목록 -->
+                                    <tbody>
+                                        <tr>
+                                            <td>12</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">작성자는 회원ID 정보를 노출.앞에서 4자리까지만 보여주고 5자리부터는 ****보안 처리 진행</a>
+                                            </td>
+                                            <td>csbe****</td>
+                                            <td>2019-09-26</td>
+                                            <td>48</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">전남 청소년 평화통일 길잡이 합격자 명단입니다 (2)</a>
+                                            </td>
+                                            <td>cm23****</td>
+                                            <td>2019-09-04</td>
+                                            <td>92</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">자유게시판 제목입니다 (4)</a>
+                                                <!-- <i class="ico ico-new">N</i> -->
+                                            </td>
+                                            <td>sm28****</td>
+                                            <td>2019-11-21</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">자유게시판 제목입니다 (4)</a>
+                                                <!-- <i class="ico ico-new">N</i> -->
+                                            </td>
+                                            <td>sm28****</td>
+                                            <td>2019-11-21</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">자유게시판 제목입니다 (4)</a>
+                                                <!-- <i class="ico ico-new">N</i> -->
+                                            </td>
+                                            <td>sm28****</td>
+                                            <td>2019-11-21</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">자유게시판 제목입니다 (4)</a>
+                                                <!-- <i class="ico ico-new">N</i> -->
+                                            </td>
+                                            <td>sm28****</td>
+                                            <td>2019-11-21</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">자유게시판 제목입니다 (4)</a>
+                                                <!-- <i class="ico ico-new">N</i> -->
+                                            </td>
+                                            <td>sm28****</td>
+                                            <td>2019-11-21</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">자유게시판 제목입니다 (4)</a>
+                                                <!-- <i class="ico ico-new">N</i> -->
+                                            </td>
+                                            <td>sm28****</td>
+                                            <td>2019-11-21</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td class="align-l">
+                                                <a href="#none" class="link-subject">자유게시판 제목입니다 (4)</a>
+                                                <!-- <i class="ico ico-new">N</i> -->
+                                            </td>
+                                            <td>sm28****</td>
+                                            <td>2019-11-21</td>
+                                            <td>36</td>
+                                        </tr>
+                                    </tbody>
+                                    <!-- //일반목록 -->
+
+                                    <!-- 목록없음 -->
+                                    <tbody class="no-data">
+                                        <tr>
+                                            <td colspan="4">등록된 게시물이 없습니다.</td>
+                                        </tr>
+                                    </tbody>
+                                    <!-- //목록없음 -->
+                                </table>
+                            </div>
+                            <!-- //게시판_목록 -->
+
+                            <!-- 게시판_페이지 -->
+                            <div class="pagination-wrap">
+                                <div class="pagination">
+                                    <a href="#none" class="btn btn-page first"><i class="ico ico-first">처음</i></a>
+                                    <a href="#none" class="btn btn-page prev"><i class="ico ico-prev">이전</i></a>
+                                    <a href="#none" class="btn btn-num">1</a>
+                                    <strong class="btn btn-num">2</strong>
+                                    <a href="#none" class="btn btn-num">3</a>
+                                    <a href="#none" class="btn btn-num">4</a>
+                                    <a href="#none" class="btn btn-num">5</a>
+                                    <a href="#none" class="btn btn-num">6</a>
+                                    <a href="#none" class="btn btn-num">7</a>
+                                    <a href="#none" class="btn btn-num">8</a>
+                                    <a href="#none" class="btn btn-num">9</a>
+                                    <a href="#none" class="btn btn-num">10</a>
+                                    <a href="#none" class="btn btn-page next"><i class="ico ico-next">다음</i></a>
+                                    <a href="#none" class="btn btn-page last"><i class="ico ico-last">마지막</i></a>
+                                </div>
+                                <!-- <button type="button" class="btn btn-sample btn-primary"><span>글쓰기</span></button> -->
+                                <div class="btn-wrap">
+                                    <a href="#none" class="btn btn-sample btn-primary"><span>글쓰기</span></a>
+                                </div>
+                            </div>
+                            <!-- //게시판_페이지 -->
+                        </div>
+                        <!-- //게시판_목록 -->
+                    </div>
+            </section>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- container -->
+    <!-- include - footer -->
+    <footer class="footer bg-darkgray">
+        <div class="inner">
+            <div class="footer-header">
+                <div class="footer-logo">
+                    <a href="" class="logo-wrap">
+                        <img src="images/footer_logo.png" alt="전남남북교류평화센터">
+                    </a>
+                </div>
+                <nav class="footer-navWrap">
+                    <ul class="footer-nav">
+                        <li><a href="#none">센터소개</a></li>
+                        <li><a href="#none">찾아오시는길</a></li>
+                        <li><a href="#none">이용약관</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-dropdown">
+                    <div class="dropdown-wrap">
+                        <button type="button" class="dropdown-shortcut">시·군 바로가기</button>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="#none"></a></li>
+                                <li><a href="#none"></a></li>
+                                <li><a href="#none"></a></li>
+                                <li><a href="#none"></a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="dropdown-shortcut">시의회 바로가기</button>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="#none"></a></li>
+                                <li><a href="#none"></a></li>
+                                <li><a href="#none"></a></li>
+                                <li><a href="#none"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom cooperation">
+                <ul class="cooperation-nav">
+                    <li>
+                        <a href="#none" class="logo-wrap">
+                            <img src="images/footer_01.png" alt="전라남도">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="logo-wrap">
+                            <img src="images/footer_02.png" alt="전라남도의회">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="logo-wrap">
+                            <img src="images/footer_03.png" alt="전라남도교육청">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="logo-wrap">
+                            <img src="images/footer_04.png" alt="통일부">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="logo-wrap">
+                            <img src="images/footer_05.png" alt="남북교류협력시스템">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="logo-wrap">
+                            <img src="images/footer_06.png" alt="통일교육원">
+                        </a>
+                    </li>
+                </ul>
+                <p class="address">광주광역시 서구 화정로 312 5층 / Tel : (062)361-8061 Fax: (062)361-8062 E-mail : unjin@naver.com</p>
+                <p class="copyright">Copyright&copy; 1995-2020 전남남북교류평화센터 All Rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- //wrapper -->
+</body>
+</html>

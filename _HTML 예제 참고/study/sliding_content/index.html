@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>sliding content</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="./common/css/base.css">
+<link rel="stylesheet" href="./common/css/style.css">
+<script src="./common/js/jquery-3.3.1.min.js"></script>
+<script src="./common/js/jquery-ui.min.js"></script>
+<script src="./common/js/gsap.min.js"></script>
+<script src="./common/js/ui.js"></script>
+<script>
+$(function (){
+	// 스크롤 부드럽게 하기
+	$(window).smoothWheel();
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+	<!-- s: main-slide -->
+	<section class="main-slide">
+		<!-- s: slide paging -->
+		<div class="paging-wrap">
+			<div class="slide-paging">
+				<a href="#paging1" class="paging-link is-active" data-scroll="paging1"><span>Lighthouse Factory</span></a>
+				<a href="#paging2" class="paging-link" data-scroll="paging2"><span>Innovilt</span></a>
+				<a href="#paging3" class="paging-link" data-scroll="paging3"><span>Venture Platform</span></a>
+				<a href="#paging4" class="paging-link" data-scroll="paging4"><span>Environment</span></a>
+				<a href="#paging5" class="paging-link" data-scroll="paging5"><span>Next Generation</span></a>
+				<a href="#paging6" class="paging-link" data-scroll="paging6"><span>Global Citizenship</span></a>
+			</div>
+		</div>
+		<!-- e: slide paging -->
+
+		<!-- s: slide container -->
+		<div class="slide-container">
+			<!-- s: slide content -->
+			<section class="slide-content bg-navy" id="paging1">
+				<div class="inner">
+					<div class="tit">
+						<h3>paging1</h3>
+					</div>
+					<div class="img-group">
+						
+					</div>
+					<div class="desc">
+						<p class="txt"></p>
+						<a href="#none" class="btn-page"></a>
+					</div>
+				</div>
+			</section>
+			<!-- e: slide content -->
+
+			<!-- s: slide content -->
+			<section class="slide-content" id="paging2">
+				<div class="inner">
+					<div class="tit">
+						<h3>paging2</h3>
+					</div>
+				</div>
+			</section>
+			<!-- e: slide content -->
+
+			<!-- s: slide content -->
+			<section class="slide-content bg-navy" id="paging3">
+				<div class="inner">
+					<div class="tit">
+						<h3>paging3</h3>
+					</div>
+				</div>
+			</section>
+			<!-- e: slide content -->
+
+			<!-- s: slide content -->
+			<section class="slide-content" id="paging4">
+				<div class="inner">
+					<div class="tit">
+						<h3>paging4</h3>
+					</div>
+				</div>
+			</section>
+			<!-- e: slide content -->
+
+			<!-- s: slide content -->
+			<section class="slide-content bg-navy" id="paging5">
+				<div class="inner">
+					<div class="tit">
+						<h3>paging5</h3>
+					</div>
+				</div>
+			</section>
+			<!-- e: slide content -->
+
+			<!-- s: slide content -->
+			<section class="slide-content" id="paging6">
+				<div class="inner">
+					<div class="tit">
+						<h3>paging6</h3>
+					</div>
+				</div>
+			</section>
+			<!-- e: slide content -->
+		</div>
+		<!-- e: slide container -->
+	</section>
+	<!-- e: main-slide -->
+
+	<!-- s: footer -->
+	<footer id="footer" class="footer">
+		<h3 class="footer-logo">posco</h3>
+		<p class="footer-slogan">Challenge Together, Change Tomorrow</p>
+		<p class="copyright">Copyright(C) 2020 POSCO. All Rights Reserved.</p>
+	</footer>
+	<!-- e: footer -->
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>모바일 웹</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mobile.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js">
+
+    </script>
+  </head>
+  <body>
+    <header id="main_header">
+      <h1>Mobile</h1>
+      <a href="#" class="btn_main">메인</a>
+      <a href="#" class="btn_toggle">toggle</a>
+    </header>
+
+    <div id="toggle_gnb">
+      <ul>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+      </ul>
+    </div>
+    <script>
+      $("#toggle_gnb").hide();
+      $(".btn_toggle").on("click", function(){
+        $("#toggle_gnb").slideToggle();
+      })
+    </script>
+    <div id="top_gnb">
+      <ul>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+      </ul>
+    </div>
+    <div id="bottom_gnb">
+      <ul>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+        <li><a href="#">버튼</a></li>
+      </ul>
+    </div>
+
+    <section>
+      <header id="content_header">
+        <h1>Lorem ipsum</h1>
+        <time datetime="2013-10-10T12:00">2013-10-10 - Birthday</time>
+      </header>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </section>
+
+    <footer id="main_footer">
+      <small>HTML5 + CSS3 Basic</small>
+      <address>Website Layout Basic</address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title></title>
+<style>
+body	{padding:0; margin:0; font-size:12px; font-family:dotum; color:#666;}
+a {color:#666; text-decoration:none;}
+a:hover	{color:#333; text-decoration:none;}
+p,ul,li,ol,h2,dl,dt,dd	{margin:0; padding:0; list-style:none;}
+#gnb {height:46px; width:647px; background:url(gnb.png) no-repeat left top; margin:50px;}
+#gnb li	{width:136px; height:40px; display:block; float:left;}
+#gnb a.menu1,
+#gnb a.menu2,
+#gnb a.menu3{width:136px; height:45px; display:block; float:left; overflow:hidden; text-indent:-999px; background:url(gnb.png) no-repeat;}
+#gnb a.menu1{background-position:left top;}
+#gnb a.menu2 {background-position:-136px top;}
+#gnb a.menu3 {background-position:-272px top;}
+#gnb a.menu1:hover {background-position:left -46px;}
+#gnb a.menu2:hover {background-position:-136px -46px;}
+#gnb a.menu3:hover {background-position:-272px -46px;}
+#gnb dl	{border:1px solid #ccc; margin-top:5px; display:none; border-top:0; margin:0 5px; background:#fff; overflow:hidden;}
+#gnb dl	dt	{display:none;}
+#gnb dl	dd a {display:block;padding:5px 5px 4px 5px;}
+#gnb dl	dd a:hover	{background:#eee;}
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<!-- gnb -->
+	<div id="gnb">
+		<ul>
+			<li><a href="#" class="menu1">웹하메뉴1</a>
+				<dl>
+					<dt>웹하메뉴1</dt>
+					<dd><a href="#">메뉴1_1</a></dd>
+					<dd><a href="#">메뉴1_2</a></dd>
+					<dd><a href="#">메뉴1_3</a></dd>
+					<dd><a href="#">메뉴1_4</a></dd>
+				</dl>
+			</li>
+			<li><a href="#" class="menu2">웹하메뉴2</a>
+				<dl>
+					<dt>웹하메뉴2</dt>
+					<dd><a href="#">메뉴2_1</a></dd>
+					<dd><a href="#">메뉴2_2</a></dd>
+					<dd><a href="#">메뉴2_3</a></dd>
+					<dd><a href="#">메뉴2_4</a></dd>
+				</dl>
+			</li>
+			<li><a href="#" class="menu3">웹하메뉴3</a>
+				<dl>
+					<dt>웹하메뉴3</dt>
+					<dd><a href="#">메뉴3_1</a></dd>
+					<dd><a href="#">메뉴3_2</a></dd>
+					<dd><a href="#">메뉴3_3</a></dd>
+					<dd><a href="#">메뉴3_4</a></dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+	<!--// gnb -->
+
+	<script>
+
+		$('#gnb li').hover(
+
+			function() {
+				$(this).children('dl').slideDown()
+
+
+			},
+
+			function() {
+				$(this).children('dl').stop().slideUp()
+
+
+			}
+
+		);
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배열에 스타일 입히기</title>
+    <script>
+      function fruit() {
+        return ["apple", "strawberry", "mango"];
+      }
+      console.log( fruit());
+      var fruit = fruit();
+      //var fruit = ["apple", "strawberry", "mango"];
+      for( var i=0; i<3; i++) {
+        document.write(fruit[i].toUpperCase() + "<br>");
+        document.body.style.fontSize = "50px";
+        //document.body.textTransform = "uppercase";
+      }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

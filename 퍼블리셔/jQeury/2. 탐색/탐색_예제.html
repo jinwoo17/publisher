@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>탐색들 예제</title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#content1').children('.doc').find('p').css('background','pink');
+        $('.doc').parent().next().children('#list').find('li').css('background','skyblue');
+        $('#list').parent().prev().children('.doc').find('h1').css('color', 'red');
+      })
+    </script>
+  </head>
+  <body>
+
+    <div id="content1">
+      <h1>Lorem Ipsum</h1>
+      <div class="doc">
+        <h1>JQuery Start</h1>
+        <p>Lorem Ipsum is simply...</p>
+      </div>
+      <p>Lorem Ipsum is simply...</p>
+    </div>
+
+    <div id="content2">
+      <ul id="list">
+          <li>Lorem Ipsum1</li>
+          <li>Lorem Ipsum2</li>
+          <li>Lorem Ipsum3</li>
+        </ul>
+    </div>
+
+  </body>
+</html>

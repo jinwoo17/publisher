@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>카운트다운</title>
+<link rel="stylesheet" href="../common/css/base.css">
+<!-- <link rel="stylesheet" href="common/css/common.css">
+<link rel="stylesheet" href="common/css/ui.css"> -->
+<script src="../common/js/libs/jquery-3.3.1.min.js"></script>
+<script src="../common/js/libs/moment.js"></script>
+<!-- <script src="common/js/libs/swiper.min.js"></script>
+<script src="common/js/libs/jquery-ui.min.js"></script>
+<script src="common/js/ui.js"></script> -->
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Sep 7, 2020 23:59:59").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        //document.getElementById("countDday").innerHTML = days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초 ";
+
+        days = days < 10 ? "0" + days : days;
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        $('.days').html(days);
+        $('.hours').html(hours);
+        $('.minutes').html(minutes);
+        $('.seconds').html(seconds);
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+        clearInterval(x);
+        $('.days').text('00');
+        $('.hours').text('00');
+        $('.minutes').text('00');
+        $('.seconds').text('00');
+        //document.getElementById("countDday").innerHTML = "<span>00</span>일 <span>00</span>시간 <span>00</span>분 <span>00</span>초";
+        $('.countdownWrap').addClass("end");
+        }
+    }, 0);
+
+
+    $(document).ready(function(){
+        //F12 방지
+        $(document).bind('keydown',function(e){
+            if ( e.keyCode == 123 /* F12 */) {
+                e.preventDefault();
+                e.returnValue = false;
+            }
+        });
+
+        //마우스 우클릭 방지
+        $('body').attr('oncontextmenu', 'return false');
+    });
+    </script>
+<style>
+.a11y-hidden {overflow:hidden; position:absolute; clip:rect(0,0,0,0); width:1px; height:1px; margin:-1px; padding:0; border:0;}
+.innerFixWrap {display:block; position:relative; width:1200px; margin:0 auto;}
+.headerWrap {display:block; position:relative; width:100%; height:120px; padding:0;}
+.headerWrap::after {content:""; display:block; clear:both;}
+.headerTitle {display:block; position:relative; float:left; margin-top:40px;}
+.headerTitle h1 {font-size:28px; font-weight:500; color:#1a77bc;}
+.headerTitle p {display:block; position:relative; padding-top:5px; color:#666;}
+.countdownWrap {display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); margin:0; padding:0; text-align:center; color:#064475;}
+.countdownWrap .timer {display:inline-block; position:relative; margin-right:20px; vertical-align: middle; line-height:18px;}
+.countdownWrap .countDday {display:inline-block; position:relative; vertical-align:middle;}
+.countdownWrap .countDday p {display:inline-block; position:relative; z-index:10; width:80px; height:80px; padding-top:20px; overflow:hidden; background:#fff; border:1px solid #f9f9f9; box-shadow:2px 2px 4px #eee; line-height:18px; font-size:12px;}
+.countdownWrap .countDday p + p {margin-left:20px;}
+.countdownWrap .countDday p span {font-size: 30px; font-weight:700;}
+.gnbWrap {display:block; position:relative; float:right;}
+.gnbWrap::before {display:block; position:relative; top:35px; right:0; width:50px; height:5px; background:#000; content:"";}
+.gnbWrap .gnb-open {display:block; position:relative; width:50px; height:50px; margin-top:30px;}
+.gnbWrap .gnb-open::before {display:block; position:absolute; top:20px; right:0; width:50px; height:5px; background:#000; content:"";}
+.gnbWrap .gnb-open::after {display:block; position:absolute; top:40px; right:0; width:50px; height:5px; background:#000; content:"";}
+.gnbWrap .gnb-open span {display:block; position:absolute; text-indent:-9999px; color:transparent;}
+.gnbWrap .gnb {display:none;}
+</style>
+</head>
+<body>
+<div id="wrapper" class="">
+	<!--#Include Virtual="/includes/header.asp"-->
+	<div class="contentsWrap" id="contentsWrap">
+		<div class="innerFixWrap" id="contents">
+            <header class="headerWrap">
+                <a href="javascript:;" class="headerTitle">
+                    <h1>제 6회 언어치료인의 날</h1>
+                    <p>2020년 9월 5일(토)~9월 7일(월)</p>
+                </a>
+                <div class="countdownWrap">
+                    <p class="timer">남은<br/>시간</p>
+                    <div id="countDday" class="countDday">
+                        <p><span class="days"></span><br/>DAYS</p>
+                        <p><span class="hours"></span><br/>HOURS</p>
+                        <p><span class="minutes"></span><br/>MINUTES</p>
+                        <p><span class="seconds"></span><br/>SECONDS</p>
+                    </div>
+                </div>
+                <nav class="gnbWrap">
+                    <button type="button" name="" id="" class="gnb-open"><span class="a11y-hidden">메뉴열기</span></button>
+                    <span class="gnb-dim"></span>
+                    <div class="gnb-wrap mobileScroll">
+                        <ul class="gnb">
+                            <li>
+                                <a href="#" aria-expanded="true" role="button">전문성 UP</a>
+                            </li>
+                            <li>
+                                <a href="#" aria-expanded="false" role="button">소통 및 공감 UP</a>
+                            </li>
+                            <li>
+                                <a href="#" aria-expanded="false" role="button">문제해결 UP</a>
+                            </li>
+                            <li>
+                                <a href="#" aria-expanded="false" role="button">이용안내</a>
+                            </li>
+                            <li>
+                                <a href="#" aria-expanded="false" role="button">공지사항</a>
+                            </li>
+                        </ul>
+                        <button type="button" name="" class="gnb-close"><span class="a11y-hidden">메뉴 닫기</span></button>
+                </nav>
+            </header>
+		</div>
+		<!-- //innerFixWrap -->
+	</div>
+	<!-- //contentsWrap  -->
+	<!--#Include Virtual="/includes/footer.asp"-->
+</div>
+<!--#wrapper -->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> parent 선택자</title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+
+</head>
+<body>
+
+	<div id="container">
+
+		<ul class="nav1">
+			<li> apple </li>
+			<li> banana </li>
+			<li></li>
+		</ul>
+
+		<ul class="nav2">
+			<li></li>
+			<li> tiger </li>
+			<li></li>
+		</ul>
+
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// empty와 반대로 요소에 텍스트가 있는 노드
+
+		$('ul li:parent').css('background','#ff0');  //헷갈리니 밑에껄로 쓰는걸 권장
+		//$('ul li:not(:empty)').css('background','#ff0');
+
+	</script>
+
+
+
+
+
+</body>
+</html>

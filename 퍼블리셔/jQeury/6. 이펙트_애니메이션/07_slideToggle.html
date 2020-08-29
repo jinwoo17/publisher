@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> slideToggle() </title>
+<style type="text/css">
+	dl { width: 300px; margin: 0 auto; }
+	dl dt { padding:10px; background: #b677ff; cursor:pointer; }
+	dl dd { border: 1px solid #b677ff; height: 100px;
+			    margin:0; padding:10px; }
+</style>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+		<dl>
+			<dt>슬라이딩 효과로 표시상태를 변경한다</dt>
+			<dd>slideDown()/slideUp()는 show()/hide() 와는
+					다른 슬라이딩 애니메이션 효과로
+					표시/비표시를 변경하는 명령입니다.
+			</dd>
+		</dl>
+		<dl>
+			<dt>슬라이딩 효과로 표시상태를 변경한다</dt>
+			<dd>slideDown()/slideUp()는 show()/hide() 와는
+					다른 슬라이딩 애니메이션 효과로
+					표시/비표시를 변경하는 명령입니다.
+			</dd>
+		</dl>
+		<dl>
+			<dt>슬라이딩 효과로 표시상태를 변경한다</dt>
+			<dd>slideDown()/slideUp()는 show()/hide() 와는
+					다른 슬라이딩 애니메이션 효과로
+					표시/비표시를 변경하는 명령입니다.
+			</dd>
+		</dl>
+
+
+
+	<!---------- jQuery code Start ---------->
+	<script type="text/javascript">
+
+        // dt 클릭시 dd가 슬라이드 업/다운을 순차적으로 실행하도록
+				$('dd').hide();
+				$('dt').on('click',function(){
+					$(this).next('dd:not(:animated)').slideToggle(1000);
+				})
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>

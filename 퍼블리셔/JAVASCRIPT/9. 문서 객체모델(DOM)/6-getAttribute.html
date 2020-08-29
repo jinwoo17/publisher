@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>getAttribute,속성가져오기</title>
+  </head>
+  <body>
+    <div id="div1" class="div2"></div>
+    <img src="images/car1.jpg" alt="중형세단">
+    <script>
+      var div = document.getElementsByTagName("div")[0];
+      //var div = document.getElementById("div1");
+      //var div = document.getElementsByClassName("div2");
+      console.log(div);
+      var attr1 = div.getAttribute("id");
+      console.log(attr1);
+      var attr2 = div.getAttribute("class");
+      console.log(attr2);
+
+      var car = document.getElementsByTagName("img");
+      var imgPath=car[0].getAttribute("src"); //src속성 가져오기
+      div.innerHTML=imgPath;
+
+    </script>
+  </body>
+</html>

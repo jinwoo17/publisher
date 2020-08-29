@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>getElementsByClassName</title>
+  </head>
+  <body>
+    <ul>
+      <li>HTML</li>
+      <li class="active">CSS</li>
+      <li class="active">javaScript</li>
+    </ul>
+    <script>
+      var active = document.getElementsByClassName("active");
+      for(var i=0; i<active.length; i++) {
+        active[i].style.color="#ff985e";
+      }
+      // for(var i in active){
+      //   active[i].style.color="#ff985e";
+      // }
+    </script>
+  </body>
+</html>

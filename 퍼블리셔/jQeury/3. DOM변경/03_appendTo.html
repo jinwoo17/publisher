@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> appendTo()  </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+	<p> 텍스트 텍스트</p>
+	<strong> 뒤로 이동</strong>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+		// 선택된 요소를 지정된 요소 내의 뒤로 이동
+		// $('p').append($('strong'));  //append는 옮기는 대상의 부모를 지정해줘야한다.
+		// strong 태그를 p 태그 내 뒤로 이동하시오
+		$('strong').appendTo($('p'))
+
+	</script>
+
+
+
+
+</body>
+</html>

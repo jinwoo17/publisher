@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>switch문</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      var areaName = prompt("지역번호를 알고싶은 지역을 쓰세요","서울");
+      var areaNum;
+
+      switch (areaName) {
+        case "서울":
+            areaNum="02"
+            break;
+        case "대구":
+            areaNum="053"
+            break;
+        case "부산":
+            areaNum="051"
+            break;
+        case "광주":
+            areaNum="061"
+            break;
+        default :
+            areaNum = "아직 등록되지 않은 지역";
+      }
+
+      document.write("입력하신 " + areaName + "의 지역번호는 " + areaNum +"입니다");
+    </script>
+  </body>
+</html>

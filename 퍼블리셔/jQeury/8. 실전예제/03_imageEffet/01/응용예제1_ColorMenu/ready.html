@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Smooth Animated jQuery Menu</title>
+<link rel="stylesheet" href="animated-menu.css"/>
+<!-- jQuery library -->
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+</head>
+
+<body>
+
+	<p>Rollover a menu item to expand it.</p>
+
+	<ul>
+		<li class="green">
+			<p><a href="#">Home</a></p>
+			<p class="subtext">The front page</p>
+		</li>
+		<li class="yellow">
+			<p><a href="#">About</a></p>
+			<p class="subtext">More info</p>
+		</li>
+		<li class="red">
+			<p><a href="#">Contact</a></p>
+			<p class="subtext">Get in touch</p>
+		</li>
+		<li class="blue">
+			<p><a href="#">Submit</a></p>
+			<p class="subtext">Send us your stuff!</p>
+		</li>
+		<li class="purple">
+			<p><a href="#">Terms</a></p>
+			<p class="subtext">Legal things</p>
+		</li>
+	</ul>
+
+
+	<script>
+
+			//Fix Errors - http://www.learningjquery.com/2009/01/quick-tip-prevent-animation-queue-buildup/
+
+
+			//When mouse rolls over
+			$("li").mouseenter(function(){
+				$(this).stop().animate({ height: 150})
+			});
+
+			//When mouse is removed
+			$("li").mouseleave(function(){
+				$(this).stop().animate({ height: 50})
+			});
+
+	</script>
+
+</body>
+</html>
